@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>কৃষি খরচ ও লাভ ক্যালকুলেটর</title>
+ <style>
+  body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: auto; 
+    background:#f5fff5; 
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* ব্যাক বাটন স্টাইল */
+  .back-btn {
+    background: green; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 16px;
+    float: left;    /* 👉 ডান পাশে চলে যাবে */
+    margin: 10px 0 20px 0; 
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+  .back-btn:hover {
+    background: darkgreen;
+    transform: scale(1.05);
+  }
+
+  /* ফর্মের ইনপুট স্টাইল */
+  label, select, input, button { 
+    margin: 5px 0; 
+    display: block; 
+    width: 100%; 
+    padding:5px; 
+  }
+
+  .result { 
+    margin-top: 20px; 
+    padding: 15px; 
+    border: 2px solid #4CAF50; 
+    background-color: #f9fff9; 
+  }
+</style>
+</head>
+<body>
+  <h2>🌾 কৃষি খরচ ও লাভ ক্যালকুলেটর</h2>
+
+  <!-- ফিরে যাওয়ার বাটন -->
+  <button class="back-btn" onclick="window.location.href='index.html'">🏠 মূল ওয়েবসাইটে ফিরে যান</button>
+
+  <label>জমির পরিমাণ (একর):</label>
+  <input type="number" id="land" placeholder="যেমন: 2" min="0">
+
+  <label>ফসল নির্বাচন করুন:</label>
+  <select id="crop">
+    <option value="rice">ধান</option>
+    <option value="potato">আলু</option>
+    <option value="bottleGourd">পটল</option>
+    <option value="chichinga">চিচিঙ্গা</option>
+    <option value="zucchini">ঝিঙ্গা</option>
+    <option value="okra">ঢেঁড়শ</option>
+    <option value="tomato">টমেটো</option>
+    <option value="maize">ভুট্টা</option>
+    <option value="wheat">গম</option>
+    <option value="cucumber">শসা</option>
+    <option value="bean">শিম</option>
+    <option value="cauliflower">ফুলকপি</option>
+    <option value="cumin">জিরা</option>
+    <option value="cardamom">এলাচ</option>
+    <option value="cinnamon">দারুচিনি</option>
+  </select>
+
+  <h3>👉 বাজারদর দিন (প্রতি কেজি/লিটার/শ্রমিক):</h3>
+  <label>বীজের দাম (প্রতি কেজি):</label>
+  <input type="number" id="seedPrice" value="60">
+
+  <label>ইউরিয়া (প্রতি কেজি):</label>
+  <input type="number" id="ureaPrice" value="25">
+
+  <label>টিএসপি (প্রতি কেজি):</label>
+  <input type="number" id="tspPrice" value="40">
+
+  <label>এমওপি (প্রতি কেজি):</label>
+  <input type="number" id="mopPrice" value="35">
+
+  <label>পানি/সেচ খরচ (প্রতি একর):</label>
+  <input type="number" id="waterPrice" value="2000">
+
+  <label>শ্রমিক খরচ (প্রতি জন):</label>
+  <input type="number" id="labourPrice" value="600">
+
+  <h3>💰 লাভ হিসাব</h3>
+  <label>ফসল উৎপাদন (কেজি):</label>
+  <input type="number" id="yield" placeholder="যেমন: 1000">
+
+  <label>বাজারদর (প্রতি কেজি):</label>
+  <input type="number" id="marketPrice" placeholder="যেমন: 40">
+
+  <br>
+  <button onclick="calculate()">হিসাব করুন</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    const cropData = {
+      rice: { seed: 35, urea: 120, tsp: 42, mop: 42, water: 1, labour: 5 },
+      potato: { seed: 1000, urea: 120, tsp: 40, mop: 40, water: 1, labour: 6 },
+      bottleGourd: { seed: 10, urea: 60, tsp: 25, mop: 25, water: 1, labour: 4 },
+      chichinga: { seed: 10, urea: 60, tsp: 25, mop: 25, water: 1, labour: 4 },
+      zucchini: { seed: 10, urea: 60, tsp: 25, mop: 25, water: 1, labour: 4 },
+      okra: { seed: 8, urea: 50, tsp: 20, mop: 20, water: 1, labour: 3 },
+      tomato: { seed: 10, urea: 100, tsp: 40, mop: 40, water: 1, labour: 5 },
+      maize: { seed: 10, urea: 30, tsp: 18, mop: 15, water: 1, labour: 6 },
+      wheat: { seed: 25, urea: 35, tsp: 20, mop: 12, water: 1, labour: 4 },
+      cucumber: { seed: 5, urea: 40, tsp: 15, mop: 15, water: 1, labour: 4 },
+      bean: { seed: 15, urea: 30, tsp: 10, mop: 10, water: 1, labour: 4 },
+      cauliflower: { seed: 1, urea: 50, tsp: 20, mop: 20, water: 1, labour: 5 },
+      cumin: { seed: 2, urea: 20, tsp: 10, mop: 10, water: 1, labour: 3 },
+      cardamom: { seed: 1, urea: 30, tsp: 10, mop: 10, water: 1, labour: 4 },
+      cinnamon: { seed: 1, urea: 25, tsp: 10, mop: 10, water: 1, labour: 4 }
+    };
+
+    function calculate() {
+      const land = parseFloat(document.getElementById("land").value);
+      if (!land || land <= 0) { alert("জমির পরিমাণ সঠিকভাবে দিন।"); return; }
+
+      const crop = document.getElementById("crop").value;
+      const data = cropData[crop];
+
+      const seed = data.seed * land;
+      const urea = data.urea * land;
+      const tsp = data.tsp * land;
+      const mop = data.mop * land;
+      const water = data.water * land;
+      const labour = data.labour * land;
+
+      const seedPrice = parseFloat(document.getElementById("seedPrice").value);
+      const ureaPrice = parseFloat(document.getElementById("ureaPrice").value);
+      const tspPrice = parseFloat(document.getElementById("tspPrice").value);
+      const mopPrice = parseFloat(document.getElementById("mopPrice").value);
+      const waterPrice = parseFloat(document.getElementById("waterPrice").value);
+      const labourPrice = parseFloat(document.getElementById("labourPrice").value);
+
+      const totalCost = (seed*seedPrice) + (urea*ureaPrice) + (tsp*tspPrice) + (mop*mopPrice) + (water*waterPrice) + (labour*labourPrice);
+
+      const yieldQty = parseFloat(document.getElementById("yield").value) || 0;
+      const marketPrice = parseFloat(document.getElementById("marketPrice").value) || 0;
+      const totalIncome = yieldQty * marketPrice;
+      const profit = totalIncome - totalCost;
+
+      const cropNames = {
+        rice:"ধান", potato:"আলু", bottleGourd:"পটল", chichinga:"চিচিঙ্গা", zucchini:"ঝিঙ্গা",
+        okra:"ঢেঁড়শ", tomato:"টমেটো", maize:"ভুট্টা", wheat:"গম", cucumber:"শসা",
+        bean:"শিম", cauliflower:"ফুলকপি", cumin:"জিরা", cardamom:"এলাচ", cinnamon:"দারুচিনি"
+      };
+
+      document.getElementById("result").innerHTML = `
+        <h3>📊 ফলাফল</h3>
+        জমি: ${land} একর <br>
+        ফসল: ${cropNames[crop]} <br><br>
+        ✅ প্রয়োজনীয় উপকরণ:<br>
+        - বীজ: ${seed} কেজি <br>
+        - ইউরিয়া: ${urea} কেজি <br>
+        - টিএসপি: ${tsp} কেজি <br>
+        - এমওপি: ${mop} কেজি <br>
+        - পানি/সেচ: ${water} একর <br>
+        - শ্রমিক: ${labour} জন <br><br>
+        💰 মোট আনুমানিক খরচ: <b>${totalCost.toLocaleString()} টাকা</b><br><br>
+        🌾 ফসল উৎপাদন: ${yieldQty} কেজি <br>
+        💵 বাজারদর: ${marketPrice} টাকা/কেজি <br>
+        🏆 মোট আয়: ${totalIncome.toLocaleString()} টাকা <br>
+        💹 আনুমানিক লাভ: <b>${profit.toLocaleString()} টাকা</b>
+      `;
+    }
+  </script>
+</body>
+</html>
