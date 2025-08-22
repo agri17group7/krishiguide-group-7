@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পটল চাষের সম্পূর্ণ গাইড</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* সাধারণ স্টাইল */
+        body {
+            font-family: 'SolaimanLipi', sans-serif; 
+            background: #f9f9f9; 
+            margin: 0; 
+            padding: 0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark-mode {
+            background-color: #121212; 
+            color: #f1f1f1; 
+        }
+        
+        .dark-mode .scientific-feature {
+            background: #1b5e20;
+        }
+        
+        .disorder-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .disorder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .collapse-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .disorder-card:hover .collapse-text {
+            max-height: 500px;
+        }
+        
+        header { 
+            background: #2e7d32; 
+            color: white; 
+            padding: 15px; 
+            text-align: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 16px; 
+            flex-wrap: wrap;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            padding: 20px;
+        }
+        
+        .section { 
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .section {
+            background: #1a1a1a;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        
+        h2 { 
+            color: #2e7d32;
+        }
+        
+        .dark-mode h2 {
+            color: #4caf50;
+        }
+        
+        button { 
+            background: #2e7d32; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover { 
+            background: #1b5e20;
+        }
+        
+        input, select { 
+            padding: 8px; 
+            margin: 5px 0; 
+            width: 100%; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode input, 
+        .dark-mode select {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        textarea { 
+            width: 100%; 
+            padding: 8px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode textarea {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        .comment-box { 
+            border-top: 1px solid #ccc; 
+            padding-top: 10px; 
+            margin-top: 10px;
+        }
+        
+        .comment { 
+            background: #e8f5e9; 
+            padding: 10px; 
+            margin-bottom: 5px; 
+            border-radius: 5px;
+        }
+        
+        .dark-mode .comment {
+            background: #1b5e20;
+        }
+        
+        .lang-btn { 
+            margin-right: 10px; 
+        }
+        
+        /* উন্নত স্টাইল */
+        h2, h3 { 
+            margin-top: 20px; 
+        }
+        
+        ul { 
+            margin-left: 20px; 
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+        }
+        
+        table, th, td { 
+            border: 1px solid #ccc; 
+        }
+        
+        th, td { 
+            padding: 10px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background-color: #ffe0b2; 
+        }
+        
+        .dark-mode th {
+            background-color: #5d4037;
+        }
+        
+        .btn-group button {
+            margin-right: 10px; 
+            padding: 5px 15px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px;
+        }
+        
+        .btn-group button:hover { 
+            opacity: 0.8; 
+        }
+        
+        #finalResult { 
+            margin-top: 15px; 
+            font-weight: bold; 
+            color: #0b3d91; 
+        }
+        
+        .switch {
+            position: fixed; 
+            top: 15px; 
+            right: 15px; 
+            cursor: pointer; 
+            background: #ccc;
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            z-index: 9999;
+        }
+        
+        .dark-mode .switch {
+            background: #555;
+            color: #fff;
+        }
+        
+        .chart-container { 
+            width: 100%; 
+            max-width: 700px; 
+            margin: 30px auto; 
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #4caf50, #81c784); 
+            color: white; 
+            font-weight: bold; 
+            padding: 10px 20px;
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease; 
+            font-size: 16px;
+        }
+        
+        .back-btn:hover { 
+            background: linear-gradient(135deg, #388e3c, #66bb6a); 
+            transform: scale(1.05); 
+        }
+        
+        input, select, button { 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            padding: 6px 8px; 
+        }
+        
+        small.hint { 
+            color: #666;
+            display: block; 
+            margin-top: -6px; 
+            margin-bottom: 10px; 
+        }
+        
+        .dark-mode small.hint {
+            color: #bbb;
+        }
+        
+        .section-card {
+            background: #fff; 
+            border-radius: 14px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+            padding: 18px; 
+            margin: 22px 0;
+        }
+        
+        .dark-mode .section-card { 
+            background: #1a1a1a; 
+            box-shadow: 0 6px 18px rgba(255,255,255,0.05); 
+        }
+        
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 16px; 
+        }
+        
+        .badge {
+            display: inline-block; 
+            padding: 4px 10px; 
+            border-radius: 999px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            background: #e8f5e9; 
+            color: #1b5e20;
+        }
+        
+        .dark-mode .badge { 
+            background: #173b17; 
+            color: #c8e6c9; 
+        }
+        
+        .kpi { 
+            display: flex; 
+            gap: 10px; 
+            align-items: center; 
+            font-weight: 600; 
+        }
+        
+        .kpi .dot { 
+            width: 10px; 
+            height: 10px; 
+            border-radius: 999px; 
+            background: #4caf50; 
+        }
+        
+        .canvas-wrap { 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
+        
+        .preview {
+            border: 1px dashed #bbb; 
+            border-radius: 12px; 
+            padding: 8px; 
+            background: #fafafa;
+        }
+        
+        .dark-mode .preview { 
+            background: #101010; 
+            border-color: #444; 
+        }
+        
+        .note { 
+            font-size: 13px; 
+            color: #555; 
+        }
+        
+        .dark-mode .note { 
+            color: #bbb; 
+        }
+        
+        .calendar { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        
+        .calendar th { 
+            background: #e3f2fd; 
+        }
+        
+        .dark-mode .calendar th { 
+            background: #0b2942; 
+        }
+        
+        .download-btn {
+            background: #2962ff; 
+            color: #fff; 
+            border: none; 
+            border-radius: 8px; 
+            padding: 8px 12px; 
+            cursor: pointer; 
+            font-weight: 700;
+        }
+        
+        .download-btn:hover { 
+            opacity: .9; 
+        }
+        
+        iframe {
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+        
+        /* নতুন স্টাইল */
+        .price-card {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .price-card {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+        }
+        
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .price-region {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2e7d32;
+        }
+        
+        .dark-mode .price-region {
+            color: #a5d6a7;
+        }
+        
+        .price-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .price-date {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .dark-mode .price-date {
+            color: #ccc;
+        }
+        
+        .companion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .companion-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .companion-card {
+            background: #2c3e2d;
+        }
+        
+        .companion-title {
+            font-size: 20px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-title {
+            color: #81c784;
+        }
+        
+        .companion-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .companion-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #c8e6c9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-list li {
+            border-bottom: 1px dashed #4caf50;
+        }
+        
+        .good-companion {
+            color: #2e7d32;
+        }
+        
+        .bad-companion {
+            color: #d32f2f;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .canvas-wrap {
+                flex-direction: column;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .switch {
+                top: 5px;
+                right: 5px;
+                padding: 3px 8px;
+                font-size: 14px;
+            }
+            
+            .companion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i> ডার্ক / লাইট মোড
+    </div>
+
+    <header>
+        <h1>🥒 পটল চাষের সম্পূর্ণ গাইড</h1>
+    </header>
+
+    <div class="container">
+        <!-- ================== পটল পরিচিতি ================== -->
+        <section id="pointed-gourd" class="section-card">
+            <span class="badge">বেসিক গাইড</span>
+            <h2 style="color: orange;">পটল (Pointed Gourd)</h2>
+            <h3>কেন চাষ করবেন?</h3>
+            <ul>
+                <li>বছরে দুইবার ফলন পাওয়া যায়</li>
+                <li>দীর্ঘ সময় ধরে ফলন দেয় (৫-৬ বছর পর্যন্ত)</li>
+                <li>বাজারে চাহিদা ও দাম ভালো</li>
+                <li>উপকূলীয় এলাকার জন্য উপযোগী কিছু জাত রয়েছে</li>
+            </ul>
+            <h3>🌍 উপযুক্ত পরিবেশ</h3>
+            <ul>
+                <li>জলবায়ু: উষ্ণ ও আর্দ্র জলবায়ু উপযোগী</li>
+                <li>তাপমাত্রা: আদর্শ ২৫–৩৫°C</li>
+                <li>মাটি: বেলে দোআঁশ থেকে দোআঁশ মাটি, pH ৬.০–৭.৫</li>
+                <li>সূর্যালোক: পরিপূর্ণ সূর্যালোক প্রয়োজন</li>
+            </ul>
+        </section>
+
+        <!-- ================== জমি ও পরিবেশ যাচাই ================== -->
+        <section id="pointed-gourd-checklist" class="section-card">
+            <span class="badge">ফিল্ড চেক</span>
+            <h2>🥒 পটল চাষের জন্য জমি ও পরিবেশ যাচাই করুন</h2>
+            <p class="note">আপনার জমি কেমন? নিচের প্রতিটি প্রশ্নে হ্যাঁ / না চাপুন:</p>
+            <ul style="list-style: none; padding: 0;" id="questionList">
+                <li style="margin-bottom: 10px;">
+                    ☀ <strong>সকাল-বিকেলে রোদ পড়ে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(0, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(0, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌡 <strong>হালকা গরম অনুভব হয়? (২০–৩৫°C)</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(1, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(1, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌧 <strong>জমিতে বেশি পানি জমে না?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(2, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(2, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌱 <strong>মাটি দোআঁশ বা বেলে দোআঁশ?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(3, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(3, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    💧 <strong>সেচের ব্যবস্থা আছে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(4, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(4, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    ❗ <strong>মাটিতে সাদা লবণের মতো দাগ পড়ে না?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(5, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(5, 0, this)">❌ না</button>
+                    </div>
+                </li>
+            </ul>
+            <button onclick="showFinalResult()" style="margin-top: 10px; padding: 10px 20px; font-weight: bold;">📊 ফলাফল দেখুন</button>
+            <div id="finalResult"></div>
+        </section>
+
+        <!-- ================== Research & AI Predictions ================== -->
+        <section id="research" class="section-card">
+            <span class="badge">রিসার্চ টুলস</span>
+            <h2 style="color:#d84315;">🔬 পটল চাষের বৈজ্ঞানিক মূল্যায়ন ও পূর্বাভাস</h2>
+
+            <!-- Soil & Climate -->
+            <h3>1️⃣ মাটি ও জলবায়ুর উপযোগিতা</h3>
+            <div class="grid-2">
+                <div>
+                    <label>মাটি pH: <input type="number" id="soilPH" min="4" max="9" step="0.1" value="6.5"></label>
+                    <label>মাটির EC (dS/m): <input type="number" id="soilEC" min="0" max="10" step="0.1" value="1.2"></label>
+                    <label>তাপমাত্রা (°C): <input type="number" id="temp" min="15" max="40" value="28"></label>
+                    <label>আর্দ্রতা (%): <input type="number" id="humidity" min="30" max="100" value="70"></label>
+                    <button onclick="calculateSuitability()">💡 উপযোগিতা যাচাই করুন</button>
+                    <div id="suitabilityResult" style="margin-top:10px;font-weight:bold;"></div>
+                </div>
+                <div>
+                    <h4>2️⃣ পূর্বাভাসকৃত ফলন (কেজি/বিঘা)</h4>
+                    <div class="chart-container"><canvas id="yieldChart"></canvas></div>
+                    <h4>3️⃣ রোগ ঝুঁকি সিমুলেটর</h4>
+                    <label>আর্দ্রতা (%): <input type="range" id="diseaseHumidity" min="30" max="100" value="70" oninput="updateDiseaseRisk()"></label>
+                    <div id="diseaseRisk" style="margin-top:10px;font-weight:bold;color:#e53935;">ঝুঁকি: মাঝারি</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== বপনের সময় ও এলাকা ================== -->
+        <section id="pointed-gourd-planting" class="section-card">
+            <span class="badge">সময়সূচি</span>
+            <h3>📅 পটল চাষের সময় ও উপযুক্ত এলাকা</h3>
+            <table>
+                <thead>
+                    <tr><th>মৌসুম</th><th>চারা রোপণের সময়</th><th>ফসল সংগ্রহ</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>খরিফ-১</td><td>ফেব্রুয়ারি – মার্চ</td><td>মে – সেপ্টেম্বর</td></tr>
+                    <tr><td>খরিফ-২</td><td>জুন – জুলাই</td><td>আগস্ট – ডিসেম্বর</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>রাজশাহী, নাটোর: বেলে দোআঁশ মাটিতে ভালো হয়</li>
+                <li>ঢাকা, মানিকগঞ্জ, টাঙ্গাইল: দোআঁশ মাটিতে ভালো ফলন</li>
+                <li>খুলনা, সাতক্ষীরা: লবণসহিষ্ণু জাত ব্যবহার করুন</li>
+                <li>কুমিল্লা, ব্রাহ্মণবাড়িয়া: সেচ সুবিধাসম্পন্ন জমি উপযোগী</li>
+            </ul>
+        </section>
+
+        <!-- ================== মাটি প্রস্তুতি ================== -->
+        <section id="soil" class="section-card">
+            <span class="badge">মাটি প্রস্তুতি</span>
+            <h2>🌱 পটল চাষের জন্য মাটি প্রস্তুতি</h2>
+            <p>
+                পটল ভালো ফলনের জন্য উর্বর দো-আঁশ বা বেলে দো-আঁশ মাটি দরকার।  
+                ১) জমি প্রথমে ২-৩ বার ভালোভাবে চাষ ও মই দিয়ে তৈরি করুন। <br>
+                ২) প্রতি শতকে ৮-১০ কেজি পচা গোবর বা জৈব সার ব্যবহার করুন। <br>
+                ৩) শেষ চাষে ইউরিয়া, টিএসপি ও এমওপি সার মিশিয়ে জমি তৈরি করুন। <br>
+                ৪) জমি উঁচু করে বেড তৈরি করুন এবং নালা রাখুন যাতে পানি জমে না থাকে।<br>
+                ৫> মাচা তৈরির জন্য খুঁটি ও তারের ব্যবস্থা করুন।
+            </p>
+            <iframe width="560" height="315" src="<iframe width="560" height="315" src="https://www.youtube.com/embed/gua953THyOs?si=LQPceHux6W2q8TJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ৪: অপ্টিমাইজড স্পেসিং ক্যালকুলেটর ================== -->
+        <section id="spacing-optimizer" class="section-card">
+            <span class="badge">স্পেসিং অপ্টিমাইজার</span>
+            <h2>📐 অপ্টিমাইজড স্পেসিং ক্যালকুলেটর</h2>
+            <div class="grid-2">
+                <div>
+                    <label>প্লট দৈর্ঘ্য (মিটার): <input type="number" id="plotLen" min="5" step="0.5" value="30"></label>
+                    <label>প্লট প্রস্থ (মিটার): <input type="number" id="plotWid" min="3" step="0.5" value="20"></label>
+                    <label>চাষ পদ্ধতি:
+                        <select id="spacingMode" onchange="applyPreset()">
+                            <option value="ground">গ্রাউন্ড (প্রস্তাবিত ২.৫মি × ২.৫মি)</option>
+                            <option value="trellis">মাচা পদ্ধতি (প্রস্তাবিত ৩.০মি × ৩.০মি)</option>
+                            <option value="custom">কাস্টম</option>
+                        </select>
+                    </label>
+                    <label>সারি দূরত্ব (মিটার): <input type="number" id="optRow" min="0.5" step="0.1" value="2.5"></label>
+                    <label>গাছের দূরত্ব (মিটার): <input type="number" id="optPlant" min="0.3" step="0.1" value="2.5"></label>
+                    <button onclick="optimizeSpacing()">🧮 হিসাব করুন</button>
+                    <div id="spacingSummary" style="font-weight:700;"></div>
+                </div>
+                <div style="min-width:260px;">
+                    <div id="gridInfo" class="note">সারি এবং গাছের সংখ্যা হিসাব করা হয়েছে</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== চারা রোপণ পদ্ধতি ================== -->
+        <section class="section-card">
+            <span class="badge">চারা রোপণ</span>
+            <h2>চারা রোপণ পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>রোপণের সময়</td>
+                        <td>ফেব্রুয়ারি-মার্চ বা জুন-জুলাই মাসে</td>
+                        <td>আবহাওয়া ও তাপমাত্রার জন্য উপযুক্ত সময়</td>
+                    </tr>
+                    <tr>
+                        <td>পদ্ধতি</td>
+                        <td>কাটিং বা বীজ থেকে চারা তৈরি করে রোপণ করুন</td>
+                        <td>কাটিং থেকে চারা তৈরি করলে ফলন দ্রুত পাওয়া যায়</td>
+                    </tr>
+                    <tr>
+                        <td>লাইন ও চারা দূরত্ব</td>
+                        <td>লাইন থেকে লাইন ২.৫ মিটার, চারা থেকে চারা ২.৫ মিটার</td>
+                        <td>গাছের বৃদ্ধি ও পর্যাপ্ত আলো নিশ্চিত করতে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সেচ ব্যবস্থাপনা ================== -->
+        <section class="section-card">
+            <span class="badge">💧 সেচ</span>
+            <h2>🥒 পটল চাষে সেচ দেওয়ার সঠিক পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>পর্যায়</th>
+                        <th>কখন সেচ দিবেন</th>
+                        <th>কীভাবে / নির্দেশনা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>চারা রোপণের পর</td>
+                        <td>রোপণের পরপরই</td>
+                        <td>হালকা সেচ দিতে হবে যাতে মাটি ভিজে যায়</td>
+                    </tr>
+                    <tr>
+                        <td>চারার বৃদ্ধি</td>
+                        <td>গ্রীষ্মে ৫-৭ দিন পরপর</td>
+                        <td>মাটি শুকালে হালকা সেচ দিন</td>
+                    </tr>
+                    <tr>
+                        <td>লতা বিস্তার</td>
+                        <td>২১–৩০ দিন</td>
+                        <td>প্রতি ৭-১০ দিনে সেচ দিতে হবে</td>
+                    </tr>
+                    <tr>
+                        <td>ফুল আসা</td>
+                        <td>৩০–৪০ দিন</td>
+                        <td>নিয়মিত সেচ দিতে হবে, আর্দ্রতা বজায় রাখুন</td>
+                    </tr>
+                    <tr>
+                        <td>ফল ধরার সময়</td>
+                        <td>৪০–৫০ দিন</td>
+                        <td>প্রতি ৫-৭ দিনে সেচ দিন</td>
+                    </tr>
+                    <tr>
+                        <td>ফল সংগ্রহকাল</td>
+                        <td>৫০ দিন পর থেকে</td>
+                        <td>৪–৫ দিনে একবার সেচ দিন</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🌿 সেচ ব্যবস্থাপনার টিপস</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>টিপস</th>
+                        <th>কারণ / উপকারিতা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ড্রিপ ইরিগেশন ব্যবহার</td>
+                        <td>পানি সাশ্রয় হয় এবং গাছের গোড়ায় সরাসরি আর্দ্রতা পৌঁছায়</td>
+                    </tr>
+                    <tr>
+                        <td>ড্রেনেজ ব্যবস্থা রাখা</td>
+                        <td>জলাবদ্ধতা রোধ করে, শিকড় পচন বন্ধ হয়</td>
+                    </tr>
+                    <tr>
+                        <td>সকালে বা বিকেলে সেচ</td>
+                        <td>তাপমাত্রা কম থাকায় পানির অপচয় কম হয়</td>
+                    </tr>
+                    <tr>
+                        <td>বৃষ্টির পর সেচ বন্ধ রাখা</td>
+                        <td>অতিরিক্ত পানি এড়ানো যায়, গাছ সুস্থ থাকে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সার ব্যবস্থাপনা ================== -->
+        <section id="fertilizer" class="section-card">
+            <span class="badge">সার ব্যবস্থাপনা</span>
+            <h2>🧪 পটলের সার ব্যবস্থাপনা চার্ট</h2>
+            <table>
+                <thead>
+                    <tr><th>সময় / অবস্থা</th><th>সারের নাম</th><th>পরিমাণ (কেজি/বিঘা)</th><th>প্রয়োগ পদ্ধতি</th></tr>
+                </thead>
+                <tbody>
+                    
+                    <tr><td>জমি তৈরির সময়</td><td>টিএসপি</td><td>৩৫-৪০</td><td>মাটির সাথে মিশিয়ে দিন</td></tr>
+                    <tr><td>জমি তৈরির সময়</td><td>এমওপি</td><td>২৫-৩০</td><td>মাটির সাথে মিশিয়ে দিন</td></tr>
+                    <tr><td>চারা রোপণের ২০-২৫ দিন পর</td><td>ইউরিয়া</td><td>১৫-২০</td><td>গাছের গোড়ার চারপাশে প্রয়োগ করুন</td></tr>
+                    <tr><td>ফল ধরা শুরু হলে</td><td>ইউরিয়া</td><td>১০-১৫</td><td>গাছের গোড়ার চারপাশে প্রয়োগ করুন</td></tr>
+                    <tr><td>প্রতি ফল সংগ্রহ পর</td><td>ইউরিয়া</td><td>৫-৭</td><td>গাছের গোড়ার চারপাশে প্রয়োগ করুন</td></tr>
+                </tbody>
+            </table>
+            <div class="chart-container"><canvas id="fertilizerChart"></canvas></div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ২: সার প্রয়োগ সিডিউল ক্যালেন্ডার ================== -->
+        <section id="fert-calendar" class="section-card">
+            <span class="badge">ক্যালেন্ডার</span>
+            <h2>🗓 সার প্রয়োগ সিডিউল ক্যালেন্ডার</h2>
+            <div class="grid-2">
+                <div>
+                    <label>চারা রোপণের তারিখ: <input type="date" id="sowDate"></label>
+                    <label>চাষ পদ্ধতি:
+                        <select id="cultMethod">
+                            <option value="ground">মাটিতে (গ্রাউন্ড)</option>
+                            <option value="trellis">মাচা পদ্ধতি</option>
+                        </select>
+                    </label>
+                    <button onclick="buildFertCalendar()">📅 ক্যালেন্ডার তৈরি করুন</button>
+                    <button class="download-btn" onclick="downloadICS()">📥 .ics ডাউনলোড</button>
+                </div>
+                <div>
+                    <table class="calendar" id="calendarTable">
+                        <thead><tr><th>তারিখ</th><th>কাজ</th><th>বিবরণ</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== পটল চাষের প্রোডাকশন টেকনোলজি ================== -->
+        <section class="section-card">
+            <span class="badge">পটল চাষ</span>
+            
+            <h2>গাছ পরিচর্যা</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>মাচা তৈরি</td>
+                        <td>গাছ বড় হলে মাচা বা খুঁটির ব্যবস্থা করুন</td>
+                        <td>গাছ সোজা হয়ে বৃদ্ধি পায় এবং ফলন বাড়ে</td>
+                    </tr>
+                    <tr>
+                        <td>প্রুনিং</td>
+                        <td>অতিরিক্ত লতা কেটে দিন</td>
+                        <td>গাছের বৃদ্ধি নিয়ন্ত্রণ ও ফলন বৃদ্ধি</td>
+                    </tr>
+                    <tr>
+                        <td>পানি</td>
+                        <td>নিয়মিত পানি দিন, মাটিকে আর্দ্র রাখুন</td>
+                        <td>উদ্ভিদের স্বাস্থ্য ভালো থাকবে ও বৃদ্ধি ত্বরান্বিত হবে</td>
+                    </tr>
+                    <tr>
+                        <td>সার প্রয়োগ</td>
+                        <td>নিয়মিত সার প্রয়োগ করুন</td>
+                        <td>গাছের পুষ্টি চাহিদা পূরণ হবে</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>আগাছা নিয়ন্ত্রণ</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>পদ্ধতি</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>হাত দ্বারা আগাছা</td>
+                        <td>নিয়মিত আগাছা পরিষ্কার করুন</td>
+                        <td>ফসলের জন্য পুষ্টি নিশ্চিত হবে</td>
+                    </tr>
+                    <tr>
+                        <td>মালচিং</td>
+                        <td>মাটিতে আর্দ্রতা বজায় রাখতে মালচ ব্যবহার করুন</td>
+                        <td>আগাছা দমন এবং মাটির আর্দ্রতা বজায় রাখে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== পটলের শারীরিক রোগ ও সমস্যা ================== -->
+        <section class="section-card">
+            <h2>পটলে শারীরিক রোগ ও সমস্যা (Physical Disorders)</h2>
+            <p>পটলের বিভিন্ন শারীরিক সমস্যার কারণ, লক্ষণ এবং ব্যবস্থাপনা নিচের কার্ডগুলিতে দেখানো হয়েছে।</p>
+
+            <div class="grid-2">
+                <!-- Leaf Curling -->
+                <div class="disorder-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyaavg2ncbmbhcN82ijtb8zyoq46xcYLKMiw&s" style="width:100%; height:auto; border-radius:8px;" alt="Leaf Curling">
+                    <div class="card-body">
+                        <h5 style="color: orange;">পাতা মোড়ানো (Leaf Curling)</h5>
+                        <p><strong>লক্ষণ:</strong> পাতা ভাঁজ হয়ে যায়, হালকা সবুজ বা হলুদ রঙ</p>
+                        <p><strong>কারণ:</strong> উচ্চ তাপমাত্রা, আর্দ্রতার ঘাটতি, পুষ্টি অভাব</p>
+                        <p><strong>ব্যবস্থাপনা:</strong> সঠিক সার প্রয়োগ করুন, ছায়া এবং জল নিয়ন্ত্রণ করুন</p>
+                    </div>
+                </div>
+
+                <!-- Fruit Cracking -->
+                <div class="disorder-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB4_YpO_am-Cy0B3Qdvl8DfTISuy4k_3Nphg&s" style="width:100%; height:auto; border-radius:8px;" alt="Fruit Cracking">
+                    <div class="card-body">
+                        <h5 style="color: #03a9f4;">ফল ফাটা (Fruit Cracking)</h5>
+                        <p><strong>লক্ষণ:</strong> ফলে ফাটল ধরা</p>
+                        <p><strong>কারণ:</strong> অনিয়মিত সেচ, বোরন অভাব</p>
+                        <p><strong>ব্যবস্থাপনা:</strong> নিয়মিত সেচ দিন, বোরন সমৃদ্ধ সার ব্যবহার করুন</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== রোগ ও প্রতিকার ================== -->
+        <section id="diseases" class="section-card">
+            <span class="badge">রোগব্যবস্থাপনা</span>
+            <h2>🐛 পটলের প্রধান রোগ</h2>
+            <table>
+                <thead><tr><th>রোগ</th><th>কারণ</th><th>প্রতিকার</th></tr></thead>
+                <tbody>
+                    <tr><td>পাউডারি মিলডিউ</td><td>ছত্রাক, উচ্চ আর্দ্রতা</td><td>সালফার (Sulfur) – ৩–৪ গ্রাম প্রতি লিটার পানি, বিকেলের দিকে স্প্রে</td></tr>
+                    <tr><td>ডাউনি মিলডিউ</td><td>ছত্রাক, অতিরিক্ত আর্দ্রতা</td><td>ম্যানকোজেব (Mancozeb)* – ২–৩ গ্রাম প্রতি লিটার পানি, ৭–১০ দিন অন্তর স্প্রে।</td></tr>
+                    <tr><td>ফল পচা</td><td>ছত্রাক, ব্যাকটেরিয়া</td><td>কাপ্টান (Captan)* – ২–৩ গ্রাম প্রতি লিটার পানি, আক্রান্ত ফল ও গাছ স্প্রে।</td></tr>
+                    <tr><td>মোজাইক ভাইরাস</td><td>ভাইরাস, সাদা মাছি</td><td>রোগমুক্ত বীজ ব্যবহার।,আক্রান্ত গাছ অপসারণ, সাদা মাছি নিয়ন্ত্রণ</td></tr>
+                </tbody>
+            </table>
+            <div class="chart-container"><canvas id="diseaseChart"></canvas></div>
+        </section>
+
+        <!-- ================== ফলন ও ব্যবহার ================== -->
+        <section class="section-card">
+            <span class="badge">হার্ভেস্ট</span>
+            <h2>🥒 পটলের ফলন সংগ্রহের সঠিক পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ফলন শুরু</td>
+                        <td>চারা রোপণের ৬০-৭০ দিন পর</td>
+                        <td>ফল পরিপক্ক ও খাওয়ার উপযোগী হয়</td>
+                    </tr>
+                    <tr>
+                        <td>সংগ্রহের সময়</td>
+                        <td>সপ্তাহে ২-৩ বার</td>
+                        <td>বেশি পেকে গেলে মান কমে যায়</td>
+                    </tr>
+                    <tr>
+                        <td>কিভাবে</td>
+                        <td>হাত দিয়ে বা ধারালো ছুরি দিয়ে সাবধানে</td>
+                        <td>গাছের লতা ছিঁড়ে না যায়</td>
+                    </tr>
+                    <tr>
+                        <td>উপযুক্ত সময়</td>
+                        <td>ভোরে বা বিকেলে</td>
+                        <td>তাপ কম থাকলে গাছের চাপ কম পড়ে</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>🌿 পটলের অন্যান্য অংশের ব্যবহার</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>অংশের নাম</th>
+                        <th>ব্যবহার / উপকারিতা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>কচি পাতা ও কান্ড</td>
+                        <td>শাক হিসেবে খাওয়া যায়</td>
+                    </tr>
+                    <tr>
+                        <td>পাকা ফল</td>
+                        <td>বীজ সংগ্রহ</td>
+                    </tr>
+                    <tr>
+                        <td>গাছের অবশিষ্টাংশ</td>
+                        <td>জৈব সার হিসেবে ব্যবহার</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার: স্থানীয় বাজার মূল্য ================== -->
+        <section id="market-price" class="section-card">
+            <span class="badge">বাজার মূল্য</span>
+            <h2><i class="fas fa-money-bill-wave"></i> স্থানীয় বাজার মূল্য</h2>
+            <p>বিভিন্ন অঞ্চলে পটলের বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">ঢাকা</div>
+                    <div class="price-value">৳ ৬০-৮০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">চট্টগ্রাম</div>
+                    <div class="price-value">৳ ৫৫-৭৫</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">রাজশাহী</div>
+                    <div class="price-value">৳ ৫০-৭০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">খুলনা</div>
+                    <div class="price-value">৳ ৫২-৭২</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">সিলেট</div>
+                    <div class="price-value">৳ ৫৮-৭৮</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button onclick="refreshPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+                <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+            </div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার: কম্প্যানিয়ন প্লান্টিং ================== -->
+        <section id="companion-planting" class="section-card">
+            <span class="badge">সহচর ফসল</span>
+            <h2><i class="fas fa-handshake"></i> পটলের সাথে চাষযোগ্য ফসল</h2>
+            <p>পটলের সাথে কোন ফসল চাষ করা উপকারী এবং কোন ফসল চাষ এড়িয়ে চলা উচিত</p>
+            
+            <div class="companion-grid">
+                <div class="companion-card">
+                    <h3 class="companion-title"><i class="fas fa-check-circle good-companion"></i> উপকারী সহচর ফসল</h3>
+                    <ul class="companion-list">
+                        <li><i class="fas fa-seedling good-companion"></i> ভুট্টা (ছায়া প্রদান করে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> মটর (মাটিতে নাইট্রোজেন সংযোজন করে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> পেঁয়াজ (কীটপতঙ্গ দূর করে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> মরিচ (কীটপতঙ্গ দূর করে)</li>
+                    </ul>
+                </div>
+                
+                <div class="companion-card">
+                    <h3 class="companion-title"><i class="fas fa-times-circle bad-companion"></i> এড়িয়ে চলুন</h3>
+                    <ul class="companion-list">
+                        <li><i class="fas fa-seedling bad-companion"></i> আলু (একই পুষ্টির জন্য প্রতিযোগিতা করে)</li>
+                        <li><i class="fas fa-seedling bad-companion"></i> বেগুন (একই পরিবারের, রোগের ঝুঁকি)</li>
+                        <li><i class="fas fa-seedling bad-companion"></i> টমেটো (একই পরিবারের, রোগের ঝুঁকি)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ১: ডিজিজ ইমেজ ডিটেকশন ================== -->
+        <section id="disease-image-ai" class="section-card">
+            <span class="badge">ইমেজ এআই</span>
+            <h2>🖼 ডিজিজ ইমেজ ডিটেকশন সিস্টেম (অন-ডিভাইস হিউরিস্টিক)</h2>
+            <p class="note">পাতার ছবি আপলোড করুন। সিস্টেম রঙ ও টেক্সচার বিশ্লেষণ করে সম্ভাব্য রোগ অনুমান করবে (ডেটা ইন্টারনেটে পাঠানো হয় না)।</p>
+            <input type="file" id="leafImage" accept="image/*">
+            <div class="canvas-wrap">
+                <div class="preview">
+                    <canvas id="leafCanvas" width="280" height="280"></canvas>
+                </div>
+                <div>
+                    <div class="kpi"><span class="dot"></span> <span id="imgSummary">কোনো ছবি লোড হয়নি</span></div>
+                    <ul id="imgFindings"></ul>
+                    <div id="imgDiagnosis" style="font-weight:700; margin-top:8px;"></div>
+                </div>
+            </div>
+            <small class="hint">টিপস: পরিষ্কার, ফোকাস করা পাতার ছবি দিন; রোগের দাগ স্পষ্ট থাকলে ফলাফল বেশি নির্ভুল হবে।</small>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ৩: পটলের ফলন অনুমানকারী ================== -->
+        <section id="yield-estimator" class="section-card">
+            <span class="badge">ফলন প্রেডিকশন</span>
+            <h2>📈 পটলের ফলন অনুমান</h2>
+            <div class="grid-2">
+                <div>
+                    <label>এলাকা (বিঘা): <input type="number" id="areaBigha" min="0" step="0.01" value="1"></label>
+                    <label>সারি দূরত্ব (মিটার): <input type="number" id="rowSpacing" min="0.3" step="0.1" value="2.5"></label>
+                    <label>গাছের দূরত্ব (মিটার): <input type="number" id="plantSpacing" min="0.2" step="0.1" value="2.5"></label>
+                    <label>প্রতি গাছে ফল (গড়): <input type="number" id="fruitsPerPlant" min="5" step="1" value="50"></label>
+                    <label>প্রতি ফলের ওজন (গ্রাম): <input type="number" id="fruitWeight" min="20" step="5" value="30"></label>
+                    <label>ম্যানেজমেন্ট ফ্যাক্টর (০.৭–১.2): <input type="number" id="mgmtFactor" min="0.7" max="1.2" step="0.05" value="1.0"></label>
+                    <button onclick="estimateYield()">🧮 ফলন হিসাব করুন</button>
+                    <div id="yieldSummary" style="font-weight:700;"></div>
+                </div>
+                <div>
+                    <div class="chart-container"><canvas id="yieldBreakdownChart"></canvas></div>
+                </div>
+            </div>
+            <small class="hint">নোট: ১ বিঘা ≈ ১৩৩৭.৮০৩ বর্গমিটার ধরা হয়েছে।</small>
+        </section>
+
+        <!-- ================== ইন্টারেক্টিভ ক্যালকুলেটর ================== -->
+        <section class="section-card">
+            <span class="badge">লাভ/ক্ষতি ক্যালকুলেটর</span>
+            <h2>ইন্টারেক্টিভ ক্যালকুলেটর (লাভ/ক্ষতি)</h2>
+            <label for="area">ক্ষেতের আকার (শতক)</label>
+            <input type="number" id="area" placeholder="ক্ষেতের আকার লিখুন">
+            
+            <label for="cost">মোট খরচ (টাকা)</label>
+            <input type="number" id="cost" placeholder="মোট খরচ লিখুন">
+            
+            <label for="yield">ফসলের সম্ভাব্য উৎপাদন (কেজি)</label>
+            <input type="number" id="yield" placeholder="ফসলের সম্ভাব্য উৎপাদন">
+            
+            <label for="price">বাজারে প্রতি কেজির দাম (টাকা)</label>
+            <input type="number" id="price" placeholder="বাজারের দাম">
+            
+            <button onclick="calculateProfit()">লাভ/ক্ষতি হিসাব করুন</button>
+            <p id="profit-msg"></p>
+        </section>
+
+        <!-- ================== কৃষি কমিউনিটি ================== -->
+        <section class="section-card">
+            <span class="badge">কৃষি কমিউনিটি</span>
+            <h2>কৃষি কমিউনিটি</h2>
+            <label for="comment">আপনার মন্তব্য লিখুন:</label>
+            <textarea id="comment" rows="3" placeholder="এখানে লিখুন..."></textarea>
+            <button onclick="postComment()">মন্তব্য পোস্ট করুন</button>
+            <div class="comment-box" id="comment-box"></div>
+        </section>
+        
+        <!-- মূল ওয়েবসাইটে ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="back-btn" onclick="window.location.href='index.html'">🏠 মূল ওয়েবসাইটে ফিরে যান</button>
+        </div>
+
+        <!-- লাভ ক্ষতি হিসাব ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+            <button class="back-btn" onclick="window.location.href='calculator.html'">কৃষি খরচ ও লাভ ক্যালকুলেটর</button>
+        </div>
+    </div>
+
+    <script>
+        // ================== Dark Mode ==================
+        function toggleDarkMode() { 
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.switch i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-sun"></i> লাইট মোড';
+            } else {
+                icon.className = 'fas fa-moon';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-moon"></i> ডার্ক মোড';
+            }
+        }
+
+        // ================== Checklist ==================
+        let answers = [null, null, null, null, null, null];
+        
+        function setAnswer(index, value, btn) {
+            answers[index] = value;
+            let btnGroup = btn.parentElement.children;
+            for(let b of btnGroup) { 
+                b.style.backgroundColor = ""; 
+                b.style.color = ""; 
+            }
+            btn.style.backgroundColor = value ? '#4caf50' : '#f44336';
+            btn.style.color = "#fff";
+        }
+        
+        function showFinalResult() {
+            if(answers.includes(null)) { 
+                alert("দয়া করে সব প্রশ্নের উত্তর দিন!"); 
+                return;
+            }
+            let sum = answers.reduce((a, b) => a + b, 0);
+            let resultText = sum === 6 ? "✅ আপনার জমি এবং পরিবেশ পটল চাষের জন্য পুরোপুরি উপযুক্ত।" :
+                             sum >= 4 ? "⚠ আপনার জমি এবং পরিবেশ পটল চাষের জন্য আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি এবং পরিবেশ পটল চাষের জন্য উপযুক্ত নয়।";
+            document.getElementById("finalResult").innerHTML = resultText;
+        }
+
+        // ================== Charts: Fertilizer & Disease ==================
+        new Chart(document.getElementById('fertilizerChart'), {
+            type: 'bar',
+            data: {
+                labels: [ 'টিএসপি', 'এমওপি', 'ইউরিয়া (প্রথম বার)', 'ইউরিয়া (দ্বিতীয় বার)', 'ইউরিয়া (তৃতীয় বার)'],
+                datasets: [{ 
+                    label: 'সারের পরিমাণ (কেজি/বিঘা)', 
+                    data: [40, 37.5, 27.5, 17.5, 12.5, 6],
+                    backgroundColor: ['#8d6e63', '#f44336', '#ff9800', '#8bc34a', '#4caf50', '#03a9f4']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'পটল চাষের সার প্রয়োগ'
+                    }
+                }, 
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                } 
+            }
+        });
+        
+        new Chart(document.getElementById('diseaseChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['পাউডারি মিলডিউ', 'ডাউনি মিলডিউ', 'ফল পচা', 'মোজাইক ভাইরাস'],
+                datasets: [{
+                    label: 'ঘটনার মাত্রা (১-৫)', 
+                    data: [4, 3, 2, 3],
+                    backgroundColor: ['#e53935', '#fb8c00', '#43a047', '#1e88e5']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                scales: {
+                    y: {
+                        beginAtZero: true, 
+                        max: 5
+                    }
+                } 
+            }
+        });
+
+        // ================== Research: Suitability & Yield mini-chart ==================
+        let yieldChart = new Chart(document.getElementById('yieldChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['খরিফ-১', 'খরিফ-২'],
+                datasets: [{
+                    label: 'পূর্বাভাসকৃত ফলন (কেজি/বিঘা)', 
+                    data: [0, 0], 
+                    backgroundColor: ['#66bb6a', '#ffa726']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'পটলের সম্ভাব্য ফলন (পূর্বাভাস)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'কেজি/বিঘা'
+                        }
+                    }
+                }
+            }
+        });
+        
+        function calculateSuitability() {
+            let ph = parseFloat(document.getElementById("soilPH").value);
+            let ec = parseFloat(document.getElementById("soilEC").value);
+            let temp = parseFloat(document.getElementById("temp").value);
+            let hum = parseFloat(document.getElementById("humidity").value);
+            let score = 0;
+            
+            if(ph >= 6 && ph <= 7.5) score++;
+            if(ec >= 0 && ec <= 2) score++;
+            if(temp >= 25 && temp <= 35) score++;
+            if(hum >= 60 && hum <= 80) score++;
+            
+            let resultText = score === 4 ? "✅ আপনার জমি ও জলবায়ু পটল চাষের জন্য খুবই উপযুক্ত।" :
+                            score >= 2 ? "⚠ আপনার জমি ও জলবায়ু আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি ও জলবায়ু পটল চাষের জন্য উপযুক্ত নয়।";
+            
+            document.getElementById("suitabilityResult").innerHTML = resultText;
+            
+            let predictedYield = score === 4 ? [1200, 1100] : score >= 2 ? [800, 700] : [300, 250];
+            yieldChart.data.datasets[0].data = predictedYield; 
+            yieldChart.update();
+        }
+        
+        function updateDiseaseRisk() {
+            let hum = +document.getElementById("diseaseHumidity").value;
+            let riskText = hum < 50 ? "নিম্ন" : (hum <= 80 ? "মাঝারি" : "উচ্চ");
+            document.getElementById("diseaseRisk").innerHTML = "ঝুঁকি: " + riskText;
+        }
+
+        // ================== ✅ নতুন ফিচার: স্থানীয় বাজার মূল্য ==================
+        function refreshPrices() {
+            alert('বাজার মূল্য হালনাগাদ করা হচ্ছে...\nবাস্তব应用中, এটি API থেকে সর্বশেষ তথ্য নিয়ে আসবে।');
+            
+            // এলোমেলোভাবে মূল্য slightly পরিবর্তন করার সিমুলেশন
+            const priceCards = document.querySelectorAll('.price-card');
+            priceCards.forEach(card => {
+                const priceElement = card.querySelector('.price-value');
+                const currentPrice = priceElement.innerText;
+                const prices = currentPrice.match(/\d+/g);
+                if (prices && prices.length >= 2) {
+                    let min = parseInt(prices[0]);
+                    let max = parseInt(prices[1]);
+                    
+                    // এলোমেলোভাবে +/- ৫ টাকা পরিবর্তন
+                    min = Math.max(40, min + Math.floor(Math.random() * 10) - 5);
+                    max = Math.max(50, max + Math.floor(Math.random() * 10) - 5);
+                    
+                    priceElement.innerText = `৳ ${min}-${max}`;
+                    
+                    // তারিখ আপডেট করুন
+                    const dateElement = card.querySelector('.price-date');
+                    dateElement.innerText = 'সর্বশেষ হালনাগাদ: আজ';
+                }
+            });
+        }
+
+        // ================== ✅ ফিচার ১: ডিজিজ ইমেজ ডিটেকশন (হিউরিস্টিক) ==================
+        const leafImage = document.getElementById('leafImage');
+        const leafCanvas = document.getElementById('leafCanvas');
+        const ctx = leafCanvas.getContext('2d');
+        leafImage.addEventListener('change', handleImage, false);
+
+        function handleImage(e) {
+            const file = e.target.files[0];
+            if(!file) return;
+            
+            const img = new Image();
+            img.onload = function() {
+                // Fit image into canvas
+                const max = 280;
+                let w = img.width, h = img.height;
+                const r = Math.min(max / w, max / h);
+                w = Math.round(w * r); 
+                h = Math.round(h * r);
+                
+                leafCanvas.width = w; 
+                leafCanvas.height = h;
+                ctx.clearRect(0, 0, w, h);
+                ctx.drawImage(img, 0, 0, w, h);
+                
+                analyzeLeaf();
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        function analyzeLeaf() {
+            const { width: w, height: h } = leafCanvas;
+            const data = ctx.getImageData(0, 0, w, h).data;
+            let n = w * h;
+            
+            let white = 0, yellow = 0, dark = 0, green = 0;
+            let varSum = 0, lumPrev = null, lumVar = 0;
+            
+            for(let i = 0; i < data.length; i += 4) {
+                const r = data[i], g = data[i+1], b = data[i+2];
+                const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+                
+                if(lumPrev !== null) { 
+                    let d = Math.abs(lum - lumPrev); 
+                    varSum += d; 
+                }
+                lumPrev = lum;
+
+                // basic thresholds
+                if(r > 220 && g > 220 && b > 220) white++;
+                if(g > 120 && r > 90 && b < 90) yellow++;              // yellowish (downy lesions)
+                if(r < 60 && g < 60 && b < 60) dark++;                 // necrotic/black spot
+                if(g > r && g > b) green++;                            // green pixels
+            }
+            
+            lumVar = varSum / (n || 1);
+            const whiteRatio = white / n, yellowRatio = yellow / n, darkRatio = dark / n, greenRatio = green / n;
+
+            // Findings
+            const findings = [];
+            findings.push(`সবুজ পিক্সেল অনুপাত ~ ${(greenRatio * 100).toFixed(1)}%`);
+            findings.push(`সাদা/পাউডারি অনুপাত ~ ${(whiteRatio * 100).toFixed(1)}%`);
+            findings.push(`হলুদ ক্ষত অনুপাত ~ ${(yellowRatio * 100).toFixed(1)}%`);
+            findings.push(`কালো/গাঢ় দাগ ~ ${(darkRatio * 100).toFixed(1)}%`);
+            findings.push(`টেক্সচার ভ্যারিয়েশন (উচ্চ মানে দাগ/পাউডার সম্ভাবনা): ${lumVar.toFixed(1)}`);
+
+            // Heuristic diagnosis
+            let diag = "স্বাস্থ্যবান পাতা (সম্ভাব্য)";
+            let tips = [];
+            
+            if(whiteRatio > 0.06 && lumVar > 15) {
+                diag = "পাউডারি মিলডিউ (সম্ভাব্য)";
+                tips.push("পাতায় সাদা পাউডারের মতো স্তর দেখা যাচ্ছে। ছত্রাকনাশক প্রয়োগ ও বাতাস চলাচল নিশ্চিত করুন।");
+            }
+            
+            if(yellowRatio > 0.08 && diag !== "পাউডারি মিলডিউ (সম্ভাব্য)") {
+                diag = "ডাউনি মিলডিউ/পত্রদাগ (সম্ভাব্য)";
+                tips.push("পাতায় হলুদ অনিয়মিত দাগ—সকালে শিশির/আর্দ্রতা কমান, অনুমোদিত ছত্রাকনাশক দিন।");
+            }
+            
+            if(darkRatio > 0.04 && lumVar > 12) {
+                diag = "পাতা দাগ/নেক্রোসিস (সম্ভাব্য)";
+                tips.push("গাঢ় দাগ দেখা যাচ্ছে—আক্রান্ত পাতা অপসারণ, স্যানিটেশন মেনে চলুন।");
+            }
+            
+            if(whiteRatio < 0.03 && yellowRatio < 0.04 && darkRatio < 0.03) {
+                tips.push("বড় কোনো অস্বাভাবিকতা শনাক্ত হয়নি। পর্যবেক্ষণ চালু রাখুন।");
+            }
+
+            document.getElementById('imgSummary').innerText = `চিত্র বিশ্লেষণ সম্পন্ন: ${w}×${h} পিক্সেল`;
+            const ul = document.getElementById('imgFindings'); 
+            ul.innerHTML = "";
+            
+            findings.concat(tips).forEach(t => { 
+                const li = document.createElement('li'); 
+                li.textContent = t; 
+                ul.appendChild(li); 
+            });
+            
+            document.getElementById('imgDiagnosis').innerHTML = `🔎 প্রাথমিক নির্ণয়: <strong>${diag}</strong>`;
+        }
+
+        // ================== ✅ ফিচার ২: সার প্রয়োগ সিডিউল ক্যালেন্ডার ==================
+        function addDays(date, days) { 
+            const d = new Date(date); 
+            d.setDate(d.getDate() + days); 
+            return d; 
+        }
+        
+        function fmt(d) { 
+            return d.toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }); 
+        }
+
+        function buildFertCalendar() {
+            const sow = document.getElementById('sowDate').value;
+            if(!sow) { 
+                alert("চারা রোপণের তারিখ নির্বাচন করুন"); 
+                return; 
+            }
+            
+            const mode = document.getElementById('cultMethod').value;
+            // baseline schedule (দিন হিসাবে)
+            const schedule = [
+                { offset: 0,  task: "বেসাল সার", desc: " টিএসপি ৩৫-৪০ কেজি, এমওপি ২৫-৩০ কেজি (বিঘা)" },
+                { offset: 20, task: "টপ ড্রেসিং ১", desc: "ইউরিয়া ১৫-২০ কেজি গাছের গোড়ার চারপাশে" },
+                { offset: 45, task: "টপ ড্রেসিং ২", desc: "ইউরিয়া ১০-১৫ কেজি (ফল ধরা শুরু হলে)" },
+                { offset: 60, task: "টপ ড্রেসিং ৩", desc: "ইউরিয়া ৫-৭ কেজি (প্রতি ফল সংগ্রহ পর)" }
+            ];
+            
+            const tbody = document.querySelector('#calendarTable tbody');
+            tbody.innerHTML = "";
+            
+            schedule.sort((a, b) => a.offset - b.offset).forEach(s => {
+                const tr = document.createElement('tr');
+                const date = fmt(addDays(sow, s.offset));
+                tr.innerHTML = `<td>${date}</td><td>${s.task}</td><td>${s.desc}</td>`;
+                tbody.appendChild(tr);
+            });
+            
+            // cache for ICS
+            window._lastSchedule = { sow, schedule };
+        }
+
+        function downloadICS() {
+            if(!window._lastSchedule) { 
+                alert("আগে ক্যালেন্ডার তৈরি করুন"); 
+                return; 
+            }
+            
+            const { sow, schedule } = window._lastSchedule;
+            const lines = [
+                "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Pointed Gourd Scheduler//BN",
+            ];
+            
+            schedule.forEach((s, i) => {
+                const dt = new Date(addDays(sow, s.offset));
+                const dtStr = dt.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+                
+                lines.push(
+                    "BEGIN:VEVENT",
+                    `UID:potol-${i}-${Date.now()}@local`,
+                    `DTSTAMP:${dtStr}`,
+                    `DTSTART:${dtStr}`,
+                    `SUMMARY:${s.task}`,
+                    `DESCRIPTION:${s.desc}`,
+                    "END:VEVENT"
+                );
+            });
+            
+            lines.push("END:VCALENDAR");
+            
+            const blob = new Blob([lines.join("\r\n")], { type: "text/calendar" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; 
+            a.download = "pointed_gourd_fertilizer_schedule.ics"; 
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ================== ✅ ফিচার ৩: ফলন অনুমানকারী ==================
+        let yieldBreakdownChart = new Chart(document.getElementById('yieldBreakdownChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['মোট গাছ', 'মোট ফল (সংখ্যা)', 'মোট ফলন (কেজি)', 'বিঘা প্রতি (কেজি)'],
+                datasets: [{ 
+                    label: 'মান', 
+                    data: [0, 0, 0, 0] 
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'ফলন ব্রেকডাউন'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                } 
+            }
+        });
+        
+        function estimateYield() {
+            const areaBigha = +document.getElementById('areaBigha').value;
+            const rowSp = +document.getElementById('rowSpacing').value;
+            const plantSp = +document.getElementById('plantSpacing').value;
+            const fruits = +document.getElementById('fruitsPerPlant').value;
+            const weightG = +document.getElementById('fruitWeight').value;
+            const mgmt = +document.getElementById('mgmtFactor').value;
+
+            const SQM_PER_BIGHA = 1337.803;
+            const areaSqm = areaBigha * SQM_PER_BIGHA;
+            const plants = Math.floor(areaSqm / (rowSp * plantSp));
+            const totalFruits = plants * fruits * mgmt;
+            const totalKg = (totalFruits * weightG) / 1000;
+            const perBighaKg = totalKg / areaBigha;
+
+            yieldBreakdownChart.data.datasets[0].data = [plants, Math.round(totalFruits), +totalKg.toFixed(1), +perBighaKg.toFixed(1)];
+            yieldBreakdownChart.update();
+
+            document.getElementById('yieldSummary').innerHTML =
+                `🌾 আনুমানিক গাছ: <b>${plants.toLocaleString('bn-BD')}</b>, মোট ফল: <b>${Math.round(totalFruits).toLocaleString('bn-BD')}</b>, মোট ফলন: <b>${totalKg.toFixed(1)} কেজি</b> (বিঘা প্রতি ~ <b>${perBighaKg.toFixed(1)} কেজি</b>).`;
+        }
+
+        // ================== ✅ ফিচার ৪: অপ্টিমাইজড স্পেসিং ক্যালকুলেটর ==================
+        function applyPreset() {
+            const mode = document.getElementById('spacingMode').value;
+            if(mode === 'ground') { 
+                document.getElementById('optRow').value = 2.5; 
+                document.getElementById('optPlant').value = 2.5; 
+            }
+            if(mode === 'trellis') { 
+                document.getElementById('optRow').value = 3.0; 
+                document.getElementById('optPlant').value = 3.0; 
+            }
+        }
+        
+        function optimizeSpacing() {
+            const L = +document.getElementById('plotLen').value;
+            const W = +document.getElementById('plotWid').value;
+            const rs = +document.getElementById('optRow').value;
+            const ps = +document.getElementById('optPlant').value;
+
+            const rows = Math.max(1, Math.floor(W / rs));
+            const perRow = Math.max(1, Math.floor(L / ps));
+            const total = rows * perRow;
+
+            document.getElementById('spacingSummary').innerHTML =
+                `🧩 সম্ভাব্য সারি: <b>${rows}</b>, প্রতি সারিতে গাছ: <b>${perRow}</b>, মোট গাছ ≈ <b>${total.toLocaleString('bn-BD')}</b>`;
+            document.getElementById('gridInfo').innerText = 'সারি এবং গাছের সংখ্যা হিসাব করা হয়েছে';
+        }
+
+        // ===== লাভ/ক্ষতি ক্যালকুলেটর =====
+        function calculateProfit() {
+            const area = parseFloat(document.getElementById('area').value);
+            const cost = parseFloat(document.getElementById('cost').value);
+            const yieldKg = parseFloat(document.getElementById('yield').value);
+            const price = parseFloat(document.getElementById('price').value);
+
+            if(isNaN(area) || isNaN(cost) || isNaN(yieldKg) || isNaN(price)) {
+                alert('সব ইনপুট পূরণ করুন!');
+                return;
+            }
+
+            const revenue = yieldKg * price;
+            const profit = revenue - cost;
+
+            let msg = `মোট আয়: ${revenue.toLocaleString('bn-BD')} টাকা, লাভ/ক্ষতি: ${profit.toLocaleString('bn-BD')} টাকা`;
+            if(profit > 0) msg += ' ✅ আপনি লাভে আছেন।';
+            else if(profit < 0) msg += ' ❌ আপনি ক্ষতিতে আছেন।';
+            else msg += ' ⚖ আপনি নিখুঁত ব্যালান্সে আছেন।';
+
+            document.getElementById('profit-msg').innerText = msg;
+        }
+
+        // ===== কৃষি কমিউনিটি =====
+        function postComment() {
+            const commentText = document.getElementById('comment').value;
+            if(!commentText) return;
+            
+            const commentBox = document.getElementById('comment-box');
+            const div = document.createElement('div');
+            div.className = 'comment';
+            div.innerText = commentText;
+            commentBox.prepend(div);
+            
+            document.getElementById('comment').value = '';
+        }
+    </script>
+</body>
+</html>

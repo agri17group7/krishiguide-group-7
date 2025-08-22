@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>দারচিনি চাষের সম্পূর্ণ গাইড</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* সাধারণ স্টাইল */
+        body {
+            font-family: 'SolaimanLipi', sans-serif; 
+            background: #f9f9f9; 
+            margin: 0; 
+            padding: 0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark-mode {
+            background-color: #121212; 
+            color: #f1f1f1; 
+        }
+        
+        .dark-mode .scientific-feature {
+            background: #7b1fa2;
+        }
+        
+        .disorder-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .disorder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .collapse-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .disorder-card:hover .collapse-text {
+            max-height: 500px;
+        }
+        
+        header { 
+            background: #7b1fa2; 
+            color: white; 
+            padding: 15px; 
+            text-align: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 16px; 
+            flex-wrap: wrap;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            padding: 20px;
+        }
+        
+        .section { 
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .section {
+            background: #1a1a1a;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        
+        h2 { 
+            color: #7b1fa2;
+        }
+        
+        .dark-mode h2 {
+            color: #9c27b0;
+        }
+        
+        button { 
+            background: #7b1fa2; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover { 
+            background: #6a1b9a;
+        }
+        
+        input, select { 
+            padding: 8px; 
+            margin: 5px 0; 
+            width: 100%; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode input, 
+        .dark-mode select {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        textarea { 
+            width: 100%; 
+            padding: 8px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode textarea {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        .comment-box { 
+            border-top: 1px solid #ccc; 
+            padding-top: 10px; 
+            margin-top: 10px;
+        }
+        
+        .comment { 
+            background: #f3e5f5; 
+            padding: 10px; 
+            margin-bottom: 5px; 
+            border-radius: 5px;
+        }
+        
+        .dark-mode .comment {
+            background: #4a148c;
+        }
+        
+        .lang-btn { 
+            margin-right: 10px; 
+        }
+        
+        /* উন্নত স্টাইল */
+        h2, h3 { 
+            margin-top: 20px; 
+        }
+        
+        ul { 
+            margin-left: 20px; 
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+        }
+        
+        table, th, td { 
+            border: 1px solid #ccc; 
+        }
+        
+        th, td { 
+            padding: 10px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background-color: #e1bee7; 
+        }
+        
+        .dark-mode th {
+            background-color: #4a148c;
+        }
+        
+        .btn-group button {
+            margin-right: 10px; 
+            padding: 5px 15px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px;
+        }
+        
+        .btn-group button:hover { 
+            opacity: 0.8; 
+        }
+        
+        #finalResult { 
+            margin-top: 15px; 
+            font-weight: bold; 
+            color: #7b1fa2; 
+        }
+        
+        .switch {
+            position: fixed; 
+            top: 15px; 
+            right: 15px; 
+            cursor: pointer; 
+            background: #ccc;
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            z-index: 9999;
+        }
+        
+        .dark-mode .switch {
+            background: #555;
+            color: #fff;
+        }
+        
+        .chart-container { 
+            width: 100%; 
+            max-width: 700px; 
+            margin: 30px auto; 
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #7b1fa2, #9c27b0); 
+            color: white; 
+            font-weight: bold; 
+            padding: 10px 20px;
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease; 
+            font-size: 16px;
+        }
+        
+        .back-btn:hover { 
+            background: linear-gradient(135deg, #6a1b9a, #8e24aa); 
+            transform: scale(1.05); 
+        }
+        
+        input, select, button { 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            padding: 6px 8px; 
+        }
+        
+        small.hint { 
+            color: #666;
+            display: block; 
+            margin-top: -6px; 
+            margin-bottom: 10px; 
+        }
+        
+        .dark-mode small.hint {
+            color: #bbb;
+        }
+        
+        .section-card {
+            background: #fff; 
+            border-radius: 14px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+            padding: 18px; 
+            margin: 22px 0;
+        }
+        
+        .dark-mode .section-card { 
+            background: #1a1a1a; 
+            box-shadow: 0 6px 18px rgba(255,255,255,0.05); 
+        }
+        
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 16px; 
+        }
+        
+        .badge {
+            display: inline-block; 
+            padding: 4px 10px; 
+            border-radius: 999px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            background: #f3e5f5; 
+            color: #7b1fa2;
+        }
+        
+        .dark-mode .badge { 
+            background: #4a148c; 
+            color: #e1bee7; 
+        }
+        
+        .kpi { 
+            display: flex; 
+            gap: 10px; 
+            align-items: center; 
+            font-weight: 600; 
+        }
+        
+        .kpi .dot { 
+            width: 10px; 
+            height: 10px; 
+            border-radius: 999px; 
+            background: #9c27b0; 
+        }
+        
+        .canvas-wrap { 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
+        
+        .preview {
+            border: 1px dashed #bbb; 
+            border-radius: 12px; 
+            padding: 8px; 
+            background: #fafafa;
+        }
+        
+        .dark-mode .preview { 
+            background: #101010; 
+            border-color: #444; 
+        }
+        
+        .note { 
+            font-size: 13px; 
+            color: #555; 
+        }
+        
+        .dark-mode .note { 
+            color: #bbb; 
+        }
+        
+        .calendar { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        
+        .calendar th { 
+            background: #ede7f6; 
+        }
+        
+        .dark-mode .calendar th { 
+            background: #1a237e; 
+        }
+        
+        .download-btn {
+            background: #5c6bc0; 
+            color: #fff; 
+            border: none; 
+            border-radius: 8px; 
+            padding: 8px 12px; 
+            cursor: pointer; 
+            font-weight: 700;
+        }
+        
+        .download-btn:hover { 
+            opacity: .9; 
+        }
+        
+        iframe {
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+        
+        /* নতুন স্টাইল */
+        .price-card {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .price-card {
+            background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
+        }
+        
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .price-region {
+            font-weight: bold;
+            font-size: 18px;
+            color: #7b1fa2;
+        }
+        
+        .dark-mode .price-region {
+            color: #e1bee7;
+        }
+        
+        .price-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .price-date {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .dark-mode .price-date {
+            color: #ccc;
+        }
+        
+        .companion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .companion-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .companion-card {
+            background: #4a235a;
+        }
+        
+        .companion-title {
+            font-size: 20px;
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-title {
+            color: #ba68c8;
+        }
+        
+        .companion-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .companion-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e1bee7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-list li {
+            border-bottom: 1px dashed #9c27b0;
+        }
+        
+        .good-companion {
+            color: #7b1fa2;
+        }
+        
+        .bad-companion {
+            color: #d32f2f;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .canvas-wrap {
+                flex-direction: column;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .switch {
+                top: 5px;
+                right: 5px;
+                padding: 3px 8px;
+                font-size: 14px;
+            }
+            
+            .companion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i> ডার্ক / লাইট মোড
+    </div>
+
+    <header>
+        <h1>🌿 দারচিনি চাষের সম্পূর্ণ গাইড</h1>
+    </header>
+
+    <div class="container">
+        <!-- ================== দারচিনি পরিচিতি ================== -->
+        <section id="cinnamon" class="section-card">
+            <span class="badge">বেসিক গাইড</span>
+            <h2 style="color: #8d6e63;">দারচিনি (Cinnamon)</h2>
+            <h3>কেন চাষ করবেন?</h3>
+            <ul>
+                <li>উচ্চ বাজার মূল্য এবং চাহিদা</li>
+                <li>দীর্ঘমেয়াদী লাভের উৎস</li>
+                <li>কম পরিচর্যায় বেশি ফলন</li>
+                <li>বাংলাদেশের আবহাওয়ায় উপযোগী</li>
+            </ul>
+            <h3>🌍 উপযুক্ত পরিবেশ</h3>
+            <ul>
+                <li>জলবায়ু: উষ্ণ ও আর্দ্র জলবায়ু উপযোগী</li>
+                <li>তাপমাত্রা: আদর্শ ২০–৩০°C</li>
+                <li>মাটি: বেলে দোআঁশ থেকে দোআঁশ, pH ৫.৫–৬.৫</li>
+                <li>বৃষ্টিপাত: বার্ষিক ১৫০–২৫০ সেমি</li>
+            </ul>
+        </section>
+
+        <!-- ================== জমি ও পরিবেশ যাচাই ================== -->
+        <section id="cinnamon-checklist" class="section-card">
+            <span class="badge">ফিল্ড চেক</span>
+            <h2>🌿 দারচিনি চাষের জন্য জমি ও পরিবেশ যাচাই করুন</h2>
+            <p class="note">আপনার জমি কেমন? নিচের প্রতিটি প্রশ্নে হ্যাঁ / না চাপুন:</p>
+            <ul style="list-style: none; padding: 0;" id="questionList">
+                <li style="margin-bottom: 10px;">
+                    ☀ <strong>জমিতে পর্যাপ্ত রোদ পড়ে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(0, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(0, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌡 <strong>তাপমাত্রা ২০-৩০°C এর মধ্যে থাকে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(1, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(1, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌧 <strong>জমিতে পানি জমে না?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(2, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(2, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌱 <strong>মাটি দোআঁশ বা বেলে দোআঁশ?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(3, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(3, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    💧 <strong>সেচের ব্যবস্থা আছে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(4, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(4, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    ❗ <strong>মাটি অম্লীয় থেকে সামান্য অম্লীয় (pH ৫.৫-৬.৫)?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(5, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(5, 0, this)">❌ না</button>
+                    </div>
+                </li>
+            </ul>
+            <button onclick="showFinalResult()" style="margin-top: 10px; padding: 10px 20px; font-weight: bold;">📊 ফলাফল দেখুন</button>
+            <div id="finalResult"></div>
+        </section>
+
+        <!-- ================== Research & AI Predictions ================== -->
+        <section id="research" class="section-card">
+            <span class="badge">রিসার্চ টুলস</span>
+            <h2 style="color:#5d4037;">🔬 দারচিনি চাষের বৈজ্ঞানিক মূল্যায়ন ও পূর্বাভাস</h2>
+
+            <!-- Soil & Climate -->
+            <h3>⿡ মাটি ও জলবায়ুর উপযোগিতা</h3>
+            <div class="grid-2">
+                <div>
+                    <label>মাটি pH: <input type="number" id="soilPH" min="4" max="9" step="0.1" value="6.0"></label>
+                    <label>মাটির জৈব পদার্থ (%): <input type="number" id="soilOM" min="0" max="10" step="0.1" value="2.5"></label>
+                    <label>তাপমাত্রা (°C): <input type="number" id="temp" min="15" max="40" value="25"></label>
+                    <label>আর্দ্রতা (%): <input type="number" id="humidity" min="30" max="100" value="75"></label>
+                    <button onclick="calculateSuitability()">💡 উপযোগিতা যাচাই করুন</button>
+                    <div id="suitabilityResult" style="margin-top:10px;font-weight:bold;"></div>
+                </div>
+                <div>
+                    <h4>⿢ পূর্বাভাসকৃত ফলন (কেজি/বিঘা/বছর)</h4>
+                    <div class="chart-container"><canvas id="yieldChart"></canvas></div>
+                    <h4>⿣ রোগ ঝুঁকি সিমুলেটর</h4>
+                    <label>আর্দ্রতা (%): <input type="range" id="diseaseHumidity" min="30" max="100" value="75" oninput="updateDiseaseRisk()"></label>
+                    <div id="diseaseRisk" style="margin-top:10px;font-weight:bold;color:#e53935;">ঝুঁকি: মাঝারি</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== চারা রোপণের সময় ও এলাকা ================== -->
+        <section id="cinnamon-planting" class="section-card">
+            <span class="badge">সময়সূচি</span>
+            <h3>📅 দারচিনি চাষের সময় ও উপযুক্ত এলাকা</h3>
+            <table>
+                <thead>
+                    <tr><th>মৌসুম</th><th>চারা রোপণের সময়</th><th>ছাল সংগ্রহ</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>বর্ষা মৌসুম</td><td>জুন – জুলাই</td><td>২-৩ বছর পর</td></tr>
+                    <tr><td>শীত মৌসুম</td><td>সেপ্টেম্বর – অক্টোবর</td><td>২-৩ বছর পর</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>চট্টগ্রাম, বান্দরবান, রাঙ্গামাটি: পার্বত্য অঞ্চলে ভালো হয়</li>
+                <li>সিলেট, মৌলভীবাজার: আর্দ্র আবহাওয়া উপযোগী</li>
+                <li>কক্সবাজার: উপকূলীয় অঞ্চলে চাষ সম্ভব</li>
+                <li>টাঙ্গাইল, ময়মনসিংহ: উঁচু জমিতে চাষযোগ্য</li>
+            </ul>
+        </section>
+
+        <!-- ================== মাটি প্রস্তুতি ================== -->
+        <section id="soil" class="section-card">
+            <span class="badge">মাটি প্রস্তুতি</span>
+            <h2>🌱 দারচিনি চাষের জন্য মাটি প্রস্তুতি</h2>
+            <p>
+                দারচিনি গাছের জন্য ভালো নিষ্কাশনযুক্ত উর্বর দো-আঁশ মাটি প্রয়োজন।  
+                ১) জমি প্রথমে ২-৩ বার ভালোভাবে চাষ ও মই দিয়ে তৈরি করতে হবে। <br>
+                ২) গর্ত তৈরি করুন ৫০সেমি × ৫০সেমি × ৫০সেমি আকারের। <br>
+                ৩) প্রতি গর্তে ১০-১৫ কেজি পচা গোবর বা কম্পোস্ট সার মিশিয়ে দিন। <br>
+                ৪) গর্তে ১০০ গ্রাম টিএসপি ও ৫০ গ্রাম এমওপি সার প্রয়োগ করুন। <br>
+                ৫) বৃষ্টির পানি নিষ্কাশনের জন্য উপযুক্ত ব্যবস্থা রাখুন।  
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jR2kMyqVgYE" title="দারচিনি চাষ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <!-- ================== চারা রোপণ পদ্ধতি ================== -->
+        <section class="section-card">
+            <span class="badge">চারা রোপণ</span>
+            <h2>চারা রোপণ পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>চারা নির্বাচন</td>
+                        <td>সুস্থ ও রোগমুক্ত চারা নির্বাচন করুন</td>
+                        <td>গাছের ভালো বৃদ্ধি নিশ্চিত করতে</td>
+                    </tr>
+                    <tr>
+                        <td>রোপণ দূরত্ব</td>
+                        <td>২ মিটার × ২ মিটার দূরত্বে রোপণ করুন</td>
+                        <td>গাছের পর্যাপ্ত বৃদ্ধির জন্য জায়গা</td>
+                    </tr>
+                    <tr>
+                        <td>রোপণের সময়</td>
+                        <td>বর্ষাকালে রোপণ করা উত্তম</td>
+                        <td>চারার establishment এর জন্য উপযুক্ত সময়</td>
+                    </tr>
+                    <tr>
+                        <td>রোপণ পদ্ধতি</td>
+                        <td>গর্তের মাঝখানে চারা স্থাপন করে মাটি দিয়ে ঢেকে দিন</td>
+                        <td>চারার শিকড় ভালোভাবে বিস্তার করতে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সেচ ব্যবস্থাপনা ================== -->
+        <section class="section-card">
+            <span class="badge">💧 সেচ</span>
+            <h2>🌿 দারচিনি চাষে সেচ দেওয়ার সঠিক পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>পর্যায়</th>
+                        <th>কখন সেচ দিবেন</th>
+                        <th>কীভাবে / নির্দেশনা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>চারা রোপণের পর</td>
+                        <td>রোপণের পরপরই</td>
+                        <td>হালকা সেচ দিতে হবে যাতে মাটি ভিজে যায়</td>
+                    </tr>
+                    <tr>
+                        <td>শুষ্ক মৌসুম</td>
+                        <td>৭-১০ দিন পরপর</td>
+                        <td>মাটি শুকালে নিয়মিত সেচ দিতে হবে</td>
+                    </tr>
+                    <tr>
+                        <td>বর্ষা মৌসুম</td>
+                        <td>প্রয়োজন অনুযায়ী</td>
+                        <td>বৃষ্টি না হলে হালকা সেচ দিতে হবে</td>
+                    </tr>
+                    <tr>
+                        <td>গাছ বড় হওয়ার পর</td>
+                        <td>১৫-২০ দিন পরপর</td>
+                        <td>পর্যাপ্ত সেচ দিতে হবে কিন্তু জলাবদ্ধতা এড়িয়ে</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🌿 সেচ ব্যবস্থাপনার টিপস</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>টিপস</th>
+                        <th>কারণ / উপকারিতা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>মালচিং ব্যবহার</td>
+                        <td>মাটির আর্দ্রতা সংরক্ষণ করে এবং সেচের প্রয়োজন কমায়</td>
+                    </tr>
+                    <tr>
+                        <td>ড্রেনেজ ব্যবস্থা</td>
+                        <td>জলাবদ্ধতা রোধ করে, শিকড় পচন প্রতিরোধ করে</td>
+                    </tr>
+                    <tr>
+                        <td>সকালে বা বিকেলে সেচ</td>
+                        <td>পানির বাষ্পীভবন কম হয়</td>
+                    </tr>
+                    <tr>
+                        <td>মাটি পরীক্ষা</td>
+                        <td>মাটির আর্দ্রতা পরীক্ষা করে সেচ দিন</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সার ব্যবস্থাপনা ================== -->
+        <section id="fertilizer" class="section-card">
+            <span class="badge">সার ব্যবস্থাপনা</span>
+            <h2>🧪 দারচিনির সার ব্যবস্থাপনা চার্ট</h2>
+            <table>
+                <thead>
+                    <tr><th>সময় / অবস্থা</th><th>সারের নাম</th><th>পরিমাণ/গাছ</th><th>প্রয়োগ পদ্ধতি</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>রোপণের সময়</td><td>জৈব সার</td><td>১০-১৫ কেজি</td><td>গর্তের মাটির সাথে মিশিয়ে</td></tr>
+                    <tr><td>রোপণের সময়</td><td>টিএসপি</td><td>১০০ গ্রাম</td><td>গর্তের মাটির সাথে মিশিয়ে</td></tr>
+                    <tr><td>রোপণের সময়</td><td>এমওপি</td><td>৫০ গ্রাম</td><td>গর্তের মাটির সাথে মিশিয়ে</td></tr>
+                    <tr><td>বর্ষার পর</td><td>ইউরিয়া</td><td>৫০ গ্রাম</td><td>গাছের গোড়ার চারপাশে</td></tr>
+                    <tr><td>বছরে দুইবার</td><td>জৈব সার</td><td>৫-১০ কেজি</td><td>গাছের গোড়ার চারপাশে</td></tr>
+                    <tr><td>ফলনকাল</td><td>NPK (১০:১০:১০)</td><td>২০০ গ্রাম</td><td>বছরে দুইবার প্রয়োগ</td></tr>
+                </tbody>
+            </table>
+            <div class="chart-container"><canvas id="fertilizerChart"></canvas></div>
+        </section>
+
+        <!-- ================== সার প্রয়োগ সিডিউল ক্যালেন্ডার ================== -->
+        <section id="fert-calendar" class="section-card">
+            <span class="badge">ক্যালেন্ডার</span>
+            <h2>🗓 সার প্রয়োগ সিডিউল ক্যালেন্ডার</h2>
+            <div class="grid-2">
+                <div>
+                    <label>রোপণের তারিখ: <input type="date" id="sowDate"></label>
+                    <button onclick="buildFertCalendar()">📅 ক্যালেন্ডার তৈরি করুন</button>
+                    <button class="download-btn" onclick="downloadICS()">📥 .ics ডাউনলোড</button>
+                </div>
+                <div>
+                    <table class="calendar" id="calendarTable">
+                        <thead><tr><th>তারিখ</th><th>কাজ</th><th>বিবরণ</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== দারচিনি গাছের পরিচর্যা ================== -->
+        <section class="section-card">
+            <span class="badge">পরিচর্যা</span>
+            
+            <h2>গাছ পরিচর্যা</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>আগাছা নিয়ন্ত্রণ</td>
+                        <td>নিয়মিত আগাছা পরিষ্কার করুন</td>
+                        <td>গাছের বৃদ্ধির জন্য পুষ্টি নিশ্চিত করতে</td>
+                    </tr>
+                    <tr>
+                        <td>প্রুনিং</td>
+                        <td>মরা ও রোগাক্রান্ত ডালপালা কেটে ফেলুন</td>
+                        <td>গাছের স্বাস্থ্য ও আকৃতি বজায় রাখতে</td>
+                    </tr>
+                    <tr>
+                        <td>মালচিং</td>
+                        <td>গাছের গোড়ায় খড় বা পাতা দিয়ে ঢেকে দিন</td>
+                        <td>মাটির আর্দ্রতা ধরে রাখতে</td>
+                    </tr>
+                    <tr>
+                        <td>রোগ ও পোকামাকড় নিয়ন্ত্রণ</td>
+                        <td>নিয়মিত নজর রাখুন ও প্রয়োজনীয় ব্যবস্থা নিন</td>
+                        <td>গাছকে সুস্থ রাখতে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== দারচিনির রোগ ও সমস্যা ================== -->
+        <section id="diseases" class="section-card">
+            <span class="badge">রোগব্যবস্থাপনা</span>
+            <h2>🐛 দারচিনির প্রধান রোগ ও পোকামাকড়</h2>
+            <table>
+                <thead><tr><th>রোগ/পোকা</th><th>লক্ষণ</th><th>প্রতিকার</th></tr></thead>
+                <tbody>
+                    <tr><td>ডাইব্যাক রোগ</td><td>ডগা শুকিয়ে যাওয়া</td><td>আক্রান্ত অংশ কেটে ফেলা, বোর্দো মিশ্রণ স্প্রে</td></tr>
+                    <tr><td>গোড়া পচা রোগ</td><td>গোড়া পচে যাওয়া</td><td>জলাবদ্ধতা এড়ানো, ব্যাভিস্টিন প্রয়োগ</td></tr>
+                    <tr><td>পাতা দাগ রোগ</td><td>পাতায় দাগ পড়া</td><td>মানকোজেব বা কপার অক্সিক্লোরাইড স্প্রে</td></tr>
+                    <tr><td>সিলা পোকা</td><td>পাতা কুচকানো</td><td>ইমিডাক্লোপ্রিড বা নিম তৈল স্প্রে</td></tr>
+                    <tr><td>স্কেল পোকা</td><td>ডালে আঠালো পদার্থ</td><td>ম্যালাথিয়ন বা ডায়াজিনন স্প্রে</td></tr>
+                </tbody>
+            </table>
+            <div class="chart-container"><canvas id="diseaseChart"></canvas></div>
+        </section>
+
+        <!-- ================== ছাল সংগ্রহ ও প্রক্রিয়াজাতকরণ ================== -->
+        <section class="section-card">
+            <span class="badge">সংগ্রহ ও প্রক্রিয়াজাতকরণ</span>
+            <h2>🌿 দারচিনির ছাল সংগ্রহ ও প্রক্রিয়াজাতকরণ</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>সংগ্রহের সময়</td>
+                        <td>বর্ষা মৌসুমে ছাল সংগ্রহ করুন</td>
+                        <td>এই সময়ে ছাল সহজে উঠে</td>
+                    </tr>
+                    <tr>
+                        <td>সংগ্রহ পদ্ধতি</td>
+                        <td>ডালের চারদিক থেকে ছাল ছাড়ান</td>
+                        <td>সম্পূর্ণ ছাল সংগ্রহ করতে</td>
+                    </tr>
+                    <tr>
+                        <td>শুকানো</td>
+                        <td>ছাল ছায়ায় শুকান</td>
+                        <td>গুণগত মান বজায় রাখতে</td>
+                    </tr>
+                    <tr>
+                        <td>সংরক্ষণ</td>
+                        <td>শুকনো ছাল এয়ারটাইট পাত্রে রাখুন</td>
+                        <td>সুগন্ধি ও গুণাগুণ রক্ষার্থে</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>🌿 দারচিনির ব্যবহার</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ব্যবহার</th>
+                        <th>বিবরণ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>মসলা</td>
+                        <td>খাদ্যে সুগন্ধি ও স্বাদ বৃদ্ধিকারী</td>
+                    </tr>
+                    <tr>
+                        <td>ঔষধি</td>
+                        <td>ডায়াবেটিস নিয়ন্ত্রণ, সর্দি-কাশির চিকিৎসা</td>
+                    </tr>
+                    <tr>
+                        <td>তৈল</td>
+                        <td>অ্যারোমাথেরাপি ও ঔষধে ব্যবহার</td>
+                    </tr>
+                    <tr>
+                        <td>কসমেটিক্স</td>
+                        <td>সুগন্ধি ও ত্বকের যত্নে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== স্থানীয় বাজার মূল্য ================== -->
+        <section id="market-price" class="section-card">
+            <span class="badge">বাজার মূল্য</span>
+            <h2><i class="fas fa-money-bill-wave"></i> স্থানীয় বাজার মূল্য</h2>
+            <p>বিভিন্ন অঞ্চলে দারচিনির বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">ঢাকা</div>
+                    <div class="price-value">৳ ৬০০-৮০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">চট্টগ্রাম</div>
+                    <div class="price-value">৳ ৫৫০-৭৫০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">সিলেট</div>
+                    <div class="price-value">৳ ৫০০-৭০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">খুলনা</div>
+                    <div class="price-value">৳ ৬৫০-৮৫০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">রাজশাহী</div>
+                    <div class="price-value">৳ ৬২০-৮২০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button onclick="refreshPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+                <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+            </div>
+        </section>
+
+        <!-- ================== ফলন অনুমানকারী ================== -->
+        <section id="yield-estimator" class="section-card">
+            <span class="badge">ফলন প্রেডিকশন</span>
+            <h2>📈 দারচিনির ফলন অনুমান</h2>
+            <div class="grid-2">
+                <div>
+                    <label>এলাকা (বিঘা): <input type="number" id="areaBigha" min="0" step="0.01" value="1"></label>
+                    <label>গাছের সংখ্যা (বিঘা প্রতি): <input type="number" id="plantsPerBigha" min="50" step="10" value="200"></label>
+                    <label>গাছের বয়স (বছর): <input type="number" id="plantAge" min="2" max="10" value="3"></label>
+                    <label>প্রতি গাছে ছাল (কেজি): <input type="number" id="barkPerPlant" min="0.1" step="0.1" value="0.5"></label>
+                    <label>ম্যানেজমেন্ট ফ্যাক্টর (০.৭–১.2): <input type="number" id="mgmtFactor" min="0.7" max="1.2" step="0.05" value="1.0"></label>
+                    <button onclick="estimateYield()">🧮 ফলন হিসাব করুন</button>
+                    <div id="yieldSummary" style="font-weight:700;"></div>
+                </div>
+                <div>
+                    <div class="chart-container"><canvas id="yieldBreakdownChart"></canvas></div>
+                </div>
+            </div>
+            <small class="hint">নোট: ১ বিঘা ≈ ১৩৩৭.৮০৩ বর্গমিটার ধরা হয়েছে।</small>
+        </section>
+
+        <!-- ================== ইন্টারেক্টিভ ক্যালকুলেটর ================== -->
+        <section class="section-card">
+            <span class="badge">লাভ/ক্ষতি ক্যালকুলেটর</span>
+            <h2>ইন্টারেক্টিভ ক্যালকুলেটর (লাভ/ক্ষতি)</h2>
+            <label for="area">ক্ষেতের আকার (বিঘা)</label>
+            <input type="number" id="area" placeholder="ক্ষেতের আকার লিখুন">
+            
+            <label for="cost">মোট খরচ (টাকা)</label>
+            <input type="number" id="cost" placeholder="মোট খরচ লিখুন">
+            
+            <label for="yield">ফসলের সম্ভাব্য উৎপাদন (কেজি)</label>
+            <input type="number" id="yield" placeholder="ফসলের সম্ভাব্য উৎপাদন">
+            
+            <label for="price">বাজারে প্রতি কেজির দাম (টাকা)</label>
+            <input type="number" id="price" placeholder="বাজারের দাম">
+            
+            <button onclick="calculateProfit()">লাভ/ক্ষতি হিসাব করুন</button>
+            <p id="profit-msg"></p>
+        </section>
+
+        <!-- ================== কৃষি কমিউনিটি ================== -->
+        <section class="section-card">
+            <span class="badge">কৃষি কমিউনিটি</span>
+            <h2>কৃষি কমিউনিটি</h2>
+            <label for="comment">আপনার মন্তব্য লিখুন:</label>
+            <textarea id="comment" rows="3" placeholder="এখানে লিখুন..."></textarea>
+            <button onclick="postComment()">মন্তব্য পোস্ট করুন</button>
+            <div class="comment-box" id="comment-box"></div>
+        </section>
+        
+        <!-- মূল ওয়েবসাইটে ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="back-btn" onclick="window.location.href='index.html'">🏠 মূল ওয়েবসাইটে ফিরে যান</button>
+        </div>
+
+        <!-- লাভ ক্ষতি হিসাব ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+            <button class="back-btn" onclick="window.location.href='calculator.html'">কৃষি খরচ ও লাভ ক্যালকুলেটর</button>
+        </div>
+    </div><script>
+        // ================== Dark Mode ==================
+        function toggleDarkMode() { 
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.switch i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-sun"></i> লাইট মোড';
+            } else {
+                icon.className = 'fas fa-moon';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-moon"></i> ডার্ক মোড';
+            }
+        }
+
+        // ================== Checklist ==================
+        let answers = [null, null, null, null, null, null];
+        
+        function setAnswer(index, value, btn) {
+            answers[index] = value;
+            let btnGroup = btn.parentElement.children;
+            for(let b of btnGroup) { 
+                b.style.backgroundColor = ""; 
+                b.style.color = ""; 
+            }
+            btn.style.backgroundColor = value ? '#4caf50' : '#f44336';
+            btn.style.color = "#fff";
+        }
+        
+        function showFinalResult() {
+            if(answers.includes(null)) { 
+                alert("দয়া করে সব প্রশ্নের উত্তর দিন!"); 
+                return;
+            }
+            let sum = answers.reduce((a, b) => a + b, 0);
+            let resultText = sum === 6 ? "✅ আপনার জমি এবং পরিবেশ দারচিনি চাষের জন্য পুরোপুরি উপযুক্ত।" :
+                             sum >= 4 ? "⚠ আপনার জমি এবং পরিবেশ দারচিনি চাষের জন্য আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি এবং পরিবেশ দারচিনি চাষের জন্য উপযুক্ত নয়।";
+            document.getElementById("finalResult").innerHTML = resultText;
+        }
+
+        // ================== Charts: Fertilizer & Disease ==================
+        new Chart(document.getElementById('fertilizerChart'), {
+            type: 'bar',
+            data: {
+                labels: ['রোপণের সময় (জৈব সার)', 'রোপণের সময় (TSP)', 'রোপণের সময় (MOP)', 'বর্ষার পর (ইউরিয়া)', 'বছরে দুইবার (জৈব সার)', 'ফলনকাল (NPK)'],
+                datasets: [{ 
+                    label: 'সারের পরিমাণ', 
+                    data: [12.5, 0.1, 0.05, 0.05, 7.5, 0.2],
+                    backgroundColor: ['#8d6e63', '#78909c', '#26a69a', '#ffa726', '#7b1fa2', '#5c6bc0']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'দারচিনি চাষের সার প্রয়োগ (প্রতি গাছ)'
+                    }
+                }, 
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'কেজি/গ্রাম'
+                        }
+                    }
+                } 
+            }
+        });
+        
+        new Chart(document.getElementById('diseaseChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['ডাইব্যাক রোগ', 'গোড়া পচা রোগ', 'পাতা দাগ রোগ', 'সিলা পোকা', 'স্কেল পোকা'],
+                datasets: [{
+                    label: 'ঘটনার মাত্রা (১-৫)', 
+                    data: [3, 2, 4, 3, 2],
+                    backgroundColor: ['#e53935', '#fb8c00', '#43a047', '#1e88e5', '#8e24aa']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                scales: {
+                    y: {
+                        beginAtZero: true, 
+                        max: 5
+                    }
+                } 
+            }
+        });
+
+        // ================== Research: Suitability & Yield mini-chart ==================
+        let yieldChart = new Chart(document.getElementById('yieldChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['২ বছর', '৩ বছর', '৪ বছর', '৫ বছর'],
+                datasets: [{
+                    label: 'পূর্বাভাসকৃত ফলন (কেজি/বিঘা)', 
+                    data: [0, 0, 0, 0], 
+                    backgroundColor: ['#8d6e63', '#78909c', '#26a69a', '#ffa726']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'দারচিনির সম্ভাব্য ফলন (বয়স অনুসারে)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'কেজি/বিঘা'
+                        }
+                    }
+                }
+            }
+        });
+        
+        function calculateSuitability() {
+            let ph = parseFloat(document.getElementById("soilPH").value);
+            let om = parseFloat(document.getElementById("soilOM").value);
+            let temp = parseFloat(document.getElementById("temp").value);
+            let hum = parseFloat(document.getElementById("humidity").value);
+            let score = 0;
+            
+            if(ph >= 5.5 && ph <= 6.5) score++;
+            if(om >= 2 && om <= 5) score++;
+            if(temp >= 20 && temp <= 30) score++;
+            if(hum >= 70 && hum <= 85) score++;
+            
+            let resultText = score === 4 ? "✅ আপনার জমি ও জলবায়ু দারচিনি চাষের জন্য খুবই উপযুক্ত।" :
+                            score >= 2 ? "⚠ আপনার জমি ও জলবায়ু আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি ও জলবায়ু দারচিনি চাষের জন্য উপযুক্ত নয়।";
+            
+            document.getElementById("suitabilityResult").innerHTML = resultText;
+            
+            let predictedYield = score === 4 ? [50, 100, 150, 200] : score >= 2 ? [30, 70, 100, 130] : [10, 30, 50, 70];
+            yieldChart.data.datasets[0].data = predictedYield; 
+            yieldChart.update();
+        }
+        
+        function updateDiseaseRisk() {
+            let hum = +document.getElementById("diseaseHumidity").value;
+            let riskText = hum < 60 ? "নিম্ন" : (hum <= 80 ? "মাঝারি" : "উচ্চ");
+            document.getElementById("diseaseRisk").innerHTML = "ঝুঁকি: " + riskText;
+        }
+
+        // ================== স্থানীয় বাজার মূল্য ==================
+        function refreshPrices() {
+            alert('বাজার মূল্য হালনাগাদ করা হচ্ছে...\nবাস্তব应用中, এটি API থেকে সর্বশেষ তথ্য নিয়ে আসবে।');
+            
+            // এলোমেলোভাবে মূল্য slightly পরিবর্তন করার সিমুলেশন
+            const priceCards = document.querySelectorAll('.price-card');
+            priceCards.forEach(card => {
+                const priceElement = card.querySelector('.price-value');
+                const currentPrice = priceElement.innerText;
+                const prices = currentPrice.match(/\d+/g);
+                if (prices && prices.length >= 2) {
+                    let min = parseInt(prices[0]);
+                    let max = parseInt(prices[1]);
+                    
+                    // এলোমেলোভাবে +/- ২০ টাকা পরিবর্তন
+                    min = Math.max(400, min + Math.floor(Math.random() * 40) - 20);
+                    max = Math.max(500, max + Math.floor(Math.random() * 40) - 20);
+                    
+                    priceElement.innerText = `৳ ${min}-${max}`;
+                    
+                    // তারিখ আপডেট করুন
+                    const dateElement = card.querySelector('.price-date');
+                    dateElement.innerText = 'সর্বশেষ হালনাগাদ: আজ';
+                }
+            });
+        }
+
+        // ================== ফিচার ২: সার প্রয়োগ সিডিউল ক্যালেন্ডার ==================
+        function addDays(date, days) { 
+            const d = new Date(date); 
+            d.setDate(d.getDate() + days); 
+            return d; 
+        }
+        
+        function fmt(d) { 
+            return d.toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }); 
+        }
+
+        function buildFertCalendar() {
+            const sow = document.getElementById('sowDate').value;
+            if(!sow) { 
+                alert("রোপণের তারিখ নির্বাচন করুন"); 
+                return; 
+            }
+            
+            // baseline schedule (দিন হিসাবে)
+            const schedule = [
+                { offset: 0,   task: "বেসাল সার", desc: "জৈব সার ১০-১৫ কেজি, TSP ১০০ গ্রাম, MOP ৫০ গ্রাম" },
+                { offset: 180, task: "প্রথম টপ ড্রেসিং", desc: "ইউরিয়া ৫০ গ্রাম প্রতি গাছ" },
+                { offset: 365, task: "বছরিক সার", desc: "জৈব সার ৫-১০ কেজি, NPK ২০০ গ্রাম" },
+                { offset: 545, task: "দ্বিতীয় টপ ড্রেসিং", desc: "NPK ২০০ গ্রাম প্রতি গাছ" },
+                { offset: 730, task: "দ্বিতীয় বছরিক সার", desc: "জৈব সার ৫-১০ কেজি, NPK ২০০ গ্রাম" }
+            ];
+            
+            const tbody = document.querySelector('#calendarTable tbody');
+            tbody.innerHTML = "";
+            
+            schedule.sort((a, b) => a.offset - b.offset).forEach(s => {
+                const tr = document.createElement('tr');
+                const date = fmt(addDays(sow, s.offset));
+                tr.innerHTML = `<td>${date}</td><td>${s.task}</td><td>${s.desc}</td`;
+                tbody.appendChild(tr);
+            });
+            
+            // cache for ICS
+            window._lastSchedule = { sow, schedule };
+        }
+
+        function downloadICS() {
+            if(!window._lastSchedule) { 
+                alert("আগে ক্যালেন্ডার তৈরি করুন"); 
+                return; 
+            }
+            
+            const { sow, schedule } = window._lastSchedule;
+            const lines = [
+                "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Cinnamon Scheduler//BN",
+            ];
+            
+            schedule.forEach((s, i) => {
+                const dt = new Date(addDays(sow, s.offset));
+                const dtStr = dt.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+                
+                lines.push(
+                    "BEGIN:VEVENT",
+                    'UID:cinnamon-${i}-${Date.now()}@local',
+                    'DTSTAMP:${dtStr}',
+                    'DTSTART:${dtStr}',
+                    'SUMMARY:${s.task}',
+                    'DESCRIPTION:${s.desc}',
+                    "END:VEVENT"
+                );
+            });
+            
+            lines.push("END:VCALENDAR");
+            
+            const blob = new Blob([lines.join("\r\n")], { type: "text/calendar" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; 
+            a.download = "cinnamon_fertilizer_schedule.ics"; 
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ================== ফিচার ৩: ফলন অনুমানকারী ==================
+        let yieldBreakdownChart = new Chart(document.getElementById('yieldBreakdownChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['মোট গাছ', 'মোট ছাল (কেজি)', 'বিঘা প্রতি (কেজি)'],
+                datasets: [{ 
+                    label: 'মান', 
+                    data: [0, 0, 0] 
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'ফলন ব্রেকডাউন'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                } 
+            }
+        });
+        
+        function estimateYield() {
+            const areaBigha = +document.getElementById('areaBigha').value;
+            const plantsPerBigha = +document.getElementById('plantsPerBigha').value;
+            const plantAge = +document.getElementById('plantAge').value;
+            const barkPerPlant = +document.getElementById('barkPerPlant').value;
+            const mgmt = +document.getElementById('mgmtFactor').value;
+
+            const totalPlants = areaBigha * plantsPerBigha;
+            
+            // বয়স অনুযায়ী ফলন ফ্যাক্টর (২ বছর = ০.৫, ৩ বছর = ১, ৪ বছর = ১.৫, ৫+ বছর = ২)
+            let ageFactor = 1;
+            if (plantAge === 2) ageFactor = 0.5;
+            else if (plantAge === 3) ageFactor = 1;
+            else if (plantAge === 4) ageFactor = 1.5;
+            else if (plantAge >= 5) ageFactor = 2;
+            
+            const totalBark = totalPlants * barkPerPlant * ageFactor * mgmt;
+            const perBighaBark = totalBark / areaBigha;
+
+            yieldBreakdownChart.data.datasets[0].data = [totalPlants, +totalBark.toFixed(1), +perBighaBark.toFixed(1)];
+            yieldBreakdownChart.update();
+
+            document.getElementById('yieldSummary').innerHTML =
+                `🌾 মোট গাছ: <b>${totalPlants.toLocaleString('bn-BD')}</b>, মোট ছাল: <b>${totalBark.toFixed(1)} কেজি</b> (বিঘা প্রতি ~ <b>${perBighaBark.toFixed(1)} কেজি</b>).`;
+        }
+
+        // ===== লাভ/ক্ষতি ক্যালকুলেটর =====
+        function calculateProfit() {
+            const area = parseFloat(document.getElementById('area').value);
+            const cost = parseFloat(document.getElementById('cost').value);
+            const yieldKg = parseFloat(document.getElementById('yield').value);
+            const price = parseFloat(document.getElementById('price').value);
+
+            if(isNaN(area) || isNaN(cost) || isNaN(yieldKg) || isNaN(price)) {
+                alert('সব ইনপুট পূরণ করুন!');
+                return;
+            }
+
+            const revenue = yieldKg * price;
+            const profit = revenue - cost;
+
+            let msg = `মোট আয়: ${revenue.toLocaleString('bn-BD')} টাকা, লাভ/ক্ষতি: ${profit.toLocaleString('bn-BD')} টাকা`;
+            if(profit > 0) msg += ' ✅ আপনি লাভে আছেন।';
+            else if(profit < 0) msg += ' ❌ আপনি ক্ষতিতে আছেন।';
+            else msg += ' ⚖ আপনি নিখুঁত ব্যালান্সে আছেন।';
+
+            document.getElementById('profit-msg').innerText = msg;
+        }
+
+        // ===== কৃষি কমিউনিটি =====
+        function postComment() {
+            const commentText = document.getElementById('comment').value;
+            if(!commentText) return;
+            
+            const commentBox = document.getElementById('comment-box');
+            const div = document.createElement('div');
+            div.className = 'comment';
+            div.innerText = commentText;
+            commentBox.prepend(div);
+            
+            document.getElementById('comment').value = '';
+        }
+
+        // Initialize charts on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateSuitability();
+            updateDiseaseRisk();
+        });
+    </script>
+</body>
+</html>

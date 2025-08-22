@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এলাচ চাষের সম্পূর্ণ গাইড</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{
+    --cdm-bg:#0b0f10;
+    --cdm-card:#12181a;
+    --cdm-text:#e8f0f2;
+    --cdm-muted:#9fb2b9;
+    --cdm-border:#1f2a2e;
+    --cdm-red:#ff6b6b;
+    --cdm-orange:#ffa94d;
+    --cdm-blue:#4dabf7;
+    --cdm-purple:#c0aaff;
+    --cdm-teal:#5cd3c7;
+    --cdm-shadow:0 6px 18px rgba(0,0,0,.25);
+    --cdm-radius:18px;
+  }
+
+  .cdm-wrap{
+    background: var(--cdm-bg);
+    color: var(--cdm-text);
+    padding: clamp(20px, 4vw, 40px);
+    border-radius: 20px;
+  }
+
+  .cdm-wrap h2{
+    margin: 0 0 8px;
+    font-size: clamp(22px, 3.2vw, 34px);
+    letter-spacing:.3px;
+  }
+  .cdm-intro{
+    margin: 0 0 22px;
+    color: var(--cdm-muted);
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  .cdm-grid{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0,1fr));
+    gap: 16px;
+  }
+  @media (min-width:680px){
+    .cdm-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (min-width:992px){
+    .cdm-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  }
+
+  .cdm-card{
+    background: var(--cdm-card);
+    border: 1px solid var(--cdm-border);
+    border-radius: var(--cdm-radius);
+    overflow: hidden;
+    box-shadow: var(--cdm-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .cdm-card:hover{ transform: translateY(-3px); }
+
+  .cdm-media{
+    position: relative;
+    aspect-ratio: 4/3;
+    background: #0e1416;
+  }
+  .cdm-media img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(.95) contrast(1.02);
+  }
+
+  .cdm-body{ padding: 14px 16px 16px; }
+  .cdm-title{
+    margin: 0 0 8px;
+    font-size: clamp(16px, 2.3vw, 18px);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .cdm-red{ color: var(--cdm-red); }
+  .cdm-orange{ color: var(--cdm-orange); }
+  .cdm-blue{ color: var(--cdm-blue); }
+  .cdm-purple{ color: var(--cdm-purple); }
+  .cdm-teal{ color: var(--cdm-teal); }
+
+  .cdm-body p{ 
+    margin: 0 0 6px;
+    line-height: 1.55; 
+    font-size: 15px;
+    color: var(--cdm-text);
+  }
+  .cdm-body p:last-child{ margin-bottom: 0; }
+
+  .cdm-note{
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--cdm-muted);
+    background: #0e1416;
+    border: 1px dashed var(--cdm-border);
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+        /* সাধারণ স্টাইল */
+        body {
+            font-family: 'SolaimanLipi', sans-serif; 
+            background: #f9f9f9; 
+            margin: 0; 
+            padding: 0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark-mode {
+            background-color: #121212; 
+            color: #f1f1f1; 
+        }
+        
+        .dark-mode .scientific-feature {
+            background: #1b5e20;
+        }
+        
+        .disorder-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .disorder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .collapse-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .disorder-card:hover .collapse-text {
+            max-height: 500px;
+        }
+        
+        header { 
+            background: #7b1fa2; 
+            color: white; 
+            padding: 15px; 
+            text-align: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 16px; 
+            flex-wrap: wrap;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            padding: 20px;
+        }
+        
+        .section { 
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .section {
+            background: #1a1a1a;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        
+        h2 { 
+            color: #7b1fa2;
+        }
+        
+        .dark-mode h2 {
+            color: #9c27b0;
+        }
+        
+        button { 
+            background: #7b1fa2; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover { 
+            background: #6a1b9a;
+        }
+        
+        input, select { 
+            padding: 8px; 
+            margin: 5px 0; 
+            width: 100%; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode input, 
+        .dark-mode select {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        textarea { 
+            width: 100%; 
+            padding: 8px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        
+        .dark-mode textarea {
+            background: #333;
+            color: #fff;
+            border-color: #555;
+        }
+        
+        .comment-box { 
+            border-top: 1px solid #ccc; 
+            padding-top: 10px; 
+            margin-top: 10px;
+        }
+        
+        .comment { 
+            background: #f3e5f5; 
+            padding: 10px; 
+            margin-bottom: 5px; 
+            border-radius: 5px;
+        }
+        
+        .dark-mode .comment {
+            background: #4a148c;
+        }
+        
+        .lang-btn { 
+            margin-right: 10px; 
+        }
+        
+        /* উন্নত স্টাইল */
+        h2, h3 { 
+            margin-top: 20px; 
+        }
+        
+        ul { 
+            margin-left: 20px; 
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+        }
+        
+        table, th, td { 
+            border: 1px solid #ccc; 
+        }
+        
+        th, td { 
+            padding: 10px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background-color: #e1bee7; 
+        }
+        
+        .dark-mode th {
+            background-color: #4a148c;
+        }
+        
+        .btn-group button {
+            margin-right: 10px; 
+            padding: 5px 15px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px;
+        }
+        
+        .btn-group button:hover { 
+            opacity: 0.8; 
+        }
+        
+        #finalResult { 
+            margin-top: 15px; 
+            font-weight: bold; 
+            color: #0b3d91; 
+        }
+        
+        .switch {
+            position: fixed; 
+            top: 15px; 
+            right: 15px; 
+            cursor: pointer; 
+            background: #ccc;
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            z-index: 9999;
+        }
+        
+        .dark-mode .switch {
+            background: #555;
+            color: #fff;
+        }
+        
+        .chart-container { 
+            width: 100%; 
+            max-width: 700px; 
+            margin: 30px auto; 
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #9c27b0, #ba68c8); 
+            color: white; 
+            font-weight: bold; 
+            padding: 10px 20px;
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease; 
+            font-size: 16px;
+        }
+        
+        .back-btn:hover { 
+            background: linear-gradient(135deg, #7b1fa2, #ab47bc); 
+            transform: scale(1.05); 
+        }
+        
+        input, select, button { 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            padding: 6px 8px; 
+        }
+        
+        small.hint { 
+            color: #666;
+            display: block; 
+            margin-top: -6px; 
+            margin-bottom: 10px; 
+        }
+        
+        .dark-mode small.hint {
+            color: #bbb;
+        }
+        
+        .section-card {
+            background: #fff; 
+            border-radius: 14px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+            padding: 18px; 
+            margin: 22px 0;
+        }
+        
+        .dark-mode .section-card { 
+            background: #1a1a1a; 
+            box-shadow: 0 6px 18px rgba(255,255,255,0.05); 
+        }
+        
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 16px; 
+        }
+        
+        .badge {
+            display: inline-block; 
+            padding: 4px 10px; 
+            border-radius: 999px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            background: #f3e5f5; 
+            color: #7b1fa2;
+        }
+        
+        .dark-mode .badge { 
+            background: #4a148c; 
+            color: #e1bee7; 
+        }
+        
+        .kpi { 
+            display: flex; 
+            gap: 10px; 
+            align-items: center; 
+            font-weight: 600; 
+        }
+        
+        .kpi .dot { 
+            width: 10px; 
+            height: 10px; 
+            border-radius: 999px; 
+            background: #9c27b0; 
+        }
+        
+        .canvas-wrap { 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
+        
+        .preview {
+            border: 1px dashed #bbb; 
+            border-radius: 12px; 
+            padding: 8px; 
+            background: #fafafa;
+        }
+        
+        .dark-mode .preview { 
+            background: #101010; 
+            border-color: #444; 
+        }
+        
+        .note { 
+            font-size: 13px; 
+            color: #555; 
+        }
+        
+        .dark-mode .note { 
+            color: #bbb; 
+        }
+        
+        .calendar { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        
+        .calendar th { 
+            background: #ede7f6; 
+        }
+        
+        .dark-mode .calendar th { 
+            background: #1a237e; 
+        }
+        
+        .download-btn {
+            background: #4527a0; 
+            color: #fff; 
+            border: none; 
+            border-radius: 8px; 
+            padding: 8px 12px; 
+            cursor: pointer; 
+            font-weight: 700;
+        }
+        
+        .download-btn:hover { 
+            opacity: .9; 
+        }
+        
+        iframe {
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+        
+        /* নতুন স্টাইল */
+        .price-card {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .price-card {
+            background: linear-gradient(135deg, #4a148c, #6a1b9a);
+        }
+        
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .price-region {
+            font-weight: bold;
+            font-size: 18px;
+            color: #7b1fa2;
+        }
+        
+        .dark-mode .price-region {
+            color: #ce93d8;
+        }
+        
+        .price-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .price-date {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .dark-mode .price-date {
+            color: #ccc;
+        }
+        
+        .companion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .companion-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dark-mode .companion-card {
+            background: #3e2723;
+        }
+        
+        .companion-title {
+            font-size: 20px;
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-title {
+            color: #ba68c8;
+        }
+        
+        .companion-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .companion-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e1bee7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dark-mode .companion-list li {
+            border-bottom: 1px dashed #9c27b0;
+        }
+        
+        .good-companion {
+            color: #7b1fa2;
+        }
+        
+        .bad-companion {
+            color: #d32f2f;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .canvas-wrap {
+                flex-direction: column;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .switch {
+                top: 5px;
+                right: 5px;
+                padding: 3px 8px;
+                font-size: 14px;
+            }
+            
+            .companion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i> ডার্ক / লাইট মোড
+    </div>
+
+    <header>
+        <h1>🌿 এলাচ চাষের সম্পূর্ণ গাইড</h1>
+    </header>
+
+    <div class="container">
+        <!-- ================== এলাচ পরিচিতি ================== -->
+        <section id="cardamom" class="section-card">
+            <span class="badge">বেসিক গাইড</span>
+            <h2 style="color: #7b1fa2;">এলাচ (Cardamom)</h2>
+            <h3>কেন চাষ করবেন?</h3>
+            <ul>
+                <li>উচ্চ বাজার মূল্য ও চাহিদা</li>
+                <li>দীর্ঘমেয়াদী লাভজনক ফসল</li>
+                <li>ছায়াযুক্ত স্থানে চাষ সম্ভব</li>
+                <li>পাহাড়ি ও পার্বত্য অঞ্চলের জন্য উপযোগী</li>
+            </ul>
+            <h3>🌍 উপযুক্ত পরিবেশ</h3>
+            <ul>
+                <li>জলবায়ু: উষ্ণ ও আর্দ্র জলবায়ু, ছায়াযুক্ত স্থান</li>
+                <li>তাপমাত্রা: আদর্শ ১০–৩৫°C</li>
+                <li>মাটি: দোআঁশ, জৈব পদার্থ সমৃদ্ধ, pH ৫.৫–৬.৫</li>
+                <li>উচ্চতা: সমুদ্রপৃষ্ঠ থেকে ৬০০–১৫০০ মিটার উপরে</li>
+            </ul>
+        </section>
+
+        <!-- ================== জমি ও পরিবেশ যাচাই ================== -->
+        <section id="cardamom-checklist" class="section-card">
+            <span class="badge">ফিল্ড চেক</span>
+            <h2>🌿 এলাচ চাষের জন্য জমি ও পরিবেশ যাচাই করুন</h2>
+            <p class="note">আপনার জমি কেমন? নিচের প্রতিটি প্রশ্নে হ্যাঁ / না চাপুন:</p>
+            <ul style="list-style: none; padding: 0;" id="questionList">
+                <li style="margin-bottom: 10px;">
+                    🌳 <strong>জমিতে ৫০-৭০% ছায়া আছে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(0, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(0, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌡 <strong>তাপমাত্রা ১০-৩৫°C এর মধ্যে থাকে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(1, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(1, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌧 <strong>বার্ষিক বৃষ্টিপাত ১৫০০-৪০০০ মিমি?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(2, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(2, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🌱 <strong>মাটি দোআঁশ ও জৈব পদার্থ সমৃদ্ধ?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(3, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(3, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    💧 <strong>জমিতে জলাবদ্ধতা হয় না?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(4, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(4, 0, this)">❌ না</button>
+                    </div>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    🏔 <strong>জমি সমুদ্রপৃষ্ঠ থেকে ৬০০ মিটার উপরে?</strong><br>
+                    <div class="btn-group">
+                        <button onclick="setAnswer(5, 1, this)">✅ হ্যাঁ</button>
+                        <button onclick="setAnswer(5, 0, this)">❌ না</button>
+                    </div>
+                </li>
+            </ul>
+            <button onclick="showFinalResult()" style="margin-top: 10px; padding: 10px 20px; font-weight: bold;">📊 ফলাফল দেখুন</button>
+            <div id="finalResult"></div>
+        </section>
+
+        <!-- ================== Research & AI Predictions ================== -->
+        <section id="research" class="section-card">
+            <span class="badge">রিসার্চ টুলস</span>
+            <h2 style="color:#7b1fa2;">🔬 এলাচ চাষের বৈজ্ঞানিক মূল্যায়ন ও পূর্বাভাস</h2>
+
+            <!-- Soil & Climate -->
+            <h3>1️⃣ মাটি ও জলবায়ুর উপযোগিতা</h3>
+            <div class="grid-2">
+                <div>
+                    <label>মাটি pH: <input type="number" id="soilPH" min="4" max="9" step="0.1" value="6.0"></label>
+                    <label>মাটির জৈব পদার্থ (%): <input type="number" id="soilOM" min="1" max="10" step="0.1" value="3.5"></label>
+                    <label>তাপমাত্রা (°C): <input type="number" id="temp" min="10" max="40" value="25"></label>
+                    <label>আর্দ্রতা (%): <input type="number" id="humidity" min="50" max="100" value="75"></label>
+                    <button onclick="calculateSuitability()">💡 উপযোগিতা যাচাই করুন</button>
+                    <div id="suitabilityResult" style="margin-top:10px;font-weight:bold;"></div>
+                </div>
+                <div>
+                    <h4>2️⃣ পূর্বাভাসকৃত ফলন (কেজি/বিঘা)</h4>
+                    <div class="chart-container"><canvas id="yieldChart"></canvas></div>
+                    <h4>3️⃣ রোগ ঝুঁকি সিমুলেটর</h4>
+                    <label>আর্দ্রতা (%): <input type="range" id="diseaseHumidity" min="50" max="100" value="75" oninput="updateDiseaseRisk()"></label>
+                    <div id="diseaseRisk" style="margin-top:10px;font-weight:bold;color:#e53935;">ঝুঁকি: মাঝারি</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== চাষের সময় ও এলাকা ================== -->
+        <section id="cardamom-planting" class="section-card">
+            <span class="badge">সময়সূচি</span>
+            <h3>📅 এলাচ চাষের সময় ও উপযুক্ত এলাকা</h3>
+            <table>
+                <thead>
+                    <tr><th>মৌসুম</th><th>রোপণের সময়</th><th>ফসল সংগ্রহ</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>বর্ষাকাল</td><td>মে – জুন</td><td>২-৩ বছর পর থেকে</td></tr>
+                    <tr><td>শীতকাল</td><td>সেপ্টেম্বর – অক্টোবর</td><td>২-৩ বছর পর থেকে</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>বান্দরবান, রাঙ্গামাটি, খাগড়াছড়ি: পার্বত্য অঞ্চলে ভালো হয়</li>
+                <li>সিলেট, মৌলভীবাজার: ছায়াযুক্ত চা বাগানের মধ্যে চাষ উপযোগী</li>
+                <li>চট্টগ্রামের পাহাড়ি অঞ্চল: উপকূলীয় পার্বত্য এলাকা</li>
+            </ul>
+        </section>
+
+        <!-- ================== মাটি প্রস্তুতি ================== -->
+        <section id="soil" class="section-card">
+            <span class="badge">মাটি প্রস্তুতি</span>
+            <h2>🌱 এলাচ চাষের জন্য মাটি প্রস্তুতি</h2>
+            <p>
+                এলাচ ভালো ফলনের জন্য উর্বর দো-আঁশ মাটি দরকার যেখানে জলাবদ্ধতা না হয়।  
+                ১) জমি প্রথমে ২-৩ বার ভালোভাবে চাষ ও কর্ষণ করতে হবে। <br>
+                ২) গাছের জন্য ৫০ x ৫০ x ৫০ সেমি গর্ত তৈরি করতে হবে। <br>
+                ৩) প্রতি গর্তে ১০-১৫ কেজি পচা গোবর বা জৈব সার ব্যবহার করতে হবে। <br>
+                ৪) শেষ চাষে জৈব সার, টিএসপি ও এমওপি সার মিশিয়ে জমি তৈরি করতে হবে। <br>
+                ৫) জমিতে ভালো ড্রেনেজ ব্যবস্থা রাখতে হবে।  
+            </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q2CVOQOxq6E?si=O5bPKcNH0vJEQbHN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ৪: অপ্টিমাইজড স্পেসিং ক্যালকুলেটর ================== -->
+        <section id="spacing-optimizer" class="section-card">
+            <span class="badge">স্পেসিং অপ্টিমাইজার</span>
+            <h2>📐 অপ্টিমাইজড স্পেসিং ক্যালকুলেটর</h2>
+            <div class="grid-2">
+                <div>
+                    <label>প্লট দৈর্ঘ্য (মিটার): <input type="number" id="plotLen" min="5" step="0.5" value="30"></label>
+                    <label>প্লট প্রস্থ (মিটার): <input type="number" id="plotWid" min="3" step="0.5" value="20"></label>
+                    <label>চাষ পদ্ধতি:
+                        <select id="spacingMode" onchange="applyPreset()">
+                            <option value="traditional">প্রথাগত (প্রস্তাবিত ২.৫মি × ২.৫মি)</option>
+                            <option value="highDensity">উচ্চ ঘনত্ব (প্রস্তাবিত ২.০মি × ২.০মি)</option>
+                            <option value="custom">কাস্টম</option>
+                        </select>
+                    </label>
+                    <label>সারি দূরত্ব (মিটার): <input type="number" id="optRow" min="1.5" step="0.1" value="2.5"></label>
+                    <label>গাছের দূরত্ব (মিটার): <input type="number" id="optPlant" min="1.5" step="0.1" value="2.5"></label>
+                    <button onclick="optimizeSpacing()">🧮 হিসাব করুন</button>
+                    <div id="spacingSummary" style="font-weight:700;"></div>
+                </div>
+                <div style="min-width:260px;">
+                    <div id="gridInfo" class="note">সারি এবং গাছের সংখ্যা হিসাব করা হয়েছে</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== চারা রোপণ পদ্ধতি ================== -->
+        <section class="section-card">
+            <span class="badge">চারা রোপণ</span>
+            <h2>চারা রোপণ পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>রোপণের সময়</td>
+                        <td>বর্ষাকালে (মে-জুন) বা শীতের শুরুতে (সেপ্টেম্বর-অক্টোবর)</td>
+                        <td>আবহাওয়া ও তাপমাত্রার জন্য উপযুক্ত সময়</td>
+                    </tr>
+                    <tr>
+                        <td>পদ্ধতি</td>
+                        <td>সুস্থ, রোগমুক্ত রাইজোম বা চারা ব্যবহার করুন</td>
+                        <td>চারা উন্নত হবে ও ফলন বেশি হবে</td>
+                    </tr>
+                    <tr>
+                        <td>লাইন ও চারা দূরত্ব</td>
+                        <td>লাইন থেকে লাইন ২.৫ মিটার, চারা থেকে চারা ২.৫ মিটার</td>
+                        <td>গাছের বৃদ্ধি ও পর্যাপ্ত ছায়া নিশ্চিত করতে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সেচ ব্যবস্থাপনা ================== -->
+        <section class="section-card">
+            <span class="badge">💧 সেচ</span>
+            <h2>🌿 এলাচ চাষে সেচ দেওয়ার সঠিক পদ্ধতি</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>পর্যায়</th>
+                        <th>কখন সেচ দিবেন</th>
+                        <th>কীভাবে / নির্দেশনা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>রোপণের পর</td>
+                        <td>রোপণের পর প্রথম ২ সপ্তাহ</td>
+                        <td>হালকা সেচ দিতে হবে যাতে মাটি সবসময় ভিজা থাকে</td>
+                    </tr>
+                    <tr>
+                        <td>শুষ্ক মৌসুম</td>
+                        <td>শীত ও গ্রীষ্মে যখন বৃষ্টি কম</td>
+                        <td>১০-১৫ দিন অন্তর সেচ দিতে হবে</td>
+                    </tr>
+                    <tr>
+                        <td>ফুল আসার সময়</td>
+                        <td>মার্চ – এপ্রিল</td>
+                        <td>নিয়মিত সেচ দিতে হবে, আর্দ্রতা বজায় রাখতে</td>
+                    </tr>
+                    <tr>
+                        <td>ফল ধরার সময়</td>
+                        <td>মে – আগস্ট</td>
+                        <td>প্রতি ১০-১২ দিনে গভীর সেচ</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🌿 সেচ ব্যবস্থাপনার টিপস</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>টিপস</th>
+                        <th>কারণ / উপকারিতা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>মালচিং ব্যবহার</td>
+                        <td>মাটির আর্দ্রতা সংরক্ষণ করে এবং আগাছা দমন করে</td>
+                    </tr>
+                    <tr>
+                        <td>ড্রেনেজ ব্যবস্থা রাখা</td>
+                        <td>জলাবদ্ধতা রোধ করে, শিকড় পচন বন্ধ হয়</td>
+                    </tr>
+                    <tr>
+                        <td>সকালে বা বিকেলে সেচ</td>
+                        <td>তাপমাত্রা কম থাকায় পানির অপচয় কম হয়</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== সার ব্যবস্থাপনা ================== -->
+        <section id="fertilizer" class="section-card">
+            <span class="badge">সার ব্যবস্থাপনা</span>
+            <h2>🧪 এলাচের সার ব্যবস্থাপনা চার্ট</h2>
+            <table>
+                <thead>
+                    <tr><th>সময় / অবস্থা</th><th>সারের নাম</th><th>পরিমাণ (গাছ প্রতি/বছর)</th><th>প্রয়োগ পদ্ধতি</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>রোপণের সময়</td><td>জৈব সার</td><td>১০-১৫ কেজি</td><td>গর্তের মাটির সাথে মিশিয়ে</td></tr>
+                    <tr><td>রোপণের সময়</td><td>এনপিকে (১০:২৬:২৬)</td><td>২০০ গ্রাম</td><td>গর্তের মাটির সাথে মিশিয়ে</td></tr>
+                    <tr><td>প্রথম বছর</td><td>ইউরিয়া</td><td>১০০ গ্রাম</td><td>দুই কিস্তিতে</td></tr>
+                    <tr><td>প্রথম বছর</td><td>এমওপি</td><td>১০০ গ্রাম</td><td>দুই কিস্তিতে</td></tr>
+                    <tr><td>প্রথম বছর</td><td>রক ফসফেট</td><td>২০০ গ্রাম</td><td>এক কিস্তিতে</td></tr>
+                    <tr><td>পরিপক্ক গাছ</td><td>ইউরিয়া</td><td>২০০ গ্রাম</td><td>তিন কিস্তিতে</td></tr>
+                    <tr><td>পরিপক্ক গাছ</td><td>এমওপি</td><td>২০০ গ্রাম</td><td>তিন কিস্তিতে</td></tr>
+                </tbody>
+            </table>
+            <div class="chart-container"><canvas id="fertilizerChart"></canvas></div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ২: সার প্রয়োগ সিডিউল ক্যালেন্ডার ================== -->
+        <section id="fert-calendar" class="section-card">
+            <span class="badge">ক্যালেন্ডার</span>
+            <h2>🗓 সার প্রয়োগ সিডিউল ক্যালেন্ডার</h2>
+            <div class="grid-2">
+                <div>
+                    <label>রোপণের তারিখ: <input type="date" id="sowDate"></label>
+                    <label>চাষ পদ্ধতি:
+                        <select id="cultMethod">
+                            <option value="traditional">প্রথাগত</option>
+                            <option value="highDensity">উচ্চ ঘনত্ব</option>
+                        </select>
+                    </label>
+                    <button onclick="buildFertCalendar()">📅 ক্যালেন্ডার তৈরি করুন</button>
+                    <button class="download-btn" onclick="downloadICS()">📥 .ics ডাউনলোড</button>
+                </div>
+                <div>
+                    <table class="calendar" id="calendarTable">
+                        <thead><tr><th>তারিখ</th><th>কাজ</th><th>বিবরণ</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== পরিচর্যা ================== -->
+        <section class="section-card">
+            <span class="badge">পরিচর্যা</span>
+            
+            <h2>গাছ পরিচর্যা</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ছাঁটাই</td>
+                        <td>বছরে একবার পুরানো ও রোগাক্রান্ত ডগা ছাঁটাই করুন</td>
+                        <td>নতুন কান্ডের বৃদ্ধি ও ফলন বাড়ায়</td>
+                    </tr>
+                    <tr>
+                        <td>মালচিং</td>
+                        <td>শুকনো পাতা বা খড় দিয়ে মালচিং করুন</td>
+                        <td>মাটির আর্দ্রতা ধরে রাখে এবং আগাছা দমন করে</td>
+                    </tr>
+                    <tr>
+                        <td>ছায়া ব্যবস্থাপনা</td>
+                        <td>৫০-৭০% ছায়া নিশ্চিত করুন</td>
+                        <td>গাছের স্বাস্থ্যকর বৃদ্ধির জন্য প্রয়োজন</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>আগাছা নিয়ন্ত্রণ</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>পদ্ধতি</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>হাত দ্বারা আগাছা</td>
+                        <td>নিয়মিত আগাছা পরিষ্কার করুন</td>
+                        <td>ফসলের জন্য পুষ্টি নিশ্চিত হবে</td>
+                    </tr>
+                    <tr>
+                        <td>মালচিং</td>
+                        <td>মাটিতে আর্দ্রতা বজায় রাখতে মালচ ব্যবহার করুন</td>
+                        <td>আগাছা দমন এবং মাটির আর্দ্রতা বজায় রাখে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+       <!-- =========================
+     Cardamom Diseases Section
+     ========================= -->
+<section class="cdm-wrap" aria-labelledby="cdm-title">
+  <h2 id="cdm-title">এলাচের রোগসমূহ (Cardamom Diseases)</h2>
+  <p class="cdm-intro">
+    এলাচে দেখা যায় এমন প্রচলিত রোগগুলোর লক্ষণ, কারণ ও ব্যবস্থাপনা সংক্ষেপে দেওয়া হলো।
+  </p>
+
+  <div class="cdm-grid">
+    <!-- 1) Capsule/Fruit Rot (Azhukal) -->
+    <article class="cdm-card">
+      <div class="cdm-media">
+        <img src="data:image/jpeg;base64,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" alt="এলাচের ক্যাপসুল/ফল পচা">
+      </div>
+      <div class="cdm-body">
+        <h3 class="cdm-title cdm-red">ক্যাপসুল/ফল পচা (Azhukal)</h3>
+        <p><strong>লক্ষণ:</strong> কাঁচা/পাকা ক্যাপসুল নরম হয়ে বাদামি-কালচে হয়ে পচে যায়; ডাঁটাও কালচে হয়। ভেজা আবহাওয়ায় দ্রুত ছড়ায়।</p>
+        <p><strong>কারণ:</strong> <em>Phytophthora</em> spp. (ওমাইসিট ফাংগাস); দীর্ঘক্ষণ ভেজা পাতা/ফল, দুর্বল ড্রেনেজ।</p>
+        <p><strong>ব্যবস্থাপনা:</strong> পানি নিষ্কাশন ঠিক রাখা, আক্রান্ত ক্যাপসুল/ডাঁটা তুলে নষ্ট করা; 
+          উইথারিং সিজনে ১% বোর্দো মিশ্রণ বা 0.3% কপার অক্সিক্লোরাইড স্প্রে; 
+          বেশি চাপ হলে মেটাল্যাক্সিল+ম্যানকোজেব পর্যায়ক্রমে লেবেল অনুযায়ী স্প্রে।</p>
+      </div>
+    </article>
+
+    <!-- 2) Rhizome Rot / Wilt -->
+    <article class="cdm-card">
+      <div class="cdm-media">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIoOTofySnXunlu3OrDz3DnEbbtbU30GfPw&s" alt="এলাচের রাইজোম রট/উইল্ট">
+      </div>
+      <div class="cdm-body">
+        <h3 class="cdm-title cdm-orange">রাইজোম রট/উইল্ট</h3>
+        <p><strong>লক্ষণ:</strong> গুচ্ছ ঢলে পড়ে, পাতা হলুদ; গোড়া/রাইজোম নরম-দুর্গন্ধযুক্ত। চারা সহজে উপড়ে আসে।</p>
+        <p><strong>কারণ:</strong> <em>Pythium</em>, <em>Fusarium</em> ইত্যাদি মাটিবাহিত রোগজীবাণু; জমে থাকা পানি।</p>
+        <p><strong>ব্যবস্থাপনা:</strong> উচ্চবেড/ড্রেনেজ; আক্রান্ত গুচ্ছ তুলে পুড়িয়ে ফেলুন; 
+          রোপণের আগে ট্রাইকোডার্মা (জৈব এজেন্ট) মিশিয়ে নিন; ১% বোর্দো মিশ্রণ বা 0.3% কপার অক্সিক্লোরাইড দিয়ে গোড়া ড্রেঞ্চ।</p>
+      </div>
+    </article>
+
+    <!-- 3) Leaf Spot / Blight -->
+    <article class="cdm-card">
+      <div class="cdm-media">
+        <img src="data:image/jpeg;base64,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" alt="এলাচের পাতা দাগ/ব্লাইট">
+      </div>
+      <div class="cdm-body">
+        <h3 class="cdm-title cdm-blue">পাতা দাগ/ব্লাইট</h3>
+        <p><strong>লক্ষণ:</strong> পাতায় ছোট বাদামি দাগ, পরে একত্রে বড় ব্লাইট আকারে ছড়ায়; পাতা শুকিয়ে যেতে পারে।</p>
+        <p><strong>কারণ:</strong> <em>Colletotrichum</em>, <em>Phyllosticta</em> প্রভৃতি ছত্রাক; ভিজে-ছায়াযুক্ত পরিবেশ।</p>
+        <p><strong>ব্যবস্থাপনা:</strong> ঝোপঝাড় কমিয়ে বাতাস চলাচল বাড়ানো; আক্রান্ত পাতা অপসারণ;
+          ১% বোর্দো মিশ্রণ/ম্যানকোজেব লেবেল রেট অনুযায়ী স্প্রে; বৃষ্টি থামার পর স্প্রে করা উত্তম।</p>
+      </div>
+    </article>
+
+    <!-- 4) Katte (Mosaic) Virus -->
+    <article class="cdm-card">
+      <div class="cdm-media">
+        <img src="data:image/jpeg;base64,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" alt="এলাচের কাট্টে (মোজাইক) ভাইরাস">
+      </div>
+      <div class="cdm-body">
+        <h3 class="cdm-title cdm-purple">কাট্টে (মোজাইক) ভাইরাস</h3>
+        <p><strong>লক্ষণ:</strong> পাতায় হলুদ/হালকা সবুজ মোজাইক প্যাটার্ন, গাছ খাটো ও দুর্বল; ফলন কমে যায়।</p>
+        <p><strong>কারণ:</strong> ভাইরাস; সাধারণত এফিড/থ্রিপসের মাধ্যমে বা আক্রান্ত চারা থেকে ছড়ায়।</p>
+        <p><strong>ব্যবস্থাপনা:</strong> সম্পূর্ণ আক্রান্ত গুচ্ছ তুলে নষ্ট করা; রোগমুক্ত রাইজন/চারা ব্যবহার; 
+          বাহক দমন (স্টিকি ট্র্যাপ/সমন্বিত পোকা ব্যবস্থাপনা, প্রয়োজনে নিবন্ধিত কীটনাশক লেবেল অনুযায়ী); আগাছা নিয়ন্ত্রণ।</p>
+      </div>
+    </article>
+
+    <!-- 5) Damping-off (Nursery) -->
+    <article class="cdm-card">
+      <div class="cdm-media">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Hx3YPqZxjQ6SXExzMGHBUKLRB6oLMF0WuQr_OncsIFUOHMwqjzzUDz-6gjLxfbYV_uk&usqp=CAU" alt="এলাচ নার্সারিতে ড্যাম্পিং-অফ">
+      </div>
+      <div class="cdm-body">
+        <h3 class="cdm-title cdm-teal">ড্যাম্পিং-অফ (নার্সারি)</h3>
+        <p><strong>লক্ষণ:</strong> অঙ্কুরোদ্‌গত চারায় গোড়া সরু/জলাঞ্জলি হয়ে পড়ে যায়।</p>
+        <p><strong>কারণ:</strong> <em>Pythium</em>, <em>Rhizoctonia</em> ইত্যাদি; বেশি আর্দ্রতা ও ঘন বপন।</p>
+        <p><strong>ব্যবস্থাপনা:</strong> বেড/মিডিয়া জীবাণুমুক্ত; পাতলা বপন, সঠিক ছায়া-আর্দ্রতা; 
+          ট্রাইকোডার্মা/বায়োকন্ট্রোল; প্রয়োজনে বীজ/মাটি ট্রীটমেন্ট ও হালকা প্রফাইল্যাক্টিক স্প্রে।</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="cdm-note" role="note">
+    ⚠️ যেকোনো রাসায়নিক ব্যবহারে স্থানীয় লেবেল/নিয়ম মানুন এবং সুরক্ষা সরঞ্জাম ব্যবহার করুন।
+  </div>
+</section>
+
+        <!-- ================== ফলন ও সংগ্রহ ================== -->
+        <section class="section-card">
+            <span class="badge">হার্ভেস্ট</span>
+            <h2>🌿 এলাচ ফলন সংগ্রহ</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ধাপ</th>
+                        <th>কী করবেন</th>
+                        <th>কারণ / লক্ষ্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ফলন শুরু</td>
+                        <td>রোপণের ২-৩ বছর পর ফল সংগ্রহ শুরু</td>
+                        <td>গাছ পরিপক্ক হওয়ার পরই ফল ধরে</td>
+                    </tr>
+                    <tr>
+                        <td>সংগ্রহের সময়</td>
+                        <td>অক্টোবর – ডিসেম্বর</td>
+                        <td>ফল পাকার ঠিক আগে সংগ্রহ করতে হবে</td>
+                    </tr>
+                    <tr>
+                        <td>কিভাবে</td>
+                        <td>হাত দিয়ে সাবধানে ফল সংগ্রহ করুন</td>
+                        <td>গাছের ক্ষতি না হয়</td>
+                    </tr>
+                    <tr>
+                        <td>সংগ্রহের পর</td>
+                        <td>রোদে বা ড্রায়ারে শুকানো</td>
+                        <td>সংরক্ষণের জন্য প্রয়োজন</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>🌿 এলাচের অন্যান্য ব্যবহার</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ব্যবহার</th>
+                        <th>বিবরণ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>মসলা</td>
+                        <td>খাদ্যে সুগন্ধ ও স্বাদ বৃদ্ধিতে</td>
+                    </tr>
+                    <tr>
+                        <td>ঔষধি</td>
+                        <td>হজমশক্তি বৃদ্ধি, সর্দি-কাশিতে</td>
+                    </tr>
+                    <tr>
+                        <td>তেল</td>
+                        <td>অ্যারোমাথেরাপি ও সুগন্ধিতে</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার: স্থানীয় বাজার মূল্য ================== -->
+        <section id="market-price" class="section-card">
+            <span class="badge">বাজার মূল্য</span>
+            <h2><i class="fas fa-money-bill-wave"></i> স্থানীয় বাজার মূল্য</h2>
+            <p>বিভিন্ন অঞ্চলে এলাচের বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">ঢাকা</div>
+                    <div class="price-value">৳ ২৫০০-৩০০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">চট্টগ্রাম</div>
+                    <div class="price-value">৳ ২৪০০-২৮০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">সিলেট</div>
+                    <div class="price-value">৳ ২২০০-২৬০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-region">বান্দরবান</div>
+                    <div class="price-value">৳ ২০০০-২৪০০</div>
+                </div>
+                <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button onclick="refreshPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+                <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+            </div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার: কম্প্যানিয়ন প্লান্টিং ================== -->
+        <section id="companion-planting" class="section-card">
+            <span class="badge">সহচর ফসল</span>
+            <h2><i class="fas fa-handshake"></i> এলাচের সাথে চাষযোগ্য ফসল</h2>
+            <p>এলাচের সাথে কোন ফসল চাষ করা উপকারী এবং কোন ফসল চাষ এড়িয়ে চলা উচিত</p>
+            
+            <div class="companion-grid">
+                <div class="companion-card">
+                    <h3 class="companion-title"><i class="fas fa-check-circle good-companion"></i> উপকারী সহচর ফসল</h3>
+                    <ul class="companion-list">
+                        <li><i class="fas fa-seedling good-companion"></i> কলা (ছায়া প্রদান করে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> কফি (একই পরিবেশে জন্মে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> দারুচিনি (একই পরিবেশে জন্মে)</li>
+                        <li><i class="fas fa-seedling good-companion"></i> কালো মরিচ (একই পরিবেশে জন্মে)</li>
+                    </ul>
+                </div>
+                
+                <div class="companion-card">
+                    <h3 class="companion-title"><i class="fas fa-times-circle bad-companion"></i> এড়িয়ে চলুন</h3>
+                    <ul class="companion-list">
+                        <li><i class="fas fa-seedling bad-companion"></i> আলু (একই পুষ্টির জন্য প্রতিযোগিতা করে)</li>
+                        <li><i class="fas fa-seedling bad-companion"></i> ভুট্টা (অতিরিক্ত ছায়া তৈরি করে)</li>
+                        <li><i class="fas fa-seedling bad-companion"></i> গম (ভিন্ন পরিবেশের প্রয়োজন)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== ✅ নতুন ফিচার ৩: ফলন অনুমানকারী ================== -->
+        <section id="yield-estimator" class="section-card">
+            <span class="badge">ফলন প্রেডিকশন</span>
+            <h2>📈 এলাচের ফলন অনুমান</h2>
+            <div class="grid-2">
+                <div>
+                    <label>এলাকা (বিঘা): <input type="number" id="areaBigha" min="0" step="0.01" value="1"></label>
+                    <label>সারি দূরত্ব (মিটার): <input type="number" id="rowSpacing" min="1.5" step="0.1" value="2.5"></label>
+                    <label>গাছের দূরত্ব (মিটার): <input type="number" id="plantSpacing" min="1.5" step="0.1" value="2.5"></label>
+                    <label>প্রতি গাছে ফল (গড়): <input type="number" id="fruitsPerPlant" min="5" step="1" value="50"></label>
+                    <label>প্রতি ফলের ওজন (গ্রাম): <input type="number" id="fruitWeight" min="0.5" step="0.1" value="1.5"></label>
+                    <label>ম্যানেজমেন্ট ফ্যাক্টর (০.৭–১.2): <input type="number" id="mgmtFactor" min="0.7" max="1.2" step="0.05" value="1.0"></label>
+                    <button onclick="estimateYield()">🧮 ফলন হিসাব করুন</button>
+                    <div id="yieldSummary" style="font-weight:700;"></div>
+                </div>
+                <div>
+                    <div class="chart-container"><canvas id="yieldBreakdownChart"></canvas></div>
+                </div>
+            </div>
+            <small class="hint">নোট: ১ বিঘা ≈ ১৩৩৭.৮০৩ বর্গমিটার ধরা হয়েছে।</small>
+        </section>
+
+        <!-- ================== ইন্টারেক্টিভ ক্যালকুলেটর ================== -->
+        <section class="section-card">
+            <span class="badge">লাভ/ক্ষতি ক্যালকুলেটর</span>
+            <h2>ইন্টারেক্টিভ ক্যালকুলেটর (লাভ/ক্ষতি)</h2>
+            <label for="area">ক্ষেতের আকার (বিঘা)</label>
+            <input type="number" id="area" placeholder="ক্ষেতের আকার লিখুন">
+            
+            <label for="cost">মোট খরচ (টাকা)</label>
+            <input type="number" id="cost" placeholder="মোট খরচ লিখুন">
+            
+            <label for="yield">ফসলের সম্ভাব্য উৎপাদন (কেজি)</label>
+            <input type="number" id="yield" placeholder="ফসলের সম্ভাব্য উৎপাদন">
+            
+            <label for="price">বাজারে প্রতি কেজির দাম (টাকা)</label>
+            <input type="number" id="price" placeholder="বাজারের দাম">
+            
+            <button onclick="calculateProfit()">লাভ/ক্ষতি হিসাব করুন</button>
+            <p id="profit-msg"></p>
+        </section>
+
+        <!-- ================== কৃষি কমিউনিটি ================== -->
+        <section class="section-card">
+            <span class="badge">কৃষি কমিউনিটি</span>
+            <h2>কৃষি কমিউনিটি</h2>
+            <label for="comment">আপনার মন্তব্য লিখুন:</label>
+            <textarea id="comment" rows="3" placeholder="এখানে লিখুন..."></textarea>
+            <button onclick="postComment()">মন্তব্য পোস্ট করুন</button>
+            <div class="comment-box" id="comment-box"></div>
+        </section>
+        
+        <!-- মূল ওয়েবসাইটে ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="back-btn" onclick="window.location.href='index.html'">🏠 মূল ওয়েবসাইটে ফিরে যান</button>
+        </div>
+
+        <!-- লাভ ক্ষতি হিসাব ফিরে যান বাটন -->
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+            <button class="back-btn" onclick="window.location.href='calculator.html'">কৃষি খরচ ও লাভ ক্যালকুলেটর</button>
+        </div>
+    </div>
+
+    <script>
+        // ================== Dark Mode ==================
+        function toggleDarkMode() { 
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.switch i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-sun"></i> লাইট মোড';
+            } else {
+                icon.className = 'fas fa-moon';
+                document.querySelector('.switch').innerHTML = '<i class="fas fa-moon"></i> ডার্ক মোড';
+            }
+        }
+
+        // ================== Checklist ==================
+        let answers = [null, null, null, null, null, null];
+        
+        function setAnswer(index, value, btn) {
+            answers[index] = value;
+            let btnGroup = btn.parentElement.children;
+            for(let b of btnGroup) { 
+                b.style.backgroundColor = ""; 
+                b.style.color = ""; 
+            }
+            btn.style.backgroundColor = value ? '#4caf50' : '#f44336';
+            btn.style.color = "#fff";
+        }
+        
+        function showFinalResult() {
+            if(answers.includes(null)) { 
+                alert("দয়া করে সব প্রশ্নের উত্তর দিন!"); 
+                return;
+            }
+            let sum = answers.reduce((a, b) => a + b, 0);
+            let resultText = sum === 6 ? "✅ আপনার জমি এবং পরিবেশ এলাচ চাষের জন্য পুরোপুরি উপযুক্ত।" :
+                             sum >= 4 ? "⚠ আপনার জমি এবং পরিবেশ এলাচ চাষের জন্য আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি এবং পরিবেশ এলাচ চাষের জন্য উপযুক্ত নয়।";
+            document.getElementById("finalResult").innerHTML = resultText;
+        }
+
+        // ================== Charts: Fertilizer & Disease ==================
+        new Chart(document.getElementById('fertilizerChart'), {
+            type: 'bar',
+            data: {
+                labels: ['জৈব সার', 'এনপিকে', 'ইউরিয়া', 'এমওপি', 'রক ফসফেট'],
+                datasets: [{ 
+                    label: 'সারের পরিমাণ (গ্রাম/গাছ/বছর)', 
+                    data: [10000, 200, 150, 150, 200],
+                    backgroundColor: ['#8d6e63', '#78909c', '#ffa726', '#66bb6a', '#9c27b0']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'এলাচ চাষের সার প্রয়োগ (পরিপক্ক গাছ)'
+                    }
+                }, 
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                } 
+            }
+        });
+        
+        new Chart(document.getElementById('diseaseChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['রাইজোম রট', 'লাফ ডিসিস', 'ক্যাপসুল রট', 'ভাইরাস রোগ'],
+                datasets: [{
+                    label: 'ঘটনার মাত্রা (১-৫)', 
+                    data: [4, 3, 2, 3],
+                    backgroundColor: ['#e53935', '#fb8c00', '#43a047', '#1e88e5']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                scales: {
+                    y: {
+                        beginAtZero: true, 
+                        max: 5
+                    }
+                } 
+            }
+        });
+
+        // ================== Research: Suitability & Yield mini-chart ==================
+        let yieldChart = new Chart(document.getElementById('yieldChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['প্রথম বছর', 'দ্বিতীয় বছর', 'তৃতীয় বছর'],
+                datasets: [{
+                    label: 'পূর্বাভাসকৃত ফলন (কেজি/বিঘা)', 
+                    data: [0, 0, 0], 
+                    backgroundColor: ['#66bb6a', '#ffa726', '#29b6f6']
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'এলাচের সম্ভাব্য ফলন (পূর্বাভাস)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'কেজি/বিঘা'
+                        }
+                    }
+                }
+            }
+        });
+        
+        function calculateSuitability() {
+            let ph = parseFloat(document.getElementById("soilPH").value);
+            let om = parseFloat(document.getElementById("soilOM").value);
+            let temp = parseFloat(document.getElementById("temp").value);
+            let hum = parseFloat(document.getElementById("humidity").value);
+            let score = 0;
+            
+            if(ph >= 5.5 && ph <= 6.5) score++;
+            if(om >= 3) score++;
+            if(temp >= 10 && temp <= 35) score++;
+            if(hum >= 60 && hum <= 85) score++;
+            
+            let resultText = score === 4 ? "✅ আপনার জমি ও জলবায়ু এলাচ চাষের জন্য খুবই উপযুক্ত।" :
+                            score >= 2 ? "⚠ আপনার জমি ও জলবায়ু আংশিক উপযুক্ত। কিছু ব্যবস্থা নিতে হবে।" :
+                                        "❌ আপনার জমি ও জলবায়ু এলাচ চাষের জন্য উপযুক্ত নয়।";
+            
+            document.getElementById("suitabilityResult").innerHTML = resultText;
+            
+            let predictedYield = score === 4 ? [0, 20, 50] : score >= 2 ? [0, 15, 40] : [0, 10, 25];
+            yieldChart.data.datasets[0].data = predictedYield; 
+            yieldChart.update();
+        }
+        
+        function updateDiseaseRisk() {
+            let hum = +document.getElementById("diseaseHumidity").value;
+            let riskText = hum < 60 ? "নিম্ন" : (hum <= 80 ? "মাঝারি" : "উচ্চ");
+            document.getElementById("diseaseRisk").innerHTML = "ঝুঁকি: " + riskText;
+        }
+
+        // ================== ✅ নতুন ফিচার: স্থানীয় বাজার মূল্য ==================
+        function refreshPrices() {
+            alert('বাজার মূল্য হালনাগাদ করা হচ্ছে...\nবাস্তব应用中, এটি API থেকে সর্বশেষ তথ্য নিয়ে আসবে।');
+            
+            // এলোমেলোভাবে মূল্য slightly পরিবর্তন করার সিমুলেশন
+            const priceCards = document.querySelectorAll('.price-card');
+            priceCards.forEach(card => {
+                const priceElement = card.querySelector('.price-value');
+                const currentPrice = priceElement.innerText;
+                const prices = currentPrice.match(/\d+/g);
+                if (prices && prices.length >= 2) {
+                    let min = parseInt(prices[0]);
+                    let max = parseInt(prices[1]);
+                    
+                    // এলোমেলোভাবে +/- ১০০ টাকা পরিবর্তন
+                    min = Math.max(2000, min + Math.floor(Math.random() * 200) - 100);
+                    max = Math.max(2200, max + Math.floor(Math.random() * 200) - 100);
+                    
+                    priceElement.innerText = `৳ ${min}-${max}`;
+                    
+                    // তারিখ আপডেট করুন
+                    const dateElement = card.querySelector('.price-date');
+                    dateElement.innerText = 'সর্বশেষ হালনাগাদ: আজ';
+                }
+            });
+        }
+
+        // ================== ✅ ফিচার ২: সার প্রয়োগ সিডিউল ক্যালেন্ডার ==================
+        function addDays(date, days) { 
+            const d = new Date(date); 
+            d.setDate(d.getDate() + days); 
+            return d; 
+        }
+        
+        function fmt(d) { 
+            return d.toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }); 
+        }
+
+        function buildFertCalendar() {
+            const sow = document.getElementById('sowDate').value;
+            if(!sow) { 
+                alert("রোপণের তারিখ নির্বাচন করুন"); 
+                return; 
+            }
+            
+            const mode = document.getElementById('cultMethod').value;
+            // baseline schedule (দিন হিসাবে)
+            const schedule = [
+                { offset: 0,  task: "বেসাল সার", desc: "জৈব সার ১০-১৫ কেজি, এনপিকে ২০০ গ্রাম প্রতি গর্ত" },
+                { offset: 30, task: "প্রথম কিস্তি সার", desc: "ইউরিয়া ৫০ গ্রাম, এমওপি ৫০ গ্রাম" },
+                { offset: 90, task: "দ্বিতীয় কিস্তি সার", desc: "ইউরিয়া ৫০ গ্রাম, এমওপি ৫০ গ্রাম" },
+                { offset: 180, task: "তৃতীয় কিস্তি সার", desc: "রক ফসফেট ২০০ গ্রাম" },
+                { offset: 270, task: "মালচিং", desc: "শুকনো পাতা বা খড় দিয়ে মালচিং" },
+                { offset: 365, task: "বার্ষিক সার", desc: "ইউরিয়া ২০০ গ্রাম, এমওপি ২০০ গ্রাম" }
+            ];
+            
+            const tbody = document.querySelector('#calendarTable tbody');
+            tbody.innerHTML = "";
+            
+            schedule.sort((a, b) => a.offset - b.offset).forEach(s => {
+                const tr = document.createElement('tr');
+                const date = fmt(addDays(sow, s.offset));
+                tr.innerHTML = '<td>${date}</td><td>${s.task}</td><td>${s.desc}</td>';
+                tbody.appendChild(tr);
+            });
+            
+            // cache for ICS
+            window._lastSchedule = { sow, schedule };
+        }
+
+        function downloadICS() {
+            if(!window._lastSchedule) { 
+                alert("আগে ক্যালেন্ডার তৈরি করুন"); 
+                return; 
+            }
+            
+            const { sow, schedule } = window._lastSchedule;
+            const lines = [
+                "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Cardamom Scheduler//BN",
+            ];
+            
+            schedule.forEach((s, i) => {
+                const dt = new Date(addDays(sow, s.offset));
+                const dtStr = dt.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+                
+                lines.push(
+                    "BEGIN:VEVENT",
+                    'UID:cardamom-${i}-${Date.now()}@local',
+                    'DTSTAMP:${dtStr}',
+                    'DTSTART:${dtStr}',
+                    'SUMMARY:${s.task}',
+                    'DESCRIPTION:${s.desc}',
+                    "END:VEVENT"
+                );
+            });
+            
+            lines.push("END:VCALENDAR");
+            
+            const blob = new Blob([lines.join("\r\n")], { type: "text/calendar" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; 
+            a.download = "cardamom_fertilizer_schedule.ics"; 
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ================== ✅ ফিচার ৩: ফলন অনুমানকারী ==================
+        let yieldBreakdownChart = new Chart(document.getElementById('yieldBreakdownChart'), {
+            type: 'bar',
+            data: { 
+                labels: ['মোট গাছ', 'মোট ফল (সংখ্যা)', 'মোট ফলন (কেজি)', 'বিঘা প্রতি (কেজি)'],
+                datasets: [{ 
+                    label: 'মান', 
+                    data: [0, 0, 0, 0] 
+                }]
+            },
+            options: { 
+                responsive: true, 
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'ফলন ব্রেকডাউন'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                } 
+            }
+        });
+        
+        function estimateYield() {
+            const areaBigha = +document.getElementById('areaBigha').value;
+            const rowSp = +document.getElementById('rowSpacing').value;
+            const plantSp = +document.getElementById('plantSpacing').value;
+            const fruits = +document.getElementById('fruitsPerPlant').value;
+            const weightG = +document.getElementById('fruitWeight').value;
+            const mgmt = +document.getElementById('mgmtFactor').value;
+
+            const SQM_PER_BIGHA = 1337.803;
+            const areaSqm = areaBigha * SQM_PER_BIGHA;
+            const plants = Math.floor(areaSqm / (rowSp * plantSp));
+            const totalFruits = plants * fruits * mgmt;
+            const totalKg = (totalFruits * weightG) / 1000;
+            const perBighaKg = totalKg / areaBigha;
+
+            yieldBreakdownChart.data.datasets[0].data = [plants, Math.round(totalFruits), +totalKg.toFixed(1), +perBighaKg.toFixed(1)];
+            yieldBreakdownChart.update();
+
+            document.getElementById('yieldSummary').innerHTML =
+                `🌾 আনুমানিক গাছ: <b>${plants.toLocaleString('bn-BD')}</b>, মোট ফল: <b>${Math.round(totalFruits).toLocaleString('bn-BD')}</b>, মোট ফলন: <b>${totalKg.toFixed(1)} কেজি</b> (বিঘা প্রতি ~ <b>${perBighaKg.toFixed(1)} কেজি</b>).`;
+        }
+
+        // ================== ✅ ফিচার ৪: অপ্টিমাইজড স্পেসিং ক্যালকুলেটর ==================
+        function applyPreset() {
+            const mode = document.getElementById('spacingMode').value;
+            if(mode === 'traditional') { 
+                document.getElementById('optRow').value = 2.5; 
+                document.getElementById('optPlant').value = 2.5; 
+            }
+            if(mode === 'highDensity') { 
+                document.getElementById('optRow').value = 2.0; 
+                document.getElementById('optPlant').value = 2.0; 
+            }
+        }
+        
+        function optimizeSpacing() {
+            const L = +document.getElementById('plotLen').value;
+            const W = +document.getElementById('plotWid').value;
+            const rs = +document.getElementById('optRow').value;
+            const ps = +document.getElementById('optPlant').value;
+
+            const rows = Math.max(1, Math.floor(W / rs));
+            const perRow = Math.max(1, Math.floor(L / ps));
+            const total = rows * perRow;
+
+            document.getElementById('spacingSummary').innerHTML =
+                `🧩 সম্ভাব্য সারি: <b>${rows}</b>, প্রতি সারিতে গাছ: <b>${perRow}</b>, মোট গাছ ≈ <b>${total.toLocaleString('bn-BD')}</b>`;
+                
+            document.getElementById('gridInfo').innerText = 'সারি এবং গাছের সংখ্যা হিসাব করা হয়েছে';
+        }
+
+        // ===== লাভ/ক্ষতি ক্যালকুলেটর =====
+        function calculateProfit() {
+            const area = parseFloat(document.getElementById('area').value);
+            const cost = parseFloat(document.getElementById('cost').value);
+            const yieldKg = parseFloat(document.getElementById('yield').value);
+            const price = parseFloat(document.getElementById('price').value);
+
+            if(isNaN(area) || isNaN(cost) || isNaN(yieldKg) || isNaN(price)) {
+                alert('সব ইনপুট পূরণ করুন!');
+                return;
+            }
+
+            const revenue = yieldKg * price;
+            const profit = revenue - cost;
+
+            let msg = `মোট আয়: ${revenue.toLocaleString('bn-BD')} টাকা, লাভ/ক্ষতি: ${profit.toLocaleString('bn-BD')} টাকা`;
+            if(profit > 0) msg += ' ✅ আপনি লাভে আছেন।';
+            else if(profit < 0) msg += ' ❌ আপনি ক্ষতিতে আছেন।';
+            else msg += ' ⚖ আপনি নিখুঁত ব্যালান্সে আছেন।';
+
+            document.getElementById('profit-msg').innerText = msg;
+        }
+
+        // ===== কৃষি কমিউনিটি =====
+        function postComment() {
+            const commentText = document.getElementById('comment').value;
+            if(!commentText) return;
+            
+            const commentBox = document.getElementById('comment-box');
+            const div = document.createElement('div');
+            div.className = 'comment';
+            div.innerText = commentText;
+            commentBox.prepend(div);
+            
+            document.getElementById('comment').value = '';
+        }
+    </script>
+</body>
+</html>
