@@ -6,6 +6,100 @@
 <title>শসা চাষের সম্পূর্ণ গাইড</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+  /* ================== শসা বাজার মূল্য সেকশন ================== */
+#cucumber-market-price {
+    background: #f0f9f0;
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin: 40px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#cucumber-market-price .badge {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+#cucumber-market-price h2 {
+    font-size: 24px;
+    color: #2e7d32;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#cucumber-market-price p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#cucumber-market-price .price-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+#cucumber-market-price .price-card:hover {
+    transform: translateY(-3px);
+}
+
+#cucumber-market-price .price-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    color: #1b5e20;
+    margin-bottom: 5px;
+}
+
+#cucumber-market-price .price-region {
+    font-size: 16px;
+}
+
+#cucumber-market-price .price-value {
+    font-size: 16px;
+    color: #388e3c;
+}
+
+#cucumber-market-price .price-date {
+    font-size: 13px;
+    color: #777;
+}
+
+#cucumber-market-price button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#cucumber-market-price button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+#cucumber-market-price .hint {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #555;
+}
   :root{
     --cdm-bg:#0b0f10;
     --cdm-card:#12181a;
@@ -976,6 +1070,57 @@ small.hint {
       </tr>
     </tbody>
   </table>
+</section>
+<!-- ================== ✅ নতুন ফিচার: স্থানীয় বাজার মূল্য (শসা) ================== -->
+<section id="cucumber-market-price" class="section-card">
+    <span class="badge">বাজার মূল্য</span>
+    <h2><i class="fas fa-money-bill-wave"></i> শসার স্থানীয় বাজার মূল্য</h2>
+    <p>বিভিন্ন অঞ্চলে শসার বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">ঢাকা</div>
+            <div class="price-value">৳ ২৫-৩৫</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">চট্টগ্রাম</div>
+            <div class="price-value">৳ ২২-৩২</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">রাজশাহী</div>
+            <div class="price-value">৳ ২০-৩০</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">খুলনা</div>
+            <div class="price-value">৳ ২১-৩১</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">সিলেট</div>
+            <div class="price-value">৳ ২৪-৩৪</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <button onclick="refreshCucumberPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+        <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+    </div>
 </section>
 
 

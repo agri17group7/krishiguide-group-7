@@ -1,813 +1,249 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>এগ্রি ১৭তম আবর্তন</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
-  <style> :root{
-      --bg:#f6f9fb;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#64748b;
-      --primary:#0ea5e9;
-      --primary-2:#22c55e;
-      --ring: rgba(14,165,233,.35);
-    }
-    *{box-sizing:border-box}
-body { 
-      margin:0;
-      font-family:"Noto Sans Bengali", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:linear-gradient(120deg,#eef6ff, #f6fff3 55%, #fffaf0);
-      color:var(--text);
-    }
-
-    /* Header */
-    .hero{
-      padding:48px 18px 24px;
-      text-align:center;
-    }
-    .title{
-      font-size:clamp(24px,4vw,36px);
-      font-weight:800;
-      letter-spacing:.2px;
-      margin:0 0 8px;
-      background: linear-gradient(90deg, #0ea5e9, #22c55e);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .subtitle{
-      margin:0 auto;
-      max-width:760px;
-      font-size:clamp(14px,2.4vw,16px);
-      color:var(--muted);
-    }
-
-    /* Grid */
-    .container{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 22px 18px 48px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(1, minmax(0,1fr));
-      gap:18px;
-    }
-    @media (min-width:640px){ .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-    @media (min-width:1024px){ .grid{ grid-template-columns: repeat(4, minmax(0,1fr)); } }
-
-    /* Card */
-    .card{
-      background:var(--card);
-      border-radius:18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
-      overflow:hidden;
-      position:relative;
-      transition: transform .25s ease, box-shadow .25s ease;
-      border:1px solid rgba(2,6,23,.06);
-    }
-    .card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,.10);
-    }
-
-    .cover{
-      height:96px;
-      background: linear-gradient(120deg, rgba(14,165,233,.18), rgba(34,197,94,.18));
-    }
-    .avatar-wrap{
-      display:flex;
-      justify-content:center;
-      margin-top:-48px;
-    }
-    .avatar{
-      width:96px; height:96px;
-      border-radius:50%;
-      border:4px solid var(--card);
-      object-fit:cover;
-      background:#e5e7eb;
-      box-shadow:0 6px 16px rgba(0,0,0,.12);
-    }
-    .content{
-      padding:16px 16px 18px;
-      text-align:center;
-    }
-    .name{
-      font-size:18px;
-      font-weight:700;
-      margin:8px 0 6px;
-    }
-    .meta{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-top:10px;
-      text-align:left;
-      background: #f8fafc;
-      border:1px solid #eef2f7;
-      border-radius:14px;
-      padding:12px;
-    }
-    .row{
-      display:flex;
-      gap:8px;
-      align-items:flex-start;
-      font-size:14px;
-      line-height:1.5;
-    }
-    .label{
-      min-width:78px;
-      color:#0f172a;
-      font-weight:700;
-    }
-    .value{ color:#334155; }
-
-    .badge{
-      position:absolute;
-      top:10px; left:10px;
-      background:#0ea5e9;
-      color:#fff;
-      font-size:12px;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:999px;
-      box-shadow:0 6px 14px var(--ring);
-    }
-
-    /* Footer note */
-    .note{
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:16px;
-    }
-
-    /* Focus ring for a11y */
-    .card:focus-within{
-      outline:2px solid var(--primary);
-      outline-offset:2px;
-    }
-    #chatbot-container {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 9999;
-    font-family: 'SolaimanLipi', Arial, sans-serif;
-  }
-
-  #toggle-chatbot {
-    background-color: #1abc9c;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-  }
-
-  #toggle-chatbot:hover {
-    background-color: #16a085;
-  }
-
-  #chatbot {
-    display: none;
-    background: white;
-    border: 1px solid #ccc;
-    width: 280px;
-    height: 360px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #chatbox {
-    flex-grow: 1;
-    overflow-y: auto;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    background-color: #f7f9fc;
-  }
-
-  #chat-input {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-
-  .user-msg {
-    background-color: #1abc9c;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 12px 12px 0 12px;
-    margin: 4px 0;
-    max-width: 80%;
-    align-self: flex-end;
-    word-wrap: break-word;
-  }
-
-  .bot-msg {
-    background-color: #eee;
-    color: #333;
-    padding: 6px 10px;
-    border-radius: 12px 12px 12px 0;
-    margin: 4px 0;
-    max-width: 80%;
-    align-self: flex-start;
-    word-wrap: break-word;
-  
-      margin:0;
-      font-family:"Noto Sans Bengali", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:linear-gradient(120deg,#eef6ff, #f6fff3 55%, #fffaf0);
-      color:var(--text)
-    /* Header */
-    .hero{
-      padding:48px 18px 24px;
-      text-align:center;
-    }
-    .title{
-      font-size:clamp(24px,4vw,36px);
-      font-weight:800;
-      letter-spacing:.2px;
-      margin:0 0 8px;
-      background: linear-gradient(90deg, #0ea5e9, #22c55e);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .subtitle{
-      margin:0 auto;
-      max-width:760px;
-      font-size:clamp(14px,2.4vw,16px);
-      color:var(--muted);
-    }
-
-    /* Grid */
-    .container{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 22px 18px 48px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(1, minmax(0,1fr));
-      gap:18px;
-    }
-    @media (min-width:640px){ .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-    @media (min-width:1024px){ .grid{ grid-template-columns: repeat(4, minmax(0,1fr)); } }
-
-    /* Card */
-    .card{
-      background:var(--card);
-      border-radius:18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
-      overflow:hidden;
-      position:relative;
-      transition: transform .25s ease, box-shadow .25s ease;
-      border:1px solid rgba(2,6,23,.06);
-    }
-    .card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,.10);
-    }
-
-    .cover{
-      height:96px;
-      background: linear-gradient(120deg, rgba(14,165,233,.18), rgba(34,197,94,.18));
-    }
-    .avatar-wrap{
-      display:flex;
-      justify-content:center;
-      margin-top:-48px;
-    }
-    .avatar{
-      width:96px; height:96px;
-      border-radius:50%;
-      border:4px solid var(--card);
-      object-fit:cover;
-      background:#e5e7eb;
-      box-shadow:0 6px 16px rgba(0,0,0,.12);
-    }
-    .content{
-      padding:16px 16px 18px;
-      text-align:center;
-    }
-    .name{
-      font-size:18px;
-      font-weight:700;
-      margin:8px 0 6px;
-    }
-    .meta{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-top:10px;
-      text-align:left;
-      background: #f8fafc;
-      border:1px solid #eef2f7;
-      border-radius:14px;
-      padding:12px;
-    }
-    .row{
-      display:flex;
-      gap:8px;
-      align-items:flex-start;
-      font-size:14px;
-      line-height:1.5;
-    }
-    .label{
-      min-width:78px;
-      color:#0f172a;
-      font-weight:700;
-    }
-    .value{ color:#334155; }
-
-    .badge{
-      position:absolute;
-      top:10px; left:10px;
-      background:#0ea5e9;
-      color:#fff;
-      font-size:12px;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:999px;
-      box-shadow:0 6px 14px var(--ring);
-    }
-
-    /* Footer note */
-    .note{
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:16px;
-    }
-
-    /* Focus ring for a11y */
-    .card:focus-within{
-      outline:2px solid var(--primary);
-      outline-offset:2px;
-    
-    font-family: 'SolaimanLipi', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #4caf50;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-h2, h3 { margin-top: 20px; }
-ul { margin-left: 20px; }
-.container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-table, th, td { border: 1px solid #ccc; }
-th, td { padding: 10px; text-align: left; }
-th { background-color: #ffe0b2; }
-.btn-group button {
-    margin-right: 10px;
-    padding: 5px 15px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-.btn-group button:hover { opacity: 0.8; }
-.btn-group button.active { outline: 2px solid #4caf50; }
-#finalResult {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #0b3d91;
-}
-.dark-mode { background-color: #121212; color: #f1f1f1; }
-.dark-mode table, .dark-mode th, .dark-mode td { border-color: #555; }
-.dark-mode th { background-color: #333; color: #fff; }
-.switch {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    background: #ccc;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 10;
-}
-.chart-container {
-    width: 100%;
-    max-width: 700px;
-    margin: 30px auto;
-}
-.flex-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
-}
-.flex-item { flex: 1 1 300px; }
-.notice { color:#555; }
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>এগ্রি ১৭তম আবর্তন</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ================= Body ================= */
+:root {
+  --bg:#f6f9fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#64748b;
+  --primary:#0ea5e9;
+  --primary-2:#22c55e;
+  --ring: rgba(14,165,233,.35);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
 body {
-    font-family: 'SolaimanLipi', Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f9f7; /* subtle light background */
-    color: #2f4f4f; /* readable dark text */
-    margin: 0;
-    padding: 20px;
-    padding-left: 220px; /* for sidebar space */
+  font-family:"Noto Sans Bengali", sans-serif;
+  background:linear-gradient(120deg,#eef6ff, #f6fff3 55%, #fffaf0);
+  color: var(--text);
+  display:flex;
 }
 
-/* ================= Headings ================= */
-h1, h2, h3 {
-    color: #2e7d32; /* dark green headings */
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* ================= Sections ================= */
-section {
-    background: #fff;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* ================= Sidebar ================= */
+/* Sidebar */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #2c3e50; /* dark sidebar */
-    color: #fff;
-    padding: 20px 10px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    overflow-y: auto;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px 10px;
+  overflow-y: auto;
 }
-
-.sidebar h3 {
-    color: #fff;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 18px;
-}
-
+.sidebar h3 { text-align:center; margin-bottom:20px; }
 .sidebar a {
-    display: block;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: 0.3s;
+  display:block;
+  color:#fff;
+  padding:10px 15px;
+  margin-bottom:10px;
+  border-radius:5px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.sidebar a:hover { background-color:#1abc9c; }
+
+/* Main content */
+main {
+  margin-left: 220px;
+  padding:20px;
+  width:100%;
 }
 
-.sidebar a:hover {
-    background-color: #1abc9c;
-    color: #fff;
+/* Header */
+h1 {
+  text-align:center;
+  margin-bottom:30px;
+  color: #2e7d32;
 }
 
-/* ================= Buttons ================= */
-.btn-group button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #ddd;
-    transition: 0.2s;
+/* Grid & Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
 }
 
-.btn-group button:hover {
-    background-color: #b2dfdb;
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  overflow:hidden;
+  position:relative;
+  transition: transform .25s ease, box-shadow .25s ease;
+  border:1px solid rgba(2,6,23,.06);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
 }
 
-.selected-yes {
-    background-color: #4caf50 !important; /* dark green */
-    color: white;
-    font-weight: bold;
-}
+.cover { height:96px; background: linear-gradient(120deg, rgba(14,165,233,.18), rgba(34,197,94,.18)); }
+.avatar-wrap { display:flex; justify-content:center; margin-top:-48px; }
+.avatar { width:96px; height:96px; border-radius:50%; border:4px solid var(--card); object-fit:cover; box-shadow:0 6px 16px rgba(0,0,0,.12); }
+.content { padding:16px; text-align:center; }
+.name { font-size:18px; font-weight:700; margin:8px 0 6px; }
+.meta { display:flex; flex-direction:column; gap:8px; margin-top:10px; text-align:left; background:#f8fafc; border:1px solid #eef2f7; border-radius:14px; padding:12px; }
+.row { display:flex; gap:8px; align-items:flex-start; font-size:14px; }
+.label { min-width:78px; color:#0f172a; font-weight:700; }
+.value { color:#334155; }
+.badge { position:absolute; top:10px; left:10px; background:#0ea5e9; color:#fff; font-size:12px; font-weight:700; padding:6px 10px; border-radius:999px; box-shadow:0 6px 14px var(--ring); }
 
-.selected-no {
-    background-color: #f44336 !important; /* red */
-    color: white;
-    font-weight: bold;
-}
+/* Crop Calendar */
+#crop-calendar { margin:30px 0; }
+#crop-calendar table { width:100%; border-collapse: collapse; text-align:center; }
+#crop-calendar th, #crop-calendar td { border:1px solid #ccc; padding:10px; }
+#crop-calendar th { background-color:#c8f7c5; }
 
-#resultBtn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 6px;
-    border: none;
-    background-color: #2e7d32; /* green */
-    color: white;
-    transition: background-color 0.3s ease;
+/* Contact Form */
+#officerContactForm input, #officerContactForm textarea {
+  width:100%; padding:10px; margin-top:5px; border:1px solid #a5d6a7; border-radius:5px; font-family: 'Noto Sans Bengali';
 }
-
-#resultBtn:hover {
-    background-color: #1b5e20;
+#officerContactForm button {
+  background:#2e7d32; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;
 }
+#officerContactForm button:hover { background:#1b5e20; }
+#confirmationMsg { margin-top:15px; }
 
-#finalResult {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #0d47a1; /* dark blue */
-}
-
-/* ================= Tables ================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-th, td {
-    border: 1px solid #a5d6a7;
-    padding: 12px 15px;
-    text-align: center;
-}
-
-th {
-    background-color: #81c784;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #e8f5e9;
-}
-
-tr:hover {
-    background-color: #c8e6c9;
-}
-
-/* ================= Form Inputs ================= */
-#officerContactForm input, 
-#officerContactForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #a5d6a7;
-    border-radius: 5px;
-    font-family: 'SolaimanLipi';
-}
-
-#officerContactForm textarea {
-    min-height: 100px;
-}
-
-#officerContactForm button:hover {
-    background-color: #1b5e20 !important;
-}
-
-/* ================= Lists ================= */
-ul {
-    padding-left: 20px;
-    line-height: 1.8;
+/* Responsive */
+@media(max-width:600px) {
+  body { flex-direction:column; }
+  main { margin-left:0; }
+  .sidebar { width:100%; height:auto; position:relative; }
 }
 </style>
 </head>
+<body>
 
-<!-- Sidebar Navigation -->
+<!-- Sidebar -->
 <div class="sidebar">
   <h3>ফসলসমূহ</h3>
-  <a href="cucumber.html" target="_blank">  শসা</a>
-  <a href="bean.html" target="_blank"> শিম চাষ</a>
+  <a href="cucumber.html" target="_blank">শসা</a>
+  <a href="bean.html" target="_blank">শিম</a>
   <a href="pointed gourd.html" target="_blank">পটল</a>
-  <a href="snake gourd.html"  target="_blank"> চিচিঙ্গা</a>
+  <a href="snake gourd.html" target="_blank">চিচিঙ্গা</a>
   <a href="ridge gourd.html" target="_blank">ঝিঙা</a>
   <a href="cauliflower.html" target="_blank">ফুলকপি</a>
   <a href="cardamom.html" target="_blank">এলাচ</a>
-  <a href="cinnamon.html" target="_blank">দারুচিনি</a>
+  <a href="cinnamon.html" target="_blank">দারচিনি</a>
   <a href="#crop-calendar">📅 চাষ ক্যালেন্ডার</a>
-  <a href="#officerContactForm" style="display:block; padding:10px; color:white; background:#17a2b8; text-decoration:none; border-radius:5px;">
-  👨‍💼 কৃষি অফিসারের সাথে যোগাযোগ
-</a>
-<a href="calculator.html" target="_blank">কৃষি খরচ ও লাভ ক্যালকুলেটর</a>
+  <a href="#officerContactForm" style="background:#17a2b8;">👨‍💼 কৃষি অফিসারের সাথে যোগাযোগ</a>
+  <a href="calculator.html" target="_blank">কৃষি খরচ ও লাভ ক্যালকুলেটর</a>
 </div>
-<!-- শিরোনাম -->
-<h1 style="text-align:center; padding-top: 20px;">এগ্রি ১৭তম আবর্তন</h1>
+
+<main>
+<h1>এগ্রি ১৭তম আবর্তন</h1>
+
 <section class="grid">
-<main class="container">
-      <!-- Member 1: নিজের ছবি/তথ্য বসান -->
-      <article class="card">
-        <span class="badge">সদস্য-১</span>
-        <div class="cover"></div>
-        <div class="avatar-wrap">
-          <!-- ছবি পাথ বদলান: images/member1.jpg -->
-          <img class="avatar" src="C:\Users\HP\OneDrive\Pictures\my pic.jpg" alt="সদস্য ১-এর ছবি" loading="lazy">
-        </div>
-        <div class="content">
-          <h3 class="name">সাইফুল ইসলাম সাইফ</h3>
-          <div class="meta">
-            <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
-            <div class="row"><span class="label">রোল:</span><span class="value">ASH2214026M</span></div>
-          </div>
-        </div>
-      </article>
+  <article class="card">
+    <span class="badge">সদস্য-১</span>
+    <div class="cover"></div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="images/my-pic.jpg" alt="সদস্য ১-এর ছবি" loading="lazy">
+    </div>
+    <div class="content">
+      <h3 class="name">সাইফুল ইসলাম সাইফ</h3>
+      <div class="meta">
+        <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
+        <div class="row"><span class="label">রোল:</span><span class="value">ASH2214026M</span></div>
+      </div>
+    </div>
+  </article>
 
-      <!-- Member 2 -->
-      <article class="card">
-        <span class="badge">সদস্য-২</span>
-        <div class="cover"></div>
-        <div class="avatar-wrap">
-          <img class="avatar" src="C:\Users\HP\OneDrive\Pictures\sudip pic.jpg" alt="সদস্য ২-এর ছবি" loading="lazy">
-        </div>
-        <div class="content">
-          <h3 class="name">সুদীপ দাশ গুপ্ত</h3>
-          <div class="meta">
-            <div class="row"><span class="label">বিভাগ:</span><span class="value"></span>কৃষি (NSTU)</div>
-            <div class="row"><span class="label">রোল:</span><span class="value">ASH2214042M</span></div>
-          </div>
-        </div>
-      </article>
+  <article class="card">
+    <span class="badge">সদস্য-২</span>
+    <div class="cover"></div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="images/sudip-pic.jpg" alt="সদস্য ২-এর ছবি" loading="lazy">
+    </div>
+    <div class="content">
+      <h3 class="name">সুদীপ দাশ গুপ্ত</h3>
+      <div class="meta">
+        <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
+        <div class="row"><span class="label">রোল:</span><span class="value">ASH2214042M</span></div>
+      </div>
+    </div>
+  </article>
 
-      <!-- Member 3 -->
-      <article class="card">
-        <span class="badge">সদস্য-৩</span>
-        <div class="cover"></div>
-        <div class="avatar-wrap">
-          <img class="avatar" src="https://i.ibb.co/KqP1tQ9/profile-3.jpg" alt="সদস্য ৩-এর ছবি" loading="lazy">
-        </div>
-        <div class="content">
-          <h3 class="name">সুমাইয়া ইসলাম ফারিহা</h3>
-          <div class="meta">
-            <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
-            <div class="row"><span class="label">রোল:</span><span class="value"> 2214027F</span></div>
-          </div>
-        </div>
-      </article>
+  <article class="card">
+    <span class="badge">সদস্য-৩</span>
+    <div class="cover"></div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="https://i.ibb.co/KqP1tQ9/profile-3.jpg" alt="সদস্য ৩-এর ছবি" loading="lazy">
+    </div>
+    <div class="content">
+      <h3 class="name">সুমাইয়া ইসলাম ফারিহা</h3>
+      <div class="meta">
+        <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
+        <div class="row"><span class="label">রোল:</span><span class="value">ASH2214051M</span></div>
+      </div>
+    </div>
+  </article>
 
-      <!-- Member 4 -->
-      <article class="card">
-        <span class="badge">সদস্য-৪</span>
-        <div class="cover"></div>
-        <div class="avatar-wrap">
-          <img class="avatar" src="https://i.ibb.co/34wG3Sh/profile-4.jpg" alt="সদস্য ৪-এর ছবি" loading="lazy">
-        </div>
-        <div class="content">
-          <h3 class="name">সাদিয়া</h3>
-          <div class="meta">
-            <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
-            <div class="row"><span class="label">রোল:</span><span class="value">need roll</span></div>
-          </div>
-        </div>
-      </article>
-
-    </section>
-<!-- Crop Calendar Section -->
-<section id="crop-calendar" style="margin: 30px;">
-  <h2 style="color: green;">📅 চাষ ক্যালেন্ডার (শুধু নির্বাচিত ফসলের জন্য)</h2>
-  <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: center;">
-    <thead style="background-color: #c8f7c5;">
-      <tr>
-        <th>ফসল</th>
-        <th>বপনের সময়</th>
-        <th>পরিচর্যা</th>
-        <th>সংগ্রহ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>শসা</td>
-        <td>নভেম্বর - জানুয়ারি (রবি)<br>ফেব্রুয়ারি - মার্চ (খরিফ)</td>
-        <td>ডিসেম্বর - এপ্রিল</td>
-        <td>বপনের ৪৫-৬০ দিন পর (জানুয়ারি-জুন)</td>
-      </tr>
-      <tr>
-        <td>শিম</td>
-        <td>মার্চ - জুলাই</td>
-        <td>এপ্রিল - আগস্ট</td>
-        <td>৬০-৭০ দিন পর (মে - সেপ্টেম্বর)</td>
-      </tr>
-      <tr>
-        <td>চিচিঙ্গা</td>
-        <td>ফেব্রুয়ারি - জুন</td>
-        <td>মার্চ - আগস্ট</td>
-        <td>৫০-৬০ দিন পর (এপ্রিল - আগস্ট)</td>
-      </tr>
-      <tr>
-        <td>ঢেঁড়স</td>
-        <td>ফেব্রুয়ারি - মে</td>
-        <td>মার্চ - জুন</td>
-        <td>৬০-৭০ দিন পর (এপ্রিল - জুলাই)</td>
-      </tr>
-      <tr>
-        <td>ফুলকপি</td>
-        <td>অক্টোবর - ডিসেম্বর</td>
-        <td>নভেম্বর - জানুয়ারি</td>
-        <td>৯০-১০০ দিন পর (জানুয়ারি - মার্চ)</td>
-      </tr>
-      <tr>
-        <td>জিরা</td>
-        <td>অক্টোবর - নভেম্বর</td>
-        <td>নভেম্বর - জানুয়ারি</td>
-        <td>৯০-১০০ দিন পর (ফেব্রুয়ারি - মার্চ)</td>
-      </tr>
-      <tr>
-        <td>এলাচ</td>
-        <td>বছরের যেকোনো সময় (বিশেষত গ্রীষ্মকাল)</td>
-        <td>চারা লাগানোর পর বছরব্যাপী</td>
-        <td>১০-১২ মাস পর (সারা বছর)</td>
-      </tr>
-      <tr>
-        <td>দারুচিনি</td>
-        <td>গ্রীষ্মকাল (মার্চ - মে)</td>
-        <td>চারা লাগানোর পর নিয়মিত সেচ ও পরিচর্যা</td>
-        <td>১২-১৪ মাস পর (পরবর্তী বছর)</td>
-      </tr>
-    </tbody>
-  </table>
+  <article class="card">
+    <span class="badge">সদস্য-৪</span>
+    <div class="cover"></div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="https://i.ibb.co/T0Gm7Vc/profile-4.jpg" alt="সদস্য ৪-এর ছবি" loading="lazy">
+    </div>
+    <div class="content">
+      <h3 class="name">sadiya</h3>
+      <div class="meta">
+        <div class="row"><span class="label">বিভাগ:</span><span class="value">কৃষি (NSTU)</span></div>
+        <div class="row"><span class="label">রোল:</span><span class="value">need</span></div>
+      </div>
+    </div>
+  </article>
 </section>
 
- <!-- অফিসার ও কৃষকের যোগাযোগ -->
-<form id="officerContactForm" onsubmit="submitForm(event)">
-  <label>👤 আপনার নাম:</label><br>
-  <input type="text" id="farmerName" required placeholder="আপনার পূর্ণ নাম"><br><br>
+<!-- Crop Calendar -->
+<section id="crop-calendar">
+<h2>📅 চাষ ক্যালেন্ডার</h2>
+<table>
+<tr><th>ফসল</th><th>বপনের মাস</th><th>ফসল তোলা</th></tr>
+<tr><td>শসা</td><td>জানুয়ারি - মার্চ</td><td>মার্চ - মে</td></tr>
+<tr><td>শিম</td><td>ফেব্রুয়ারি - এপ্রিল</td><td>মে - জুলাই</td></tr>
+<tr><td>পটল</td><td>মার্চ - জুন</td><td>জুন - আগস্ট</td></tr>
+<tr><td>চিচিঙ্গা</td><td>মার্চ - জুলাই</td><td>জুন - সেপ্টেম্বর</td></tr>
+<tr><td>ঝিঙা</td><td>এপ্রিল - জুলাই</td><td>জুলাই - অক্টোবর</td></tr>
+<tr><td>ফুলকপি</td><td>নভেম্বর - ফেব্রুয়ারি</td><td>ফেব্রুয়ারি - মার্চ</td></tr>
+<tr><td>এলাচ</td><td>মার্চ - জুন</td><td>জুন - সেপ্টেম্বর</td></tr>
+<tr><td>দারচিনি</td><td>মে - আগস্ট</td><td>আগস্ট - নভেম্বর</td></tr>
+</table>
+</section>
 
-  <label>📍 ঠিকানা/জেলা:</label><br>
-  <input type="text" id="location" required placeholder="জেলা ও ইউনিয়ন"><br><br>
-
-  <label>🌾 ফসল ও সমস্যা:</label><br>
-  <textarea id="problem" rows="4" required placeholder="সমস্যার বিস্তারিত বর্ণনা"></textarea><br><br>
-
-  <label>📞 মোবাইল নম্বর:</label><br>
-  <input type="tel" id="phone" pattern="01[3-9]\d{8}" 
-         required placeholder="01XXXXXXXXX"><br><br>
-
-  <button type="submit" style="background:#2e7d32; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
-    📤 সমস্যা জমা দিন
-  </button>
+<!-- Officer Contact Form -->
+<section id="officerContactForm">
+<h2>👨‍💼 কৃষি অফিসারের সাথে যোগাযোগ</h2>
+<form onsubmit="submitForm(event)">
+  <label>নাম</label>
+  <input type="text" id="name" required placeholder="আপনার নাম">
+  <label>ইমেল</label>
+  <input type="email" id="email" required placeholder="আপনার ইমেল">
+  <label>মোবাইল</label>
+  <input type="tel" id="phone" required placeholder="মোবাইল নম্বর">
+  <label>মন্তব্য</label>
+  <textarea id="message" rows="4" required placeholder="আপনার বার্তা"></textarea>
+  <button type="submit">প্রেরণ করুন</button>
+  <p id="confirmationMsg"></p>
 </form>
+</section>
 
-<div id="confirmationMsg" style="margin-top:15px;"></div>
 <script>
-function submitForm(event) {
-  event.preventDefault(); // ফর্মের ডিফল্ট সাবমিট বন্ধ করুন
-  
-  // ফর্ম ডাটা সংগ্রহ
-  const formData = {
-    name: document.getElementById('farmerName').value,
-    location: document.getElementById('location').value,
-    problem: document.getElementById('problem').value,
-    phone: document.getElementById('phone').value
-  };
-
-  // ভ্যালিডেশন চেক
-  if (!formData.name || !formData.location || !formData.problem || !formData.phone) {
-    alert('দয়া করে সব ফিল্ড পূরণ করুন!');
-    return;
-  }
-
-  // ফোন নম্বর ভ্যালিডেশন
-  if (!/^01[3-9]\d{8}$/.test(formData.phone)) {
-    alert('সঠিক মোবাইল নম্বর দিন (11 ডিজিট, 01 দিয়ে শুরু)');
-    return;
-  }
-
-  // ডাটা প্রসেসিং (এখানে আপনি AJAX, fetch API বা অন্য কোনো মেথড ব্যবহার করতে পারেন)
-  console.log('ফর্ম ডাটা:', formData);
-  
-// কনফার্মেশন মেসেজ দেখান
-  document.getElementById('confirmationMsg').innerHTML = `
-    <div style="background:#e8f5e9; padding:10px; border-radius:5px;">
-      <b>ধন্যবাদ ${formData.name}!</b><br>
-      আপনার সমস্যা "${formData.problem.substring(0, 30)}..." সফলভাবে জমা দেওয়া হয়েছে।<br>
-      কৃষি অফিসার শীঘ্রই আপনার সাথে যোগাযোগ করবেন (${formData.phone})।
-    </div>
-  `;
-
-  // ফর্ম রিসেট
+function submitForm(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  document.getElementById('confirmationMsg').textContent = name + ', আপনার বার্তা সফলভাবে প্রেরণ হয়েছে!';
   document.getElementById('officerContactForm').reset();
-}</script>
-        
+}
+</script>
+
+</main>
 </body>
 </html>

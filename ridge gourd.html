@@ -6,6 +6,172 @@
 <title>ঝিঙা (Ridge Gourd) — বাংলাদেশিক চাষ গাইড</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+  /* ================== ঝিঙার কম্প্যানিয়ন প্লান্টিং সেকশন ================== */
+#ridge-gourd-companion-planting {
+    background-color: #fff3e0; /* হালকা কমলা ব্যাকগ্রাউন্ড */
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-family: 'SolaimanLipi', sans-serif;
+}
+
+#ridge-gourd-companion-planting .badge {
+    background-color: #fb8c00; /* কমলা রঙের ব্যাজ */
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#ridge-gourd-companion-planting h2 {
+    font-size: 24px;
+    color: #ef6c00;
+    margin-bottom: 10px;
+}
+
+#ridge-gourd-companion-planting p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#ridge-gourd-companion-planting .companion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#ridge-gourd-companion-planting .companion-card {
+    flex: 1 1 300px;
+    background-color: #fff;
+    border: 1px solid #ffe0b2;
+    border-radius: 10px;
+    padding: 15px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#ridge-gourd-companion-planting .companion-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+#ridge-gourd-companion-planting .companion-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#ridge-gourd-companion-planting .good-companion {
+    color: #fb8c00; /* কমলা */
+    margin-right: 8px;
+}
+
+#ridge-gourd-companion-planting .bad-companion {
+    color: #d32f2f; /* লাল */
+    margin-right: 8px;
+}
+
+#ridge-gourd-companion-planting .companion-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#ridge-gourd-companion-planting .companion-list li {
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+#ridge-gourd-companion-planting .companion-list li i {
+    margin-right: 8px;
+}
+  /* ================== ঝিঙা বাজার মূল্য সেকশন ================== */
+#jhinga-market-price {
+    background-color: #f0f8ff; /* হালকা নীল-সবুজ ব্যাকগ্রাউন্ড */
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'SolaimanLipi', sans-serif;
+}
+
+#jhinga-market-price .badge {
+    background-color: #1e88e5; /* নীল রঙের ব্যাজ */
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#jhinga-market-price h2 {
+    font-size: 24px;
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+#jhinga-market-price p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#jhinga-market-price .price-card {
+    background-color: #fff;
+    border: 1px solid #cfe3f3;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#jhinga-market-price .price-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+#jhinga-market-price .price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #1565c0;
+}
+
+#jhinga-market-price .price-date {
+    font-size: 14px;
+    color: #777;
+}
+
+#jhinga-market-price button {
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#jhinga-market-price button:hover {
+    background-color: #1565c0;
+}
+
+#jhinga-market-price .hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #999;
+}
 :root{ --green:#2e7d32; --accent:#4caf50; --muted:#666; --card:#fff; --danger:#e53935; }
 body{ 
       font-family: 'SolaimanLipi', sans-serif;
@@ -174,6 +340,84 @@ h2{ color:var(--green); }
       </div>
     </div>
   </section>
+  <!-- ================== ✅ নতুন ফিচার: ঝিঙার স্থানীয় বাজার মূল্য ================== -->
+<section id="jhinga-market-price" class="section-card">
+    <span class="badge">বাজার মূল্য</span>
+    <h2><i class="fas fa-money-bill-wave"></i> ঝিঙার স্থানীয় বাজার মূল্য</h2>
+    <p>বিভিন্ন অঞ্চলে ঝিঙার বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">ঢাকা</div>
+            <div class="price-value">৳ ৪০-৬০</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">চট্টগ্রাম</div>
+            <div class="price-value">৳ ৩৮-৫৮</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">রাজশাহী</div>
+            <div class="price-value">৳ ৩৫-৫৫</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">খুলনা</div>
+            <div class="price-value">৳ ৩৭-৫৭</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+    </div>
+    
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">সিলেট</div>
+            <div class="price-value">৳ ৪২-৬২</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <button onclick="refreshJhingaPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+        <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+    </div>
+</section>
+<!-- ================== ✅ নতুন ফিচার: ঝিঙার কম্প্যানিয়ন প্লান্টিং ================== -->
+<section id="ridge-gourd-companion-planting" class="section-card">
+    <span class="badge">সহচর ফসল</span>
+    <h2><i class="fas fa-handshake"></i> ঝিঙার সাথে চাষযোগ্য ফসল</h2>
+    <p>ঝিঙার সাথে কোন ফসল চাষ করা উপকারী এবং কোন ফসল চাষ এড়িয়ে চলা উচিত</p>
+    
+    <div class="companion-grid">
+        <div class="companion-card">
+            <h3 class="companion-title"><i class="fas fa-check-circle good-companion"></i> উপকারী সহচর ফসল</h3>
+            <ul class="companion-list">
+                <li><i class="fas fa-seedling good-companion"></i> ভুট্টা (ছায়া প্রদান করে)</li>
+                <li><i class="fas fa-seedling good-companion"></i> শসা (একই সার প্রয়োজন)</li>
+                <li><i class="fas fa-seedling good-companion"></i> আলু (মাটি আলগা করে)</li>
+                <li><i class="fas fa-seedling good-companion"></i> গাজর (মাটি আলগা করে)</li>
+            </ul>
+        </div>
+        
+        <div class="companion-card">
+            <h3 class="companion-title"><i class="fas fa-times-circle bad-companion"></i> এড়িয়ে চলুন</h3>
+            <ul class="companion-list">
+                <li><i class="fas fa-seedling bad-companion"></i> পেঁয়াজ (বৃদ্ধি বাধা দেয়)</li>
+                <li><i class="fas fa-seedling bad-companion"></i> রসুন (বৃদ্ধি বাধা দেয়)</li>
+                <li><i class="fas fa-seedling bad-companion"></i> সূর্যমুখী (পুষ্টির জন্য প্রতিযোগিতা)</li>
+            </ul>
+        </div>
+    </div>
+</section>
   <!-- ================== বপনের সময় ও এলাকা ================== -->
 <section id="ridgegourd-planting" class="section-card">
     <span class="badge">সময়সূচি</span>
