@@ -516,9 +516,14 @@
 
     <div class="container">
         <!-- ================== শিম পরিচিতি ================== -->
-        <section id="beans" class="section-card">
-            <span class="badge">বেসিক গাইড</span>
-            <h2 style="color: orange;">শিম (Beans)</h2>
+<section id="beans" class="section-card" style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); margin: 20px 0;">
+    <span class="badge" style="display:inline-block; background:#ff9800; color:#fff; padding:6px 12px; border-radius:20px; margin-bottom:15px;">বেসিক গাইড</span>
+    <h2 style="color: orange; text-align:center; margin-bottom:20px;">শিম (Beans)</h2>
+
+    <div class="beans-container" style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:20px;">
+
+        <!-- লেখা অংশ -->
+        <div class="beans-text" style="flex:1; min-width:280px;">
             <h3>কেন চাষ করবেন?</h3>
             <ul>
                 <li>স্বল্প সময়ে ফলন দেয় (৬০-৭০ দিন)</li>
@@ -526,6 +531,7 @@
                 <li>সহজ পরিচর্যা ও রোগবালাই কম</li>
                 <li>মাটির উর্বরতা বৃদ্ধি করে (নাইট্রোজেন সংবদ্ধকরণ)</li>
             </ul>
+
             <h3>🌍 উপযুক্ত পরিবেশ</h3>
             <ul>
                 <li>জলবায়ু: নাতিশীতোষ্ণ ও উষ্ণ জলবায়ু উপযোগী</li>
@@ -533,7 +539,27 @@
                 <li>মাটি: দোআঁশ বা বেলে দোআঁশ, pH ৬.০–৭.৫</li>
                 <li>সূর্যালোক: দিনে ৬-৮ ঘন্টা সূর্যালোক প্রয়োজন</li>
             </ul>
-        </section>
+        </div>
+
+        <!-- ছবি অংশ -->
+        <div class="beans-image" style="flex:1; min-width:250px; text-align:center;">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTEhMWFhUXGB8YGRcWFx4dGxsYGBodGx4bGB4bHSggHx4lHh8XIjEhJSkrLi8uIB8zODMsNygtLisBCgoKDg0OGxAQGy0mICUrLS0tLS0tLS0tLy0tLS0tLystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAK4BIQMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAGAgMEBQcBAAj/xABJEAACAgAEBAQDBQYDBQQLAQABAgMRAAQSIQUGMUETIlFhMnGBBxRCkaEjUmKxwdFy8PEVM4KS4RZDk8IlU1RjZHODorKz0iT/xAAaAQADAQEBAQAAAAAAAAAAAAACAwQBBQAG/8QAMxEAAQQBAwMBBgQGAwAAAAAAAQACAxEhBBIxE0FRIgVhcYGRoRQyscEjQlJi0fAVM3L/2gAMAwEAAhEDEQA/ANQQYcAxxBhZGLlyFzHsdrHax61qSBiDBxRTmJMvpIdFD3RIKt6kbA3Yo9eovep08gVSzMqj1Y0LOws/Ohir5Wi1RHMM6yST07MgGkADSqL3pd+u9lunTAkrVcAY6BhVY9WMtYuAYg8clKQSSLWqMeIL6Wm/6ix9cWNYi8ThLwyKKsqR5hY6dx6YEla3ld4bOZIo5CukuisVPYsAaxJrEbhSuIYhIQX0LqI6XXbEsDGA2LWuGUnHawqserHrWJIwHfaXPUIUddLt9a0j8yThPFos7l2nnfMI0UhCKNNNGlNVbhdVlRe5NDpgbzObkmMKSyeIz5hI16bRCRasjrYs2d8czXagV0e5r9VUyGhvBWpZHL+HFHH+4ir/AMqgYfrCqx2sdEcKciyk1j1YVjuNteASKx6sLxW8w8ZiykDzStpAG3qWrYAdz/S8etaG2s74plUzfGmhzT+JBHQWL8OpkoA/U2a3J09hjTcplljjSNdlRQij+FRQ/QYy3kjgWdllizc8Sr4jLOzl1OzEOfKp1Bjt5SAACN9qxrWBaU2TsEiserC8ImBo6autr9cFaABBfMHK4Vw+WUqkoME8MflDK/R1ogKQaJI37921FWQgjSNViFRgeUb9Prvge4tx5Sr5Zy/jNSoFRlJD3TWwAHwncE716jBFwrKiKCKNQwCIqgMbbyqB5j3PqcA1wshPmBAAJT1Y9pwvTj1YZaQm6x6sLrHCMba8miMJIw8RhjNShEZyPhBNetdvrgrWrgIN79OuPEY5l4NIP7zHU3+I9fy6fKsOHGgrKTdY5hysextr1JC4WBjijDgGPEpKTWO1hVY8cDa8hPmzjSjMQcOGktm1dWJO8a1swBBBJAcAH8Wn6knD8jHDGIoUCIvRR0Fmz+ZJOM/4TmjmuKqZgoMZYoAmlyIg4XxQRY0+IfxHc9saUBjCmOwKXhjtY9WO1jEtcrEXi2Y8OGRwL0oTX07+2JgGKrmrh8k+VlhiYK7gDfuLBIvsSLF1gXHCOMAuAKkcGn1wo3tX5bYnYCOWUzWTjiikQtq1DQzLq8hIGkgkE6dHf51WDnCon22jyEyWPacGwk1jtY6MdrDEuk1mIFdSjqGVhRUiwQexGMlh4UmX4pHFECEGaBAJuh8QAvsLxr9YynmbOLl+KeNJehJlY0LP+7HQYh1uNh/uCdHeQtWx2sNZTMLIiyL8LqGX5MLH6Ydxahql7Hsex2setepJZgNz2wA/aVlYs4OHwKQ33jMDS6G/2IQtIyHcG10/ocEfFllkUogIc7EI3az8R2oEd+o7b4y7Kytk+NZbLErKygqIwT4cDZgixGO+mIAkgLqJJIGA3XhPMW2jaTy7zX/s55oYFEmW8Vioawfiq7Iu6AuxjS+A855XMgDWI3P4HIH/ACt0P8/bGafaVwxcvmiETSjqpUAbUBpIH1GAuMEeYMR/COn1xI7UFjiClEWV9R4S7AAkmgNyT0AHrj544ZznncvQSVqHRbta9KawPpWLrPc/TZqNYpqRb82gEFx6GzX8hhh1bdtr1IoznEmzWfjc390j+F1sUQ12xvo5Xp6AX3xoUMoZQykEHoR0xlHLrrmJGKSFYoY1TSdtbSSq11e9KrjvW+CmpuH+GqkzRlaKGlUEE/BQJGxW7JvCIJ3NYZJcXn4ZT5GjaB3CMcerAuvOidHgkHyKn+oxMy/NeWb4iyf41ofmLGKm6uF3Dh9UiqV0RjhGFIwIBBBB3BHQj2x4jFIKxM5iVUUsxpVFknsBisy3E1zEStCCdZ/F5SFVt2N9LA29bHvizzWXSRCkihkYUysLBHoQdiMQOX5I3iMkVU8jmwKHxGu3YV+uMvKIVSnkYSRh3CSMGChpNY7junHsFaxJUYXjijCxjCUmlysZVxfmriq8UkycXh/F+yjKKQUIBVnYb1Vk7it/SsatgJ41JmMrnJuIARy5ZYfDcagHj0WaUV1Mh3F7humwwJTGAWpXI2czOYfMTZqNUZSsKlQdJ8Mtr0WTY1mrvevlgurAD9kPHmzMM6v1SZmG++mYl9xXTVro/P0wfgY8seMrwGO46Bj2MtDS4MN5nMpGNTsFHuf5ep9sezWZSNS7sFUdzgGzCLxLNxAlljXU2lWIJjSrvSdtTsn0HtieacMpo5PCZG0E5VzlOMwz5qLzBWVWARiLLtWwrY+UE4J8Y39pXAPAmyogSRY2Y6fCJZzKKJHXVdAMK9Gwecg8QzcsJGajkUoaDSoUdh2sHrt3xkT38PGfsqnwDZvafkijHcN5gkK1GjpNE9tuuMq5J5kzuYzcSmQMmorIA1jTpZrF7/EpHXDHPDSAlxwF7S4dlrOMm5s4eMxxHwroPOiN/h0rde9DGtVjOcxBq4qh/wDib/5Y7/piPXH/AK//AEP3QswtEjQAADoNvyxE4pxAQhSVJDNV+g6k/kCa71idgF+0TjE2UeJ1QTRy1H4WmyZC3lIHQ2Svofc3iqQkN9PKJjdxykZHmwyZmRo0fw/xWtCh5V3PWzfT39NzN8/GsXjMwVNOqz6f39sZiPEhWUSMImsr4Om2SmsMX1EMCukhum9dQcd5QzI4hOIZHMmWy9vpYAq8l+UGxuou/np7HEsM7txYef0+Kon2HaG+MrQOMcwwZfLPmWdWRUDjSQS2r4AtddR2GKzkHl8wQmedR97zLGadq3UvuIwfRAar1vAvk+V434y0SX92y+mdk/CJDZjjrppUszD5V0xqeK2uvlIIrhCv2g8unNZe4xcse6juw/Eo/mPce+MLmGkkVv0oj9Dj6eIwFc5cgpmyZYSI5j1seR/8QG4b+IfUHEup0+87m8oKWGeLRsjEXN55mFAfpgo4vyvmcuSsuXkH8SIXQ+4ZL/I0fbCODclZvOsEjieKPbXNKhQBbF6ARbNXQDb1IxNFG7dRajaM5T32WcPzHjQzyA+BIzIpJ66CAxqqCr01EgdQLxv2ayyyrTbjqCOx7EH/AD+WA/mTK5XK5WOEWIYYzGVUktRaNgNrOomj7k4tTzHIIzL92Jj/AAssgatOz+JQ8hVgwI36db2Foc23A/7hMcC7IVdmuCSFyUHiBDp8pCm6BNqxC9CNwfWhiM3BpjY8JjZ3/wBTt+uExc4zBDphjLMzEC2uidtQoUar9MXPKOZz0rSSZrSsR2jTRpYHuf8AD1Au72Pz5w0Okmfbb/Za7dWVc8PyCQoFQEAe5q+5omsScLrCSMdptAUp0J88cbEDZeN1uCVwszA/CpI+IfuEB7I61Xc4JcuyMoMZUqRYKUVr2rbGJ8+8XabiOai1Fo4o60qwUWgpSbPmqZwK6023fFTwDiOZDBcjJIG2GhSfiN/h+E3R6jthTpS08WnGL02voUjCSMU3L2dzLFocyi64wLmRgVc/4R8DexxdYpBtIIpJrHsKx7GrE2uFjCVGFjHilKJxPNeHGWFX21GhfvjJOH8ZmmaTIzRAxZuXysysNJMiiQpYoqVBoj8QO+NingVxpdQw9CMY99sfH4hImVQC4QN1IBVzTBR7KAn/ADeowD3UMJsYvCe+zrmaGDOTxNGsaTykqwFafMdCkdNFGvb5dNiGPmmZ1sEfEaO/vjYvs15m+8w+DKf2sY79WjG1/MbA/NT3xNDNuJBQuCNcQ+KcSjgTXI1eg7n2AxS8e5wih8kVSP7fCPmR1+WAPPZyWZtcrFifyHyHbE2r9osi9LclZSseKcZfOSV0XoqX29Tgp5GyQCvMPhb9mn+BCbYf4n1fQDAxwjhRmkEKWCRcrjrHH7fxt0H1PbGleSKPskaL8gqqP7Yk9nRvledRJ8v8o6oKn5vkQRxhtnMn7M1dOFZgfmKv5gYd5S4hNPCZJk0trYL5dOpAdmAO9dQL6gA73eAfi/Mf3mdnG0Uflj1bWT1c30uq36DGlcKcNDER0MakfVRi+GUSTPLTgYTa9AT7oCCDuDsR7HGRcM4AuSzc7LmP9wdGXAHQzFtqN34a677Em/bBrzRzE0SjQas9viI9v+mKPheVhzQWUhtQJ1EGi6k2Qx9xvY33OOi/SyFgkruuhp9HIGF5wPC0PLuWRSdiVBPzIs4Bo1via/8Az3//AFEYPF6bdMAMOYriSeUm53AI/wCJf02xytcCTFX9Y/dQtYXOICP8BX2icXWDw3YqDFqlTULJYIVGkd61Aj3A9MGx2xlX2y8HlzKxmEM7gqAgoDQdRNXVsToNX0Gw64rkBLaBXo2EmlkuZ4tNOWt2pjZsm2J9T3ONa+y7hrQI8zUI0BLnbYquoj16EH02wMy/Z8cvk0mzTaZHkUBAdo1Fm3YbWao70AeuC/jMEiZXLcPhapc6Ra7EoigGR7BorQG3emF74VGNtmlo9PCufs0kEi5mZv8AfSzl5B3VTsi/QA4NMZLzbw5uEzw5vLSv4bEIYSWIJUGy7FvNd9O25xpHAOMx5uFZYzsfiXurVuD/AH7jBRO/kPKx1XhWWOE1jtYEvtBB0RG/LZBU/C2wq/fr+uNnl6UZfXCEoim4jCgJaWMAdbcf3wNcb56hVGXLEyS15fKdAPS2JqwPQdfbrgJmVGoolH+vthzLw+I6woA0pBIjHXyiyXr4VG2/yAskDHJHtSSU7Y2ZSuoboKBxXjeY0NKyIZgxlcKNSMYxq1AMWGyKDpPTSAd9yZcNQ5mE5ZGdWkUz+JsVVCxCmhQLNICdO+wJJvFZ9mPCZZXnkzKL4elogpB1EyH9pqBA07KBX8WOpxdshl8xEiyNLEqwwyrEzRvoLtRdgFD7uDuaPrWOpCDt3O7qhpNUlfZ5xvwcznIM3IvivO2mRruQqSlM10Oi6VodxZxpoxifPXBDUebhVlhzADU43RyPMGsXbG2DdyW9rc5Z+0HMZceHJ/8A6IxXxGmUegbv8jeAGoDHFr0D7JsracD/ADpzGuRy5lIDOTpjQmgzkE7n0ABJ/wCuI8fPWUaLxAx1f+qrzkn03r63jM/tT5lGZbL0rIE12GIq2077ewxe2N7o+oB6fKOOFzs1hCnOOWk+9mVqAmRZ9SHyapVV2UE9wx6Xttg8+zTlRsosnEczLGI/CJUI+qtt2Zh5QwFrpF7k4DZuKPHkI4JYlkjMhmRifMuuN46bbpbBlP8ADXocVP8A2kkEAyms+AG16BQ1PQ+I9xYBrpe+J9u05TtpIpaN9k/H5XlWN5WOoU4kOpmaiR5ibu/f29K104+euRHJzkSwlPE1agGYAeTzVfvVbDvjfclnklW0PT4l/EpP4WHYjD2nykSNo4T+PY9WPYJKTZcAWSAB1J2A+ZwP5/nzh8J0vmVJ/gBf9VBGM/8AtIbiLuBKPDy7C0RGsH2kI/GNrG49CRgAfIm60164kk1Ya7ahDR3Wqcc5/fM5jK5fhUhDvJTtJF5SD7NuQBqY1XTrgD49kVSbOyZzzZh5CqsvwK/iAuwr+CwAexPfBt9knKTI/wB+lFKFIiBHW9i/yqwD3snpVhnFJvvLSs//AHzsw3+El2qvpWNLyWWe6K9vCiTZZSgOq9qBG/TE/l7LmK3Z7c7eU/CpvY+57+1Ygck8POYzMWWN0W81GiQOtHevUnrQNb1jZs5yJF92WGE+ZGLIXro3VLAuvQtqI9TiR8L3Rks5XqrugPLhbIXc/wCemLThXDJJW0RDVIOpPwxj95/6L1P5kXXCeQ5QQZHWMdwh1OR7EgKv5N9MFOZly/D8uWoIi9huzsfc7sx9TjnwezHOdumwFlUpHBeFJlotCkk/E7t1dz1Zv7dAABjP+ceZxmn8CIkQqfM375HSv4R+uK7jHPGbzGpF0xRsOi/EVPYsf6AYrspk+h2A73thus1rQzpx8LwyrSDJI1pQIWNpdJ7sBSKL6k+dq/hONP5fN5aA/wDu1H5ADGMRLLLJ4miUJG4OoJcZNMg7agACR17t641/lCS8rHdWNQ26fEa/SsM9nAMIZ3qz9U6SNzKtDvHOFZlczD4UKSgknUdShBvsTekVd0QST09oH2axeHHPJm7hIkYaG+ERgAgluncg/LGjZgmjQvbua/ocAUPHycwY3ClWYqT6UAFsepI747gD3Am+Aq4pXyAgupEB544fdfeU+gavzC1jOOJ8UkkzvhQhQWlZld30INLNICxqxuPrsMN84ckZaNMxJEtMV8dRq3QqSSB/AwvbsRt0wO55mEihSQQOoO/Qd/zxxtXIHOaD2ykSMdDnyF9FZeUOvxK22+k2PevbC5YlYUyhhd0QCLG4O/vj5yHFsxHuJD+Qv8+uCnlfj/FM1IIoZDXUliTpUfvMbq+n+dmxazeQCElhtHnHONZOYS5SUkNuPhJptxYruDf0xnnL2dzEWbXOzuslFcjGi/GVVVZlVa62Y9+p1E9OsXiVJmYoCS2a8SUSIKFb2GtyoCso1AkgURgu5L4AIs8oIeOofGMbBgBNq0F1vb4CEJGxrttV+oEQI6ZN91fJFG0W02pn2zZYnJK430SC/kwI/nWM05A5sfJS77xtsVJ6j+/ofn643nmPhYzOWlg/fUgH0bqp/MDHy/xDLMrlW2KkgjuCOoxDMNr7UJC+puGcSinjEkTBlP6H0I7HCuI8PjnQxyqGU79wQR0II3B9xj515S5wmybgq3l6EHcMPRh/IjcY2OD7Q8s0SOAxLMFdRR0X+InuvuP0xRC/qnZWfHla0Fxocqt515YysOX8QNOGulUTPTk9mBPQAE7YDOAcfXImSaKNHkb9moJICxq1saAss59+irgr5xzUM7xyyyj7uoehqNWw2ah32NXvdAb4y9CC7aQSim+wJBNLYJFbbnAv2xYaEDmkHC0LgWazUsEuY+9fd4hOuoBRRZ9LSOzHcCipAuqu7w9zDxtczl/u8ELpHEEk1uV8yOZI42ABJ8xBO9HcWN8AGW4vNOqwJqMQUosK7F55upbrbeY79FAoDreucqctwRtPG2hm8GLLyV1LLHrY3ffxF6AfCDgQC9paPH3RAYWc5Pi80QMYfXGwpon8yEehU9PpRxUZ2FWJ0jQDvWqyPaz1Hz3+fXBnzLyq2XJZrZb8svb2D18Lfoe1XpAxmsswpSAb9fTHKfI9h2SBKyDRTWQyzNpCHf39Ou+JGYkDByYklGkgo63pI3DLfQ7EX7nErgmY8OZbjJAGnbc2dgAMROM5qOJnboTdAmiCeo9cfcxe1tKWBjPyAALrQzNczarw8EE0YD0wZQCK9PTD3CeDjJrKYcnDP5AxM+mkCg7lnOwPfvdYH+A87RqqI6SAa1j10NI1mrNkHYBjsO2Kr7QOLPJnJI18U5WNtKijpfTs0tDytbaqb0qsSarWMkYcZQPdZpJ5h42J80mZigjh0osbLGBpJUsSwoDrdf8ADjYfs24gk8Mj/wDelwZD3bbyk/8A3fWz3xhPDM1GR6AbbkY1v7IFtp2AIXSq7/iJJII9ao745UTiTlJlaKwtKrHcevHcVWp1X5/h8c6GOVdS/Mgg+oI3BxW5Tk7JRsGEIYjceIzPR9gxI/TF3G1gH1+n6HDgxjo2k2QkBKXGFcA4SM3PBDpJXWTMQNlRSXIJ6W40iutEnoLxt+dl0Ru/7qM35AnGFcZyAy3DOH5uFdObknMpnHx6akZFs9F06Nuhr3wqRoNX2TGiytL5f5LhyWbzGb1qEazGpFCJW8z2Saq7o7UNsNcb+0CNPLlxq/jYbf8ACNifmaHzwH8W5zzGdhiWo4yU1GIk3MQSpMd7HSRYQ9d61EYF4zS2TbE3eINVqnNFR496F+EaT845xrPiEL/Cqg/ysYgZvPyzANI7OATWptVfn0xUxZ6l6fXCIs0aIGOO98r8En6peVMzUZYdaFd+mImXmJOkm98MiRmJG/yxP4Zw9tQUC3fYDvvtf+e+Maw/l79kbWklF3C83qjgjsBNyxuviJYk9upAxb8t8ZEEoy5rw5GKo47OPKAe1MAv1PviLPwQK8EQAIAHiGu170e3Ye4xH5oiVJmC0ulo5AQN1b2HeyFr5Y7MxEPTd4x9V1XwXGB3WlYz/j/Jv3nPSiOVoFaJXYxqCxlDeU79BsCQBvXvi+y3MOpVOxcKusA7aiu4/PAtnebpIM80roPD0JGyDr5gzgqfavri+3WA3upGMddN5QjnuBZyJ3XNu8jyFQ5DAhwCQtURS9SFrpdjCeDcvzZ2eUQ6fIqlix0gar9j6HtjQ+YMimZy/wDtCBtJERcirDADfV6Mo1C/bFT9kBHj5v8AwRn9ZMcySN7tTsk47UvSvLqB7J7hn2Xb3mZhX7sY/wDMw/8ALg94RwiHLR+HAgRep9SfUk7k4m4qeNczZbLA+LKoYKWCA2xoHsOlkEb99sWshjiFhC0eFk3O3AJuI8XzX3d0EmXiiCKxrUaBoHs1sxF7bduuDXkjiUs+ZHjqwmhy7xSagLJEq7mtiduo222xQ8p8GjP/AKV4hJ4bSTGaNPUXak7FiNrCj8NX1wSZ6WODMRZ6CjFmo2iO5CmRh4kT79NRUqfmDjCH0HnAtM2nar3j75vw3bKlQyKSFdCxkYCwqnUAL6XR69sYTzG8MuYkKOXZv2jgpoKO5JZCP4TttfzOD/nbnWZ4FiySOHelkkqvDZgP2YY0Axvqa/rio5F+ztPEczlJToKvpJ/ZM21K3QuNmvpRFX1K5B1m+n6rHMJFLOs1CANumE8L4iUYp+A7X6Xgs5r5OnyzsGRmj/DKqkqR/FXwn2P0vE77O/s8GafxsyjDLr0Qgr4r+vY+GPb4j7A2mFr91G7SWWFV5Cf72VgymXt4ySyiPUqnUPM3bdr3brZvvjmc5bngnm8cCKWQhkjhC6ShrZQDpAG4NkdD1vGh8amXh8y+CBEiRFBYWil66GwJprFbkDVVXgRTmOR8+WnhE65gaHTqFy5I+CqII0307Hpd46Urt4a01aeXbsKz+ynh0cMeazbxtI+XJ0gAar8MMwUFq1kaRudgfc4Z+0aSTKx5LOwqI8xJK80klAtqdBpjY1uoQlK6ELgm5fEMHBZ5kIAlWeUm73csqL17KI1HyGLHJRQcY4WniKVR1oeqPGSmpSfQg+xBI3GFgU2ggVbyt9puUnyxbOSRQSqKdWOziusYNlr/AHdzgX4pzZwlpKgyuZazVxHw1/4UJP8A+IxR8zfZlmsrbRqZ47+KJSWH+JNyPmLHviNyrkdIkLrTE6RY3Arfr0wzTac6qUREfGwmQw9V4arSHmaKPOxvlYX+GgJ96c3qY6KBobAX3vDi5ZZM282cjE2prcGxsKoqFKgnYLR2ok0e/HzsyZaTLRxo1v4moi3GkAUv0A+ljBHwxY5EVj1rHTHs5sEZEgHPb9U1+n6d2h7iIy+ffIxNH4TffGjZaqsu/m0g0KFjSPS8bXlsusaKiKFRVCqoFAKBQAHoMYfzznctGyKmlp1bUa/Cvo/udqHXvtgh4B9oMgiELx+IdNB9Rv21A9a6XeJvw+63R8XwkOb3RZkszBLnJQ0UVoVSNjEpkY1bOGAP7MkhQfVWxNzWQV85HIbuOOxXS7YC/ozYrOB5eMTmVgwOhdDDWECEajqLHSGvqBi1+8N9+KbaRlg3vZkYD9AcTOAP1WvDR+XwrPHsex3DMpCaBwvEXKZlXUOhDKehHQgGrHqPQ98SAcElAKl55znhcPzTk9ImH1Yaf64HuKcKSXJQ5PRrOUhhkNEWSqhGSj6oWPXfpiV9qxvI+F3mljiH/E3/AExGz0UJzOaTMzumtdKBNQCxhCNTWun1ABJUkEgbmlOaHbgfCawd1i3MaESBhsOi2RYUdBf+mLTl7PJLcUm0g6Enr67/AK4JONctZGRTHl84mtHNszhgYyuoHaum42226Xin4byaIc1WccCNQj3HqCvHJIkepJCFpRqskb7dtjjnO0/UZsPI7hE4bxlW0PDrHTfCUyGlvNSj1PT9cSs5LBmcyMnwuKQsW88rSSFEjFDUo1UAfN8XtVlgAZ8a5DQq7QVrA8iMLuv4mY7nfc+2ImezJXE28Uk9OlnfE+Mw5ddUamRu21Lfz7j5Yg8u80S5UnOzKZxI5jCAMiqwF2r6CpNGtAN969C3h/JOr9txLVHAm5jJtnr8JKm1B9Budxt35zBzjF4Pgx5aKGFW1IDRIIujoACg733xUzTxaYXyffyU9rww4V9leLTl18aHwHksqjsC1DfzBTY2s710PXEbiMErZljErTMacr0JVFCnSD2BZcZ2nEpZnkzb2aBayT5z081dhtt06dsF/JPE5WYzW7toV449W3majrb4iAu9E1YGANySNHa/0Vz5d0eVZrwLiZlDxQxxqVP+8lGxHw2FBN+23zGM6i4XnA6yzRu0nissgsmS1vUdNURe1g/IVvjUOJc5Tyo8aReCwbTeosdNeoCjc+hPQjAdls/IJ3kDBTEuqidyRVV2Fb+o2GPoIdL1B1HOquPig0sdusmlpPJ/CZYctJl5gAkoJQE+YGVTqQjtXX5lsCH2Rz6c5LG2xeHp7xsLH6nBHw/OSyx+JIFJU04u21ECtNVXY71gH4LmhlOLA0dCSyoa3Ok66r1Pw45WqkP4gF3nn4rNTCWmybsrc8YzzLy6JuNnLR0VkAzEiE0dP4hqAOlWYAdLGokXtg+n5gmzGT+8cNRXtSQJbDWpoqEHU7GrIvb1xkEPEuIZjMvPEjHMMNDNEp1BRQ0nT8I2GxrpvjZpG4FWp2kttd5h54zeZmeF4Y4/BZohHHqsUdJUm9/h2oD5Yb4nmM2MsHnjZY4F0xllPlPVV6jTddTvXS+mL9OQuIZgO+Zm8HbUWJBlIHTzAijtVltvTF5zhyRlo+Fs0OoMgjdpNZYygMt6yfi7kEVRqvTGXJIz1E7fCY2RwFXjsqbgOazMsAilimQrJ4ml0KAkArrXUBt7Wd8aRyTl3SFw4q5Cy9NwyJ+t31xJizsdNmASY400q92GHViDfm3Ci/UHfriu4VxhrgBCxrMZFVD1DI5JBujqK3Q7bk+1XVLWCMcfBPfqDJGI6A7opxVcT47HA4WSwNOot2HoNu5xaXjP/tA4plzS+H4kosEksAEXc9CAd9q3PX2wTWlxoKRrdxpDvOvOeU4jGYFiJVGEmt9iFX4hXUWSB7i+m2I3AGzIVo1i0jNkwLMzANGQFDUpFilLm+hr86zKR5FJASfBiRFdwzMzSPq1KguzV30ABC+4OLniGQyueVSSyy5h1VWiNtpAIAKk6SAOq7HqdsSUXPJvjCwjNqHzq+RyeaiGXMUkKKDJAHLK0ilhcgBILFdHW/h+WGvs853mGZjykcKOsrUiBvBiirU7MqojXfXezt7nFTxXkfL5fNNlpM4+xjGtYLVWlDEeL56UCk7knXsNjjXOS/s/ymQqRAzz1Rkc7i+oQdFB/PBtB3LaU3gfMy5jNZnLXGr5c6SiksTspL6qAABbRpq7B3wH8f4Rm3zUuZMb6SxGmrURp5Qd+tqNW3rjSYMlGjMyRqrObdlUAsfViNyfniJnON5eNULSoA+oJvsxQEt9BRsnbFsM7oSXN8ImPLTYWYtAaJVAD2Ibb++IfCOF8Skv7rCpjraSV9CX6rsWf5gV74e4JxiIqGWLUYjb+fZgqtq2c6aLV5BvQ2smgd5DmkS5d3EdMq/CDsL2HuBfthr555mbjwnvme5vC+dM9wydJXSVSZCfnq1H4ge4J740LlfhTxaDIo6qpBs7dCTsP8+mLzIcGQMkzKXKghdXQepr1vvi3dgbNAAemJYi+O67pDpLFBQeYeNJl5JYfCLmRgTLAdKKrgahRu2+Jj03PUXi84FOfv0jEgxPlkeFjepkDNrL6u+pj2G1YrMrn1kIANgDf3O4xV8z52SCMZiJidCNlxHpGlEkBBawL2ISgTWGdJzi0AZtY0l1NR5/2oyX/tcH/ir/AHx3Hzj4A98cx9B/wf8AcrfwXvWvcqcxy/dEjhh8WRUHhqXNtQGrsaAOwugBWOZvnvOQyxifh0yqAwkSMayxNaTGdNGqO19+u2MdkkZTszAexI/liZk+LZ2vChzM9SeXQJG3vaqvbHyEc57lc2mngIm525lfMzJpmtEdGRlBVVYeawDZ1ChubIOKvm2UvPr1o+vSdKSh9JCKN6J/1BHYYhZHgxXNR5bMSakcEj7q4c6mDALqUMCdQAIANA4s8jy9GXASQa6J0mttJIYtR2AIbej0w3bI9jiBaPYSPSFJ4VwbLy5Fiy+JmBITpptQAGwItbUg6vTcWdsFnI3DpJFOUny8ccNRyUq6S8agkFiGJtn0nr01b9hUcN4gngjS+sQy/to9LXoa94mQ3bHSpJogE9QNy3lzmbLeGZI00LSRLEpFqsY6IOpUMzC+h0/K1tIYAXmrRPpreERcvcvplGkELERObWL8KE/FVncE9B2364i8ycw6cp42WYW5IViNgFJDEA7Hpt2PXFRxXnb8KVDuPM5Bb/lAIH5nGe8x8eLRNp1gFSLY7Nbgmh0UbsdsJl1zHeiLnz2Smjccqu43zlmZmIeRm32s7D5AbA+4xQB5JnUGySaAxGvBlyNwvUfGfovS+3qcTzvbCwvPKLaAns9ytmMyFigVSmXiUy22n4yTsPxGgTWHuB5VoJvBcamRGFL3Fhgd+1XiHBnNefZop/8AeoQdFi1II0H1FUT27drxM5vmWLNZN7omFlk81WoNLq/NsZET6GcECyqBF/B3HyrrNcEXMAPNmHysR21aTW5C9VYUP8WwwI5jgwjz5ijlkliKlfGdrcq1pselk/CewN9cEeZ4pcTRihqXSxLX5R237/yxA4bFGZJBIni1F5Dq2R7sFgdiAL2Pt8xXJrGB20H5qXqU6giPk7g2Sjn8IPIJVjLS+IxZFRSNJ7KpJO4N9B0vAxzfpGemIbWhcEMO9qp2r32xTjODLy+MPOC9BY2dGazq0munpsDZ04mZTISz5lIAAZGf4SdvJ5jZJ7BT3wEoa7bfJP2VFmhZxa03l7iv3LISyzTIx87qijcNpUKtg77jc+vfDP2KMDBM7EeJJJroCqQgKN6skkWfmuATnt1WKHLRjzM7ecuN2OhWrbZNQG56ebBNytxQJk6yoTL50OokjdgqMiMRVyEqPKSatSW374fbGH0n0jAWuAJK07jc6JEXkKgD1IFg9VtjXp+WBHmjj+XOSfKLOjSmNR5Phqx+KyLAB2snpgBznKeczc7Zid5PDDjT4h1OVLaRo0/suno1dNqwd8x8NyMGSGWfTAkkcgV5KvxChVWZhYuyaP0FYx7nPBAwhGBRCRkONCTLrEmYhqNEQrJH8LRopJKlhqW++w+YxVtzNkcsUnlzJmlhkYAIwLOstyO4QeRBqaqBHwdT0A5y7weXimRHiBV8HYZoklgoA/YlBWoDrZPl6Ab4C+P8Bky8kiE61RgutQQpLCxV/l88eY53da7yAtK4j9tpaRVy0KpHYBknBYgE0W0RsNgN6BJOBrNcwQTrNNmiJJmf9ig1JHEl2XA1my23lYmvlsQWKEdzR+WFSQAC9V/T/rjXOvFoLCvnz8DM2kamYRkySgEqyHzaOwVifhNmgN8OcvZicQz5k2YiPupsnSDMNTADpuq6SfR8DnhVt26/OsEmS49K2TOQR1EZOrToUHWGDXqIvqB0x5ra4WUrrmiRzwmGQuz+NnZXdmPmYxhoY9VfwIR6bYuPs7+04whcvnWLR7BJjuUHYP3K+/Ue46eaDINwfQxQZnzMpb49ZkLeWrOjciv8XrjLzA2rSoJJNAAWSTsAAOp+WN3EFYV9awZhXUOjBlYWGU2CD3BxlHPXJLyRTTR5kJl4vElVGDE6xYKAbAWRpDdxVg9cXH2Z5DM5LJyrnLQX4ipdlEKnVdbA2LIF18zj3HeIJJl0y67jwpcw+23hQhtN0ABqm8I16Bvq59bbKMWBaBMvypPlchl88k7kyL+0iKjQFk6XRs9Fu++JXA+Z5EJVtOlwUYAAbN3HuCLGNC5bzkcvD0R1GgReG4JHQDT+vUenscZ/Byr+0p2JQsQK2JXsT+mJ3Gd7AInYKAyOArsi/O5iOCNGaZSrgMK6gtd/MWD03FdMDfFuNBQ1EV6g2K+fTD2U4KzwqHLMoYto1VupIFHpdE9Qbs4B+MctOc0/kMcd6hY6j02NXgus6MW8UvAjkot4BMVVnY/ENr/lhOd4siB45fMHB1ILsg+ldD7+uKnOM4cPdkfhPt0qun+mIuVzYnzSLJEhFqo1Ej8XRmXcL1urxo9pBx3tWsIJUTb91/zH98exo3+yeG+i/wDiTf3x3HU/5mbyFZ1/es6yvCdW8kiooUljpLVQJoCxd0B9cXHLccUbajCkvanvYHrVGvzB74qc1PsEW/NuQeoB3ANbaum3+mLrhSUNtzj5GaV8bfeuSbHKh8wZBtcUkC6dBN96BN2QBvW90Lw0eGKFctKGnnXxIpImIDFWZHAAAHl8l32DEXtgh8M6dyBWIWc4y7hIUbUVBVWA2RSd6rq3Qe1Dqem6TXODC1Mie4Ck3w3KR5WOm3kbcgHe9tvYdD+fTFqjMwazp9l6/md/bAzmI3jNEkn1PX64SM9JVYnlY+TJNrbtWGZRBbNVC7J6AeuKDmTiMUtJGTa9AOl7fpQxP8PxfKxNfOv8/TFnHy8jgIUWh026fUb4NkkcJDnk2mREDtaG+W+AvmZAB0HxN2Ht8zgq5jzywoMlEB5hoZl/DewUd7OOcR4l4EX3fJgAj4nXtfYep36npiq4QVLZeIrcjTgm6PwMDZP0Y4cY3zATyD0/yjufeU1jVU56L9uyxsU8NhTgaWA0hQo9FAH6nFdxLKMxLiUykDzFmsium/p1xbZTi9z5p2jDxu5LAsQEDNpV9ttrA39fXFPkFH7XTZXQRv7Xv/XHQaHNbZ8BAd3nCsMjmnmoL3NNb/D0rqO/9N6xo3B+B5QMgjmYzaSx1Xbdj5TuGW+gNDbr1xm/J9Hxl76QfyP/AFwSZLPKWVZQQ6G0lXZlrtff0+W2ItS4NcWgYRMlbG+3BFfEoocqrTiKMSAiiUGrV022uyaNjAHE+YaZTBIY5v3h/HtWwIo2QbFYv+YhmZ9BaUSIpv4QO3U11I6fXpij4dxX7vJM9A0KJI3AANgX0u/5emFwuJy02VTPJHKW1gKJxWSWHMwtPpdgrEeGFABs71st7g9t6w/NnY5JVaFzbC79+4O/1xLlz0c7xzpEAGFBWAGlr8xFWN/KL67e+EPxHLGdQ7AMPLfUWdtz23/nhsji4VtyAeP8KKfbvIjyFaw80iONsvMNKy/jUeZT+9GbvY6SV70cDXFcxK+WPis1RvpjLf8AeaioZqu1AFEbG9R32wvmNj4nhMu22+J0sKPH4Up8uwDdwdqv22GNhmEbG7ghbMQACrr7P/FggmSVmSFpWWqoOxQLatq1bDciqGxJ2rFLzVDK8VRlBl0oaL38gSIFbUWDVgX0HQYkZGaTWcvJqdt3eMVo2O0gJIAsEA79NNemG+NASITEwdQRqVT5tR6jSa3NMSLJ/rQ+Ql4LOFeY7ittY+6CWmdVUlbB6FlNEDY6T3o4RFNqYajt+X0xoLZSKaIQjzBVJAK79NmQqdiDsRR69e2APMZdFZlF1e1kbV6kbH6YOKYPsVRUTDfZTOEZI5mcKHjQu3WRgigE+p2+n0xZ8Y4D4MImGsyDMPE7bFP2fw313NEj2vrtgcU306j09MToeJyBPDJ1R3q0n96qse9d8MNhFavuC8TeeIZSUpqaXXFI+wUsKZDQ6HSK9z8sRIhpk3Okq3UHcEHsR/MfPFTJMrCja19cPz52lDadTbanDbNQ2JBFhv09sA8bvigcLHvWnR81O0H3Z7cMwAdjZCjchu53AAPubw9mXcRTIteJJC0fm7qb79B1P6YzvgHHFMirMNKfvKdw3Y74IeIcZeM2H8dD2KgEX7qADhDXSMoPTo8tyr3krLhMuW1ElmNqTspXsB+uLbJZkPLpP7pr6bn/AD7HGacG49PHK3hgyJKdRj00QfVTVdOpPWhgk4fnf2wYfhO9+h6/12x2NLsDClublFvDs2CXSiCrEf8AX9cc4llg4o74HeKZ/wAGVZVIMcuwYEVqHa/Wv5Yj8U5uiioOQXPQA2B7sR2wuYsys2qtzR0uydKJF11xWwZSpGFgMdh1631vtWI2a5jTcg2xO5ojr3G2FcPzbySqVDNGSNaKL272eoB3H644sWncLNUvRR2bRd/tHIekn5t/fHsRNOX/AHG/Mf8A9Y9g7l8KnagvLT0RdYJchxFgBY29jgTbMiz4a6lUbs1/X5YnZPihf4QiAdi25O/wqNz+mMm0xeLpQOjJyiuXMRyRqxYtbWVUnoP3j039BfvhiWOM7oBGe1Ch9a2xSLn5FF6LN0FG23rv/LCl4yT+HT7XiT8O9v5ePigIcDhXOVg1C/i9RXTE/LcJVu1YCTxmRH1IxB9Ov0IOLGXiWZcNrlCKKGo0qi+nv0s7dhjXaOYn0nlNawclEcwhg80kgUDt3J9qwPcf5zLDRCCie3xN8/TFEHVvOQXPW2bb8gP64ajyTPZAB99sUxaCNh3SZI+iMEDCePFpNgrBb9Ow/qeuCzlbM6gCImSVVkOoqBasNO3e9JI+uKThfDfDt23P7oq/r2xbZHN6ZFYXV0fkdsFq32za3twtbLt4Qkco0ZQMmok9Q1K19rqwR64nRZdsuHV47ttJDgrRYdgdwffvt2OLzRH4oWYkRhj5gLNgEjSO5ogfXDPGsxqKF7+IdTZ8oAonuRteGsm6ga09yqNLl7Qe5pO5CIxOCyqrKo+AbNE2xPzBo777V3w7msuLxa8aiCwLL0MbCj7MaI/X9MQGYFem1bf1r2GFe09P0J6bxX+hUe2NO2KahweFFhzskZ2Nj07YmzTQZhSkq6SwokUP164YQb+3rhLopxzjV2MHyFxTYSc9wIlAIHpdhsx2AHt/b1wLzQpAWDRnWT5de9DtuNifli+zTmP4Sfp/XEBuLX5ZRYxdp3yVnI+6Yxzl3JcUaVFWVS3huKkAsgH8LV+nfFzxSaFEMhdarYA2WJ6AYHM8pVKRiI2N7E0O/T+uKORbO+59cO/DMlIcMDwmljHcIxgnaRQUlEjLp8kdjyttpYtRBFVYBI8pqqOGMvxmbL64VjMbEgsd1csh1A3ex3370awN5ElW1q1FcW0ucLXNIy+IxHQkyOT5bHtXW+tDrigs24HCob7lO43LPGvnmJeQFmVWsKzBXvV0shvw7bH2wP2nhrQJkJa7N+UAVt/zeuLHiQVFKAkknzMRXuAB69z8wMVceWZlZxWkGviAP0BNnt0wcIsZSzd5UdZCDY2OJsbo9b6T6Hofkf6YYzGUdAGYUDuPl9Pnh7K5EP4dt8bVQG4As3+mCdtq7WFOfdzvhqdyu3r1+XocT8vlcvqZC8xbomllA1An4gRuu29EEe+I2dyTKxVhTDerB2PcVgBzyhSOEOgkPiKCNJIvoCBe+JuVzgIVWRtl7sR+VVtv0N/lipCUcLLYJzAUR4pWeQ4mUIvoL7b713+n88WXCONkN8BJGpmax0G/ToABeB7Lrvdd6HoTXTD+XlaMFSvmkobj8NhqH+Ly/T54As8L1Hsns1mWzEgXUQjuPKTsKsWN6BonFtHw/KuRGiqX23BJP/Eb6nFIFuU6WFKdiBsd/TEiLMCPMbeVlBF3tuNj8xeFSgk4JwOyE5PKucxyzHCWBW36aGO4rrXb2o/piN/tZcqSFhO+1E7BvYg/pi44fN4iy+IXkkB1pQFtqa2s9STQFk98QOdNCIgRSoN61cbrKOqg9LA0g0eletn0QeTd2Puq+iK3A4+6r/8AtOP/AFafrj2B2x+7j2H7B4Q7lOyqyTaIkAstQF0GNdK74cy7uZPEci0Ok0AOnYaRX1xJSGNh4hUit/L/AK4jPnAbABO12avf5bYWXbrACmJB4S8zxBrsbDtiI85IPS+tnrhoNZ3xyQ4NrAMUvBoUnhsukqx7g3tZ2P8Ap64lsYi1q+k9QSb3B72MVnC82IpkkKLIFYExv8Lgfhauxw7xJ45HZ4o/CRjYj1EhR6Anevbtgy0fNeLU4iBQfNYG/wBe/wDTEzh2cjAOpgpuhv1GKpL0tvdUd/y/thDCxRGAczcCCV4tCKfvK0CGBvYVvZ9B69tsEk/L6qEfXqRl1UAbOw2FHfACuYHlVFMfhkvYYk+Ub1ffpg14BxLOGGVU8IsASrOW8mtXbalN7K3puR2xFPp30Aw5TdO2OzvVfmnJlhZSwidiQRV3EGXr8tj7YrOYczui16t+f+mJnLhByVnrFMyL/wDUUE7/AEOKjibl56voQuPRNqTb/ShLv4orspvE+YPvEUUQhCaTbPrJLEAgbHYdffDvBuJ6PJJ8J6HuD6jFnyRy5FmjmTIN1AEZBPlYEnV6em3t74qeIwBb+Xb1GG6oA0Hd02bdI3e82reYiMdPJ2IN0PX5eo7YZ1Ab/ril4XxFj+zb6H0xJOYK+TsRt7e2I3QEGjyoa7FIzk+5xSZiSziRK5s4YkGLoWBqNopLymc0gq26n9PljkyhB5CfN69ffthfDoQZBfYahte/a/bD+WzKmYPMmtQdTC6JvovyvTf1wzG7HzTGizQTnC+XZHoyERRMNRkfoFG/l/eY2PLiTBl0USBAANqfSC13sQWBZetkAiwN8Imzjy6QTSgeVR8Kj0UemGM1m99I2Cdfc1/Lc1gBvlfTU4tz6FCzGrzhmsjY36AjcfkMScnll8HVo1OW227bdfQYgSS05PvR+V4tMtmxGpQRq2pdNsDtq6MCCKIODdeAEklVubdwNDdKBA/dPWhfzI/0xyJyuihXUg+vb6d8cnZr0E3Rrf54YlYqSO4sbYcAtCfzMTBro2T7A/kMScsjEG9mJABO3Ts39ziDI/Tv7nrhcGaLHSbrBy7wNoXirDiGSaNUZqpwWBX0VtJJ9BfQ4hBdxZC9wT0+nrhOezjs1BiFC6AOwU7kD2JJP1w5momjERc6xLH4gHSvMyUffyHp7YW0GsrwCKstmZGkiWUoEFkgIACQQVNKKBsdsD/Hp2Mi77KPKfkavr12A+gxccu5lZ/2enTpFu92xrsvpYxUcciIbTflWVlHrR3H5Y9uF0iCZyDqPTVd79D7XiZPmlun1L6EgHp3BxWTtdkbAkWPkNsWXCJg48KQalPT2+XphcoAG5LcKypuRIBDxu2oEEMp3Fdh6DptiHxx3ZqaQtbmQ6upZ6BN/JVGIfFMkYHGljR3UjY/XCP9osQFkAYDv0bf3716HARtd+ZpsImuPyTWgf5GOY996Pt+WPYblFa//9k=" alt="শিম চাষের জন্য মাটি প্রস্তুতি" style="max-width:100%; border-radius: 10px; box-shadow: 0px 3px 6px rgba(0,0,0,0.3);">
+
+    </div>
+</section>
+
+<!-- ================== Responsive CSS ================== -->
+<style>
+@media (max-width: 768px) {
+    .beans-container {
+        flex-direction: column;
+    }
+    .beans-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
 
         <!-- ================== জমি ও পরিবেশ যাচাই ================== -->
         <section id="beans-checklist" class="section-card">
@@ -590,7 +616,7 @@
 
         <!-- ================== Research & AI Predictions ================== -->
         <section id="research" class="section-card">
-            <span class="badge">রিসার্চ টুলস</span>
+           
             <h2 style="color:#d84315;">🔬 শিম চাষের বৈজ্ঞানিক মূল্যায়ন ও পূর্বাভাস</h2>
 
             <!-- Soil & Climate -->
@@ -636,19 +662,81 @@
             </ul>
         </section>
 
-        <!-- ================== মাটি প্রস্তুতি ================== -->
-        <section id="soil" class="section-card">
-            <span class="badge">মাটি প্রস্তুতি</span>
-            <h2>🌱 শিম চাষের জন্য মাটি প্রস্তুতি</h2>
-            <p>
-                শিম ভালো ফলনের জন্য উর্বর দো-আঁশ বা বেলে দো-আঁশ মাটি দরকার।  
-                ১) জমি প্রথমে ২-৩ বার ভালোভাবে চাষ ও মই দিয়ে তৈরি করুন। <br>
-                ২) প্রতি শতকে ৪-৫ কেজি পচা গোবর বা জৈব সার ব্যবহার করুন। <br>
-                ৩) শেষ চাষে ইউরিয়া, টিএসপি ও এমওপি সার মিশিয়ে জমি তৈরি করুন। <br>
-                ৪) জমি উঁচু করে বেড তৈরি করুন এবং নালা রাখুন যাতে পানি জমে না থাকে।<br>
-                ৫> মাচা তৈরির জন্য খুঁটি ও তারের ব্যবস্থা করুন (লতা জাতীয় শিমের জন্য)।
-            </p>
-        </section>
+      <!-- ================== ✅ শিম চাষের জন্য মাটি প্রস্তুতি ================== -->
+<section id="bean-soil-preparation" class="section-card" style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2); margin: 20px 0;">
+  <span class="badge">🌱 মাটি প্রস্তুতি</span>
+  <h2>শিম চাষের জন্য মাটি প্রস্তুতি</h2>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+    
+    <!-- লেখা অংশ -->
+    <div style="flex: 1; min-width: 280px;">
+      <p>✅ শিমের জন্য উর্বর দোআঁশ বা বেলে দোআঁশ মাটি সবচেয়ে ভালো।</p>
+      <p>✅ জমি চাষ করার আগে আগাছা পরিষ্কার করতে হবে।</p>
+      <p>✅ ২-৩ বার চাষ দিয়ে মাটি ঝুরঝুরে করতে হবে।</p>
+      <p>✅ জৈব সার (গোবর/কম্পোস্ট) প্রয়োগ করলে মাটির উর্বরতা বাড়ে।</p>
+      <p>✅ বেড বা উঁচু জমি তৈরি করা উচিত যাতে পানি জমে না থাকে।</p>
+    </div>
+
+    <!-- ছবি অংশ -->
+    <div style="flex: 1; min-width: 250px; text-align: center;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcCghzfqY1EbtR9kkrstB649QB4Us0sIwhQ&s" alt="শিম চাষের জন্য মাটি প্রস্তুতি" style="max-width:100%; border-radius: 10px; box-shadow: 0px 3px 6px rgba(0,0,0,0.3);">
+      <p style="font-size: 14px; color: gray; margin-top: 5px;">শিম চাষের জমি প্রস্তুতির উদাহরণ</p>
+    </div>
+
+  </div>
+
+  <!-- ভিডিও অংশ -->
+  <div style="margin-top: 20px; text-align: center;">
+    <h3>🎥 ভিডিও: শিম চাষের জমি প্রস্তুতি</h3>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/V4aVREVB4Oo?si=GiwiDtSFwAWc9IWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+ <!-- ================== ✅ শিম (Bean) এর মাচা তৈরি — সংক্ষিপ্ত HTML সেকশন ================== -->
+<section id="bean-trellis" class="section-card">
+  <style>
+    /* Scoped styles for this section only */
+    #bean-trellis.section-card{max-width:900px;margin:24px auto;padding:20px;border-radius:16px;background:#f8fff9;box-shadow:0 6px 20px rgba(0,0,0,.06);border:1px solid #e3f5e6;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    #bean-trellis .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#0ea5a4;color:#fff;font-weight:600;font-size:12px;letter-spacing:.3px;vertical-align:middle}
+    #bean-trellis h2{margin:10px 0 14px;font-size:24px;line-height:1.3;color:#0b7a58}
+    #bean-trellis .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:720px){#bean-trellis .grid{grid-template-columns:repeat(2,1fr)}}
+    #bean-trellis .card{background:#ffffff;border:1px solid #eaf3eb;border-radius:14px;padding:14px}
+    #bean-trellis h3{font-size:18px;margin:0 0 8px;color:#0b7a58}
+    #bean-trellis ul{margin:0 0 0 18px;padding:0}
+    #bean-trellis li{margin:6px 0}
+    #bean-trellis ol{margin:0 0 0 18px;padding:0}
+    #bean-trellis .note{margin-top:10px;font-size:13px;color:#25634b;background:#eefbf2;border:1px dashed #bfe5cc;padding:8px 10px;border-radius:10px}
+    #bean-trellis iframe{width:100%;height:315px;border-radius:12px;border:1px solid #ddd;margin-top:10px}
+  </style>
+
+  <span class="badge">শিমের মাচা</span>
+  <h2>🌱 শিম (Bean) এর মাচা তৈরি — সংক্ষিপ্ত নির্দেশিকা</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>১) উপকরণ</h3>
+      <ul>
+        <li>বাঁশ/খুঁটি (৬–৭ ফুট)</li>
+        <li>দড়ি/সুতলি</li>
+        <li>জাল/তার (ইচ্ছাধীন)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>২) তৈরির প্রক্রিয়া</h3>
+      <ol>
+        <li>৬–৭ ফুট বাঁশ ২–২.৫ ফুট মাটিতে পুঁতে খুঁটি বসান।</li>
+        <li>খুঁটির মাথায় আড়াআড়ি বাঁশ বেঁধে ফ্রেম তৈরি করুন।</li>
+        <li>গোড়া থেকে ফ্রেমে দড়ি বেঁধে দিন—লতা দড়ি বেয়ে উঠবে।</li>
+      </ol>
+      
+      <!-- 🎥 ভিডিও এমবেড অপশন -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/prVldrhT854?si=XMWcavw8E8ITlUF2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+  </div>
+
+  <div class="note">🛠 যত্ন: ঝড়–বৃষ্টির পর বাঁধন শক্ত করুন, পুরোনো দড়ি নষ্ট হলে নতুন দিন।</div>
+</section>
 
         <!-- ================== ✅ নতুন ফিচার ৪: অপ্টিমাইজড স্পেসিং ক্যালকুলেটর ================== -->
         <section id="spacing-optimizer" class="section-card">
@@ -675,6 +763,45 @@
                 </div>
             </div>
         </section>
+        <!-- ================== শিম ভ্যারাইটি টেবিল ================== -->
+<section id="bean-varieties" style="padding:30px; max-width:1000px; margin:20px auto; font-family:sans-serif;">
+  <h2 style="text-align:center; color:#2c3e50; margin-bottom:20px;">শিমের ভ্যারাইটি (Hybrid, Local & HYB)</h2>
+  <table style="width:100%; border-collapse:collapse; text-align:left; border:1px solid #ddd;">
+    <thead>
+      <tr style="background:#27ae60; color:#fff;">
+        <th style="padding:10px; border:1px solid #ddd;">শ্রেণী</th>
+        <th style="padding:10px; border:1px solid #ddd;">ভ্যারাইটি নাম</th>
+        <th style="padding:10px; border:1px solid #ddd;">বৈশিষ্ট্য ও ব্যবহার</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- হাইব্রিড -->
+      <tr style="transition:0.3s;">
+        <td style="padding:10px; border:1px solid #ddd;">হাইব্রিড</td>
+        <td style="padding:10px; border:1px solid #ddd;">BARI Hybrid Bean-1, BARI Hybrid Bean-2, FLK-203, FLK-204, FLK-205, FLK-206</td>
+        <td style="padding:10px; border:1px solid #ddd;">উচ্চ ফলনশীল, রোগ প্রতিরোধ ক্ষমতা বেশি, দ্রুত বৃদ্ধি, দীর্ঘ ও স্বাস্থ্যকর শুঁটি।</td>
+      </tr>
+      <!-- লোকাল -->
+      <tr style="transition:0.3s;">
+        <td style="padding:10px; border:1px solid #ddd;">লোকাল</td>
+        <td style="padding:10px; border:1px solid #ddd;">Goalgadda, Rupban, Puti, Aishna, Kaikka, Katimaiya, Motor, Auto, Choita, Beguni</td>
+        <td style="padding:10px; border:1px solid #ddd;">স্থানীয় জাত, উচ্চ পুষ্টিমান, বিভিন্ন অঞ্চলে জনপ্রিয়।</td>
+      </tr>
+      <!-- উন্নত জাত -->
+      <tr style="transition:0.3s;">
+        <td style="padding:10px; border:1px solid #ddd;">উন্নত জাত</td>
+        <td style="padding:10px; border:1px solid #ddd;">BARI Sheem-1, BARI Sheem-2, BARI Sheem-3, BARI Sheem-4, BARI Sheem-5, BARI Sheem-6, BARI Sheem-7, BARI Sheem-8</td>
+        <td style="padding:10px; border:1px solid #ddd;">উন্নত জাত, উচ্চ ফলনশীল, বিভিন্ন অঞ্চলে চাষযোগ্য, রোগ প্রতিরোধ ক্ষমতা বেশি।</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<style>
+  #bean-varieties table tbody tr:hover {
+    background-color: #d1f2d8; /* হোভার হলে হালকা সবুজ হাইলাইট */
+  }
+</style>
 
         <!-- ================== বীজ বপন পদ্ধতি ================== -->
         <section class="section-card">
@@ -700,7 +827,7 @@
                         <td>শিমের চারা প্রত Transplant সহ্য করতে পারে না</td>
                     </tr>
                     <tr>
-                        <td>বীজের глуби</td>
+                        <td>বীজের </td>
                         <td>২-৩ সেন্টিমিটার গভীরতায় বপন করুন</td>
                         <td>অঙ্কুরোদগমের জন্য উপযুক্ত গভীরতা</td>
                     </tr>
@@ -759,7 +886,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ফুল-Fruit阶段避免过度浇水</td>
+                        <td>ফুল-Fruit</td>
                         <td>অতিরিক্ত পানি ফুল ও ফল ঝরে পড়তে পারে</td>
                     </tr>
                     <tr>
@@ -935,7 +1062,7 @@
                         <h5 style="color: orange;">পাতা হলুদ হওয়া (Leaf Yellowing)</h5>
                         <p><strong>লক্ষণ:</strong> পাতা হলুদ হয়ে যায়, বৃদ্ধি বন্ধ হয়ে যায়</p>
                         <p><strong>কারণ:</strong> নাইট্রোজেনের অভাব, অতিরিক্ত পানি</p>
-                        <p><strong>ব্যবস্থাপনা:</strong> সঠিক সার প্রয়োগ করুন, পানি নিষ্কাশন改善 করুন</p>
+                        <p><strong>ব্যবস্থাপনা:</strong> সঠিক সার প্রয়োগ করুন, পানি নিষ্কাশন করুন</p>
                     </div>
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu4EG7L66gjTHIxshWxYNUuiKlIJU2t06YMw&s" class="card-img-top" alt="Sunscald">
 
@@ -1491,7 +1618,7 @@
             const mode = document.getElementById('cultMethod').value;
             // baseline schedule (দিন হিসাবে)
             const schedule = [
-                { offset: 0,  task: "বেসাল সার", desc: "গোবর সার ৮০০-১০০০ কেজি, টিএসপি ২৫-৩০ কেজি, এমওপি ১৫-২০ কেজি (বিঘা)" },
+                { offset: 0,  task: "বেসাল সার", desc: "গোবর সার ৮০-১০০ কেজি, টিএসপি ২৫-৩০ কেজি, এমওপি ১৫-২০ কেজি (বিঘা)" },
                 { offset: 20, task: "টপ ড্রেসিং ১", desc: "ইউরিয়া ১০-১২ কেজি গাছের গোড়ার চারপাশে" },
                 { offset: 40, task: "টপ ড্রেসিং ২", desc: "ইউরিয়া ৮-১০ কেজি (ফুল আসার সময়)" }
             ];

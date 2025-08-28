@@ -626,8 +626,88 @@ small.hint {
         </div>
     </div>
 </section>
+<!-- ================== শসা ভ্যারাইটি টেবিল ================== -->
+<section id="cucumber-varieties" style="padding:30px; max-width:1000px; margin:20px auto; font-family:sans-serif;">
+  <h2 style="text-align:center; color:#2c3e50; margin-bottom:20px;">শসার ভ্যারাইটি (Hybrid, Local & HYB)</h2>
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; text-align:left; min-width:600px; color:#000;">
+      <thead>
+        <tr style="background:#27ae60; color:#fff;">
+          <th style="padding:10px; border:1px solid #ddd;">শ্রেণী</th>
+          <th style="padding:10px; border:1px solid #ddd;">ভ্যারাইটি নাম</th>
+          <th style="padding:10px; border:1px solid #ddd;">বৈশিষ্ট্য ও ব্যবহার</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- হাইব্রিড -->
+        <tr class="table-row">
+          <td style="padding:10px; border:1px solid #ddd; font-weight:bold;">Hybrid</td>
+          <td style="padding:10px; border:1px solid #ddd;">BARI Cucumber Hybrid-1, BARI Cucumber Hybrid-2, BARI Cucumber Hybrid-3</td>
+          <td style="padding:10px; border:1px solid #ddd;">উচ্চ ফলনশীল, রোগ প্রতিরোধ ক্ষমতা বেশি, দ্রুত বৃদ্ধি, লম্বাটে ও স্বাস্থ্যকর ফল।</td>
+        </tr>
+        <!-- লোকাল -->
+        <tr class="table-row">
+          <td style="padding:10px; border:1px solid #ddd; font-weight:bold;">Local</td>
+          <td style="padding:10px; border:1px solid #ddd;">Sadar, Puti, Golap, Shahi, Green Long</td>
+          <td style="padding:10px; border:1px solid #ddd;">স্থানীয় জাত, স্বাদে ভালো, বিভিন্ন অঞ্চলে জনপ্রিয়।</td>
+        </tr>
+        <!-- উন্নত জাত -->
+        <tr class="table-row">
+          <td style="padding:10px; border:1px solid #ddd; font-weight:bold;">HYB</td>
+          <td style="padding:10px; border:1px solid #ddd;">BARI Cucumber-1, BARI Cucumber-2, BARI Cucumber-3, BARI Cucumber-4</td>
+          <td style="padding:10px; border:1px solid #ddd;">উচ্চ ফলনশীল, রোগ প্রতিরোধ ক্ষমতা বেশি, বিভিন্ন অঞ্চলে চাষযোগ্য।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-</div>
+<style>
+  /* হোভার ইফেক্ট */
+  #cucumber-varieties table tbody tr.table-row:hover {
+    background-color: #d1f2d8;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+  }
+
+  /* মোবাইল রেসপন্সিভ */
+  @media screen and (max-width:768px) {
+    #cucumber-varieties table, 
+    #cucumber-varieties thead, 
+    #cucumber-varieties tbody, 
+    #cucumber-varieties th, 
+    #cucumber-varieties td, 
+    #cucumber-varieties tr { 
+      display:block; 
+    }
+    #cucumber-varieties thead tr { 
+      position:absolute; 
+      top:-9999px; 
+      left:-9999px; 
+    }
+    #cucumber-varieties tr { border:1px solid #ccc; margin-bottom:10px; }
+    #cucumber-varieties td { 
+      border:none; 
+      border-bottom:1px solid #eee; 
+      position:relative; 
+      padding-left:50%; 
+      text-align:left; 
+    }
+    #cucumber-varieties td:before { 
+      position:absolute; 
+      top:10px; 
+      left:10px; 
+      width:45%; 
+      padding-right:10px; 
+      white-space:nowrap; 
+      font-weight:bold; 
+      color:#27ae60;
+    }
+    #cucumber-varieties td:nth-of-type(1):before { content: "শ্রেণী"; }
+    #cucumber-varieties td:nth-of-type(2):before { content: "ভ্যারাইটি নাম"; }
+    #cucumber-varieties td:nth-of-type(3):before { content: "বৈশিষ্ট্য ও ব্যবহার"; }
+  }
+</style>
 <section class="section-card">
   <span class="badge">বীজ</span>
  <h2>বীজ বপন পদ্ধতি</h2>
