@@ -254,10 +254,17 @@ h2{ color:var(--green); margin:8px 0;}
 
 <div class="container">
 
-  <!-- ১: কেন চাষ করবেন + Field check -->
-  <section class="section" id="why">
+<!-- ১: কেন চাষ করবেন -->
+<section class="section" id="why">
     <span class="badge">১</span>
     <h2>একজন কৃষক কেন চিচিঙ্গা চাষ করবেন?</h2>
+    
+    <!-- ছবি সহ সেকশন -->
+    <div class="image-container" style="text-align:center; margin-bottom:15px;">
+        <img src="data:image/jpeg;base64,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" alt="চিচিঙ্গা চাষ" style="max-width:100%; height:auto; border-radius:8px;">
+        <p style="font-size:14px; color:#555;">চিচিঙ্গা</p>
+    </div>
+    
     <ul>
       <li>কম জমিতে বেশি ফলন (ট্রেলিস পদ্ধতিতে)।</li>
       <li>নিয়মিত বাজার চাহিদা — শহর ও গ্রামের সবজি বাজারে চাহিদা থাকে।</li>
@@ -325,85 +332,26 @@ h2{ color:var(--green); margin:8px 0;}
       </div>
     </div>
   </section>
-  <!-- ================== ✅ নতুন ফিচার: চিচিঙ্গা বাজার মূল্য ================== -->
-<section id="chichinga-market-price" class="section-card">
-    <span class="badge">বাজার মূল্য</span>
-    <h2><i class="fas fa-money-bill-wave"></i> চিচিঙ্গার স্থানীয় বাজার মূল্য</h2>
-    <p>বিভিন্ন অঞ্চলে চিচিঙ্গার বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
-
-    <div class="price-card">
-        <div class="price-header">
-            <div class="price-region">ঢাকা</div>
-            <div class="price-value">৳ ৫০-৭৫</div>
-        </div>
-        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
-    </div>
-
-    <div class="price-card">
-        <div class="price-header">
-            <div class="price-region">চট্টগ্রাম</div>
-            <div class="price-value">৳ ৪৫-৭০</div>
-        </div>
-        <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
-    </div>
-
-    <div class="price-card">
-        <div class="price-header">
-            <div class="price-region">রাজশাহী</div>
-            <div class="price-value">৳ ৪০-৬৫</div>
-        </div>
-        <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
-    </div>
-
-    <div class="price-card">
-        <div class="price-header">
-            <div class="price-region">খুলনা</div>
-            <div class="price-value">৳ ৪২-৬৮</div>
-        </div>
-        <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
-    </div>
-
-    <div class="price-card">
-        <div class="price-header">
-            <div class="price-region">সিলেট</div>
-            <div class="price-value">৳ ৪৮-৭৫</div>
-        </div>
-        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
-    </div>
-
-    <div style="margin-top: 20px;">
-        <button onclick="refreshChichingaPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
-        <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
-    </div>
-</section>
-<!-- ================== ✅ নতুন ফিচার: সাপের কুমড়োর কম্প্যানিয়ন প্লান্টিং ================== -->
-<section id="snake-gourd-companion-planting" class="section-card">
-    <span class="badge">সহচর ফসল</span>
-    <h2><i class="fas fa-handshake"></i> চিচিঙ্গার সাথে চাষযোগ্য ফসল</h2>
-    <p>চিচিঙ্গার সাথে কোন ফসল চাষ করা উপকারী এবং কোন ফসল চাষ এড়িয়ে চলা উচিত</p>
-    
-    <div class="companion-grid">
-        <div class="companion-card">
-            <h3 class="companion-title"><i class="fas fa-check-circle good-companion"></i> উপকারী সহচর ফসল</h3>
-            <ul class="companion-list">
-                <li><i class="fas fa-seedling good-companion"></i> ভুট্টা (ছায়া প্রদান করে)</li>
-                <li><i class="fas fa-seedling good-companion"></i> শসা (মাটি ও সার প্রয়োজন একই ধরনের)</li>
-                <li><i class="fas fa-seedling good-companion"></i> মটরশুঁটি (মাটিতে নাইট্রোজেন যোগ করে)</li>
-                <li><i class="fas fa-seedling good-companion"></i> আলু (মাটি আলগা করে)</li>
-            </ul>
-        </div>
+  <!-- ২: মাঠ প্রস্তুতি -->
+<section class="section" id="field-prep">
+    <span class="badge">২</span>
+    <h2>চিচিঙ্গা চাষের জন্য মাঠ প্রস্তুতি</h2>
         
-        <div class="companion-card">
-            <h3 class="companion-title"><i class="fas fa-times-circle bad-companion"></i> এড়িয়ে চলুন</h3>
-            <ul class="companion-list">
-                <li><i class="fas fa-seedling bad-companion"></i> পেঁয়াজ (বৃদ্ধি বাধা দেয়)</li>
-                <li><i class="fas fa-seedling bad-companion"></i> রসুন (বৃদ্ধি বাধা দেয়)</li>
-                <li><i class="fas fa-seedling bad-companion"></i> সূর্যমুখী (পুষ্টির জন্য প্রতিযোগিতা)</li>
-            </ul>
-        </div>
+        <!-- ভিডিও -->
+        
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6MuY9lk6Rr0?si=UiscGf2hfTBINjXq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </video>
+        <p style="font-size:14px; color:#555;">মাঠ প্রস্তুতির ভিডিও</p>
     </div>
+    
+    <h3>প্রধান ধাপসমূহ:</h3>
+    <ul>
+        <li>মাটিকে নরম করা ও আগাছা পরিষ্কার করা।</li>
+        <li>সারের ব্যবহার: জৈব সারের সঙ্গে প্রাথমিক ফসফরাস ও পটাশ মেশানো।</li>
+        <li>ট্রেলিস বা খুঁটি স্থাপন (যদি লতানো পদ্ধতি ব্যবহার করা হয়)।</li>
+        <li>সেচের ব্যবস্থা নিশ্চিত করা।</li>
+        <li>বীজ/চারা লাগানোর আগে মাটির সমতলায়ন।</li>
+    </ul>
 </section>
-
   <!-- ৩: স্পেসিং অপ্টিমাইজার -->
   <section class="section" id="spacing">
     <span class="badge">৩</span>
@@ -430,7 +378,7 @@ h2{ color:var(--green); margin:8px 0;}
     </div>
   </section>
 
-  <!-- ৪: চারা রোপণ + ভিডিও -->
+   <!-- ৪: চারা রোপণ + ভিডিও -->
   <section class="section" id="transplant">
     <span class="badge">৪</span>
     <h2>চারা কিভাবে রোপন করবেন — পদ্ধতি</h2>
@@ -442,6 +390,80 @@ h2{ color:var(--green); margin:8px 0;}
     </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bVb5ACbavDU?si=cfaq87l-A5lmh8ao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  </section>
+ <!-- ================== চিচিঙ্গা Training / লতা নিয়ন্ত্রণ ================== -->
+<section id="training" class="section-card">
+    <span class="badge">৩</span>
+    <h2>🌿 চিচিঙ্গা Training / ট্রেলিস ব্যবস্থাপনা</h2>
+    
+    <!-- ছবি/ভিডিও -->
+    <div class="media-container" style="text-align:center; margin-bottom:15px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxXFlRWwoYTi8Pr3NFFeYSYNdPxwkU8hFsw&s" alt="চিচিঙ্গা ট্রেলিস" style="max-width:100%; height:auto; border-radius:8px; margin-bottom:10px;">
+        <p style="font-size:14px; color:#555;">ট্রেলিসে বাঁধার চিত্র</p>
+    </div>
+
+    <h3>প্রধান ধাপসমূহ:</h3>
+    <ul>
+        <li>প্রাথমিকভাবে লতা মাটির কাছে রাখুন।</li>
+        <li>ট্রেলিস বা খুঁটি স্থাপন করে লতাকে ধাপে ধাপে বাঁধুন।</li>
+        <li>পাতা ও লতা সমানভাবে ছড়িয়ে দিন যাতে বাতাস চলাচল সহজ হয়।</li>
+        <li>ক্ষতিগ্রস্ত বা অতিরিক্ত লতা ছাঁটাই করুন।</li>
+        <li>লতা বাঁধার সময় শক্ত কিন্তু বেশি চাপ না দিয়ে বাঁধুন।</li>
+    </ul>
+</section>
+<!-- ================== চিচিঙ্গার ভ্যারাইটি ================== -->
+<section id="varieties" class="section-card">
+    <span class="badge">৪</span>
+    <h2>চিচিঙ্গার ভ্যারাইটি (snake gourd varieties in Bangladesh)</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ভ্যারাইটি নাম</th>
+                <th>আকার / রঙ</th>
+                <th>বৈশিষ্ট্য</th>
+                <th>ফলন সময়</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Green Long</td>
+                <td>লম্বা, সবুজ</td>
+                <td>বাজারে প্রচলিত, মসৃণ</td>
+                <td>৭০–৮০ দিন</td>
+            </tr>
+            <tr>
+                <td>Jhapat Long</td>
+                <td>লম্বা, মসৃণ</td>
+                <td>দ্রুত ফলনদায়ী</td>
+                <td>৬৫–৭৫ দিন</td>
+            </tr>
+            <tr>
+                <td>Supriya</td>
+                <td>মাঝারি আকার, হালকা সবুজ</td>
+                <td>কম দাগযুক্ত, মানসম্মত ফলন</td>
+                <td>৭০–৭৫ দিন</td>
+            </tr>
+            <tr>
+                <td>Kachri</td>
+                <td>ছোট–মাঝারি আকার, সবুজ</td>
+                <td>স্থানীয় চাষে জনপ্রিয়, তিক্ত স্বাদ কম</td>
+                <td>৭০–৮০ দিন</td>
+            </tr>
+            <tr>
+                <td>Local Varieties</td>
+                <td>ভিন্ন আকার ও রঙ</td>
+                <td>বিভিন্ন অঞ্চলের স্থানীয় জাত, পরিবেশের সাথে মানানসই</td>
+                <td>৭০–৮৫ দিন</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>বাংলাদেশে এই ভ্যারাইটিগুলো বাজারে সহজলভ্য এবং বিভিন্ন অঞ্চলের মাটি ও জলবায়ুর সাথে মানানসই। প্রতিটি জাতের ফলন, আকার ও চাষের সময় ভিন্ন।</p>
+</section>
+   
+  
+
+ 
 
   <!-- ৫: সেচ নির্দেশনা + ভিডিও -->
   <section class="section" id="irrigation">
@@ -549,6 +571,85 @@ h2{ color:var(--green); margin:8px 0;}
       <div style="flex:1;min-width:220px;">         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSucE-ZAciFhaO8TAk_iU3_8BXoD6DKJUGNXQ&s" class="card-img-top" alt="Blossom-End Rot">
 
   </section>
+  <!-- ================== ✅ নতুন ফিচার: চিচিঙ্গা বাজার মূল্য ================== -->
+<section id="chichinga-market-price" class="section-card">
+    <span class="badge">বাজার মূল্য</span>
+    <h2><i class="fas fa-money-bill-wave"></i> চিচিঙ্গার স্থানীয় বাজার মূল্য</h2>
+    <p>বিভিন্ন অঞ্চলে চিচিঙ্গার বর্তমান বাজার মূল্য (প্রতি কেজি)</p>
+
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">ঢাকা</div>
+            <div class="price-value">৳ ৫০-৭৫</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">চট্টগ্রাম</div>
+            <div class="price-value">৳ ৪৫-৭০</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: গতকাল</div>
+    </div>
+
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">রাজশাহী</div>
+            <div class="price-value">৳ ৪০-৬৫</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ২ দিন আগে</div>
+    </div>
+
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">খুলনা</div>
+            <div class="price-value">৳ ৪২-৬৮</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: ৩ দিন আগে</div>
+    </div>
+
+    <div class="price-card">
+        <div class="price-header">
+            <div class="price-region">সিলেট</div>
+            <div class="price-value">৳ ৪৮-৭৫</div>
+        </div>
+        <div class="price-date">সর্বশেষ হালনাগাদ: আজ</div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button onclick="refreshChichingaPrices()"><i class="fas fa-sync-alt"></i> মূল্য হালনাগাদ করুন</button>
+        <small class="hint">মূল্যগুলো স্থানীয় কৃষি বিপণন বিভাগ থেকে সংগ্রহ করা হয়েছে</small>
+    </div>
+</section>
+<!-- ================== ✅ নতুন ফিচার: সাপের কুমড়োর কম্প্যানিয়ন প্লান্টিং ================== -->
+<section id="snake-gourd-companion-planting" class="section-card">
+    <span class="badge">সহচর ফসল</span>
+    <h2><i class="fas fa-handshake"></i> চিচিঙ্গার সাথে চাষযোগ্য ফসল</h2>
+    <p>চিচিঙ্গার সাথে কোন ফসল চাষ করা উপকারী এবং কোন ফসল চাষ এড়িয়ে চলা উচিত</p>
+    
+    <div class="companion-grid">
+        <div class="companion-card">
+            <h3 class="companion-title"><i class="fas fa-check-circle good-companion"></i> উপকারী সহচর ফসল</h3>
+            <ul class="companion-list">
+                <li><i class="fas fa-seedling good-companion"></i> ভুট্টা (ছায়া প্রদান করে)</li>
+                <li><i class="fas fa-seedling good-companion"></i> শসা (মাটি ও সার প্রয়োজন একই ধরনের)</li>
+                <li><i class="fas fa-seedling good-companion"></i> মটরশুঁটি (মাটিতে নাইট্রোজেন যোগ করে)</li>
+                <li><i class="fas fa-seedling good-companion"></i> আলু (মাটি আলগা করে)</li>
+            </ul>
+        </div>
+        
+        <div class="companion-card">
+            <h3 class="companion-title"><i class="fas fa-times-circle bad-companion"></i> এড়িয়ে চলুন</h3>
+            <ul class="companion-list">
+                <li><i class="fas fa-seedling bad-companion"></i> পেঁয়াজ (বৃদ্ধি বাধা দেয়)</li>
+                <li><i class="fas fa-seedling bad-companion"></i> রসুন (বৃদ্ধি বাধা দেয়)</li>
+                <li><i class="fas fa-seedling bad-companion"></i> সূর্যমুখী (পুষ্টির জন্য প্রতিযোগিতা)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 
  <!-- ================== ফলন ও ব্যবহার ================== -->
 <section class="section-card">
