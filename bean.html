@@ -1266,27 +1266,35 @@
                 </div>
             </div>
         </section>
-        <!-- ================== ✅ নতুন ফিচার ৩: শিমের ফলন অনুমানকারী ================== -->
-        <section id="yield-estimator" class="section-card">
-            <span class="badge">ফলন প্রেডিকশন</span>
-            <h2>📈 শিমের ফলন অনুমান</h2>
-            <div class="grid-2">
-                <div>
-                    <label>এলাকা (বিঘা): <input type="number" id="areaBigha" min="0" step="0.01" value="1"></label>
-                    <label>সারি দূরত্ব (মিটার): <input type="number" id="rowSpacing" min="0.3" step="0.1" value="0.4"></label>
-                    <label>গাছের দূরত্ব (মিটার): <input type="number" id="plantSpacing" min="0.2" step="0.1" value="0.3"></label>
-                    <label>প্রতি গাছে ফল (গড়): <input type="number" id="fruitsPerPlant" min="5" step="1" value="30"></label>
-                    <label>প্রতি ফলের ওজন (গ্রাম): <input type="number" id="fruitWeight" min="10" step="5" value="15"></label>
-                    <label>ম্যানেজমেন্ট ফ্যাক্টর (০.৭–১.2): <input type="number" id="mgmtFactor" min="0.7" max="1.2" step="0.05" value="1.0"></label>
-                    <button onclick="estimateYield()">🧮 ফলন হিসাব করুন</button>
-                    <div id="yieldSummary" style="font-weight:700;"></div>
-                </div>
-                <div>
-                    <div class="chart-container"><canvas id="yieldBreakdownChart"></canvas></div>
-                </div>
+      <!-- ================== ✅ শিমের ফলন অনুমানকারী ================== -->
+<section id="bean-yield-estimator" class="section-card">
+    <span class="badge">ফলন প্রেডিকশন</span>
+    <h2>📈 শিমের ফলন অনুমান</h2>
+    <div class="grid-2">
+        <div>
+            <label>এলাকা (বিঘা): <input type="number" id="beanAreaBigha" min="0" step="0.01" value="1"></label><br>
+            <label>সারি দূরত্ব (মিটার): <input type="number" id="beanRowSpacing" min="0.3" step="0.1" value="0.6"></label><br>
+            <label>গাছের দূরত্ব (মিটার): <input type="number" id="beanPlantSpacing" min="0.2" step="0.1" value="0.3"></label><br>
+            <label>প্রতি গাছে ফল/ডাঁটা (গড়): <input type="number" id="beanPodsPerPlant" min="5" step="1" value="25"></label><br>
+            <label>প্রতি ফল/ডাঁটার ওজন (গ্রাম): <input type="number" id="beanPodWeight" min="5" step="1" value="10"></label><br>
+            <label>ম্যানেজমেন্ট ফ্যাক্টর (০.৭–১.2): <input type="number" id="beanMgmtFactor" min="0.7" max="1.2" step="0.05" value="1.0"></label><br>
+            <button id="beanEstimateBtn">🧮 ফলন হিসাব করুন</button>
+            <div id="beanYieldSummary" style="font-weight:700; margin-top:10px;"></div>
+        </div>
+        <div>
+            <div class="chart-container" style="width:100%; max-width:400px;">
+                <canvas id="beanYieldBreakdownChart"></canvas>
             </div>
-            <small class="hint">নোট: ১ বিঘা ≈ ১৩৩৭.৮০৩ বর্গমিটার ধরা হয়েছে।</small>
-        </section>
+        </div>
+    </div>
+    <small class="hint">নোট: ১ বিঘা ≈ ১৩৩৭.৮০৩ বর্গমিটার ধরা হয়েছে।</small>
+</section>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- আপনার JS আলাদা ফাইলে নিচের script সংযুক্ত করবেন -->
+<script src="bean-yield.js"></script>
+
 
         <!-- ================== কৃষি কমিউনিটি ================== -->
         <section class="section-card">
@@ -1774,6 +1782,63 @@
             
             document.getElementById('comment').value = '';
         }
+        
+       //let beanYieldChart;
+
+function estimateBeanYield() {
+    const areaBigha = parseFloat(document.getElementById("beanAreaBigha").value);
+    const rowSpacing = parseFloat(document.getElementById("beanRowSpacing").value);
+    const plantSpacing = parseFloat(document.getElementById("beanPlantSpacing").value);
+    const podsPerPlant = parseFloat(document.getElementById("beanPodsPerPlant").value);
+    const podWeight = parseFloat(document.getElementById("beanPodWeight").value);
+    const mgmtFactor = parseFloat(document.getElementById("beanMgmtFactor").value);
+
+    // ১ বিঘা = 1337.803 sqm
+    const areaSqm = areaBigha * 1337.803;
+
+    // প্রতি গাছে জায়গা
+    const areaPerPlant = rowSpacing * plantSpacing;
+
+    // মোট গাছ সংখ্যা
+    const totalPlants = areaSqm / areaPerPlant;
+
+    // মোট ফল/ডাঁটা
+    const totalPods = totalPlants * podsPerPlant;
+
+    // মোট ওজন (গ্রামে)
+    const totalWeightGrams = totalPods * podWeight * mgmtFactor;
+
+    // টনে রূপান্তর
+    const totalYieldTon = totalWeightGrams / 1000000;
+
+    // সারসংক্ষেপ দেখানো
+    document.getElementById("beanYieldSummary").innerHTML =
+        '👉 অনুমানিত মোট ফলন: <b>${totalYieldTon.toFixed(2)} টন</b>';
+
+    // চার্ট আপডেট করা
+    const ctx = document.getElementById("beanYieldBreakdownChart").getContext("2d");
+
+    if (beanYieldChart) {
+        beanYieldChart.destroy();
+    }
+
+    beanYieldChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["মোট গাছ", "মোট ফল/ডাঁটা", "মোট ফলন (টন)"],
+            datasets: [{
+                data: [totalPlants.toFixed(0), totalPods.toFixed(0), totalYieldTon.toFixed(2)],
+                backgroundColor: ["#4caf50", "#ff9800", "#2196f3"]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: "bottom" }
+            }
+        }
+    });
+}
     </script>
 </body>
 </html>
